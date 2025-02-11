@@ -1,0 +1,3347 @@
+Resident data ends at 29b4, program starts at 29b4, file ends at 64f8
+
+Starting analysis pass at address 29b4
+
+End of analysis pass, low address = 29b4, high address = 626c
+
+[Start of code]
+
+Main routine R0001, 0 locals
+
+       CALL_1N         R0002
+       CALL_1N         R0003
+       QUIT
+
+orphan code fragment:
+
+       RTRUE
+
+Routine R0002, 1 local
+
+       LOADB           #00,#21 -> G0b
+       LOADB           #00,#20 -> G0c
+       SUB             G0b,#01 -> -(SP)
+       STOREB          G11,#00,(SP)+
+       STOREB          G11,#01,#3c
+       STORE           L00,#02
+L0001: SUB             G0b,#02 -> -(SP)
+       JL              L00,(SP)+ [FALSE] L0002
+       STOREB          G11,L00,#2d
+       INC             L00
+       JUMP            L0001
+L0002: STOREB          G11,L00,#3e
+       RTRUE
+
+Routine R0003, 1 local
+
+L0001: ERASE_WINDOW    #ffff
+       OUTPUT_STREAM   REDIRECT_ENABLE,#1955
+       CALL_1N         R0093
+       OUTPUT_STREAM   #fffd
+       SET_TEXT_STYLE  REVERSE
+       LOADW           #1955,#00 -> -(SP)
+       SUB             G0b,(SP)+ -> -(SP)
+       DIV             (SP)+,#02 -> L00
+       STORE           Gef,L00
+       JL              Gef,#01 [TRUE] L0003
+L0002: PRINT_CHAR      ' '
+       SUB             Gef,#01 -> Gef
+       JE              Gef,#00 [FALSE] L0002
+L0003: CALL_1N         R0093
+       LOADW           #1955,#00 -> -(SP)
+       SUB             G0b,L00 -> -(SP)
+       SUB             (SP)+,(SP)+ -> -(SP)
+       STORE           Gef,(SP)+
+       JL              Gef,#01 [TRUE] L0005
+L0004: PRINT_CHAR      ' '
+       SUB             Gef,#01 -> Gef
+       JE              Gef,#00 [FALSE] L0004
+L0005: SET_TEXT_STYLE  ROMAN
+       STORE           L00,#00
+L0006: SUB             G0c,#0a -> -(SP)
+       DIV             (SP)+,#02 -> -(SP)
+       JL              L00,(SP)+ [FALSE] L0007
+       NEW_LINE
+       INC             L00
+       JUMP            L0006
+L0007: CALL_VN         R0004 (S011,S012)
+       CALL_VN         R0004 (S013,S014)
+       CALL_VN         R0004 (S015,S016)
+       CALL_VN         R0004 (S017,S018)
+       CALL_VN         R0004 (S019,S020)
+       READ_CHAR       #01 -> L00
+       ERASE_WINDOW    #ffff
+       STORE           Gef,L00
+       JE              Gef,#73,#53 [FALSE] L0008
+       CALL_1N         R0009
+       JUMP            L0012
+L0008: JE              Gef,#72,#52 [FALSE] L0009
+       CALL_1N         R0005
+       JUMP            L0012
+L0009: JE              Gef,#63,#43 [FALSE] L0010
+       CALL_1N         R0006
+       JUMP            L0012
+L0010: JE              Gef,#69,#49 [FALSE] L0011
+       CALL_1N         R0007
+       JUMP            L0012
+L0011: JE              Gef,#71,#51 [FALSE] L0012
+       QUIT
+L0012: JUMP            L0001
+
+Routine R0004, 2 locals
+
+       SUB             G0b,#16 -> -(SP)
+       DIV             (SP)+,#02 -> -(SP)
+       STORE           Gef,(SP)+
+       JL              Gef,#01 [TRUE] L0002
+L0001: PRINT_CHAR      ' '
+       SUB             Gef,#01 -> Gef
+       JE              Gef,#00 [FALSE] L0001
+L0002: SET_TEXT_STYLE  BOLDFACE
+       PRINT_PADDR     L00
+       SET_TEXT_STYLE  ROMAN
+       PRINT           "  "
+       PRINT_PADDR     L01
+       NEW_LINE
+       NEW_LINE
+       RTRUE
+
+Routine R0005, 1 local
+
+       RESTORE         -> Gef
+       JE              Gef,#02 [TRUE] L0001
+L0001: PRINT           "Restore failed
+Press RETURN to continue..."
+       READ_CHAR       #01 -> L00
+       RTRUE
+
+Routine R0006, 1 local
+
+       SET_TEXT_STYLE  BOLDFACE
+       PRINT           "Credits"
+       SET_TEXT_STYLE  ROMAN
+       PRINT           "
+
+'"
+       CALL_1N         R0093
+       PRINT           "' was translated to Inform by Scott2Zip, version "
+       PRINT_PADDR     S002
+       PRINT           ", and subsequently compiled with Inform v"
+       PRINT           "1502"
+       PRINT           ".
+
+"
+       PRINT           "The original version was probably written by either
+Scott Adams or Brian Howarth, in the the "Scott Adams format". If written by
+Scott Adams, it is still under copyright and this translated version can only
+be used by the legal owner of the original adventure; it must not be given away
+or distributed on the Net.
+
+"
+       PRINT           "For help to understand the TRS-80 format, thanks to
+Paul David Doherty, who wrote the decompiler ScottDec, and to Alan Cox, who
+wrote the game driver ScottFree.
+
+"
+       PRINT           "Thanks to Graham Nelson, for creating Inform, and for
+documenting the Z-machine.
+
+"
+       PRINT           "Thanks to Graham Nelson and Gareth Rees, for suggesting
+how word-wrapping in the upper window could be done.
+
+"
+       PRINT           "[Please press SPACE.]
+"
+       READ_CHAR       #01 -> L00
+       RTRUE
+
+Routine R0007, 1 local
+
+       SET_TEXT_STYLE  BOLDFACE
+       PRINT           "Commands"
+       SET_TEXT_STYLE  ROMAN
+       PRINT           "
+
+Commands consist of sentences with one or two words.  The following commands
+are always understood: HELP, QUIT, SAVE GAME, SCORE, and INVENTORY.
+
+"
+       PRINT           "In this particular adventure, you may abbreviate any
+word by typing its first "
+       PRINT_NUM       G06
+       PRINT           " letters, and directions by typing one letter.
+
+"
+       PRINT           "There are some meta-commands available.
+
+"$script" turns on a game transcript, "$unscript" or "$noscript" turns off the
+transcript. "
+       PRINT           "
+
+"
+       PRINT           "[Please press SPACE.]
+"
+       READ_CHAR       #01 -> L00
+       RTRUE
+
+Routine R0008, 1 local
+
+       READ_CHAR       #01 -> L00
+       JE              L00,#79 [TRUE] L0001
+       JE              L00,#59 [FALSE] L0002
+L0001: RTRUE
+L0002: RFALSE
+
+Routine R0009, 8 locals
+
+       LOADW           #00,#04 -> L00
+       OUTPUT_STREAM   REDIRECT_ENABLE,#1955
+       CALL_1N         R0013
+       OUTPUT_STREAM   #fffd
+       NEW_LINE
+L0001: JE              #01,#01 [FALSE] L0018
+L0002: OUTPUT_STREAM   REDIRECT_ENABLE,#1955
+       CALL_1N         R0091
+       CALL_1N         R0010
+L0003: OUTPUT_STREAM   REDIRECT_ENABLE,#1955
+       CALL_1N         R0013
+       OUTPUT_STREAM   #fffd
+L0004: PRINT           "WHAT SHALL I DO? "
+       CALL_1S         R0011 -> L05
+       JE              L05,#00 [FALSE] L0005
+       JUMP            L0004
+L0005: STOREB          G09,#01,#00
+       TOKENISE        G08,G09,L00,#00
+       LOADW           G09,#01 -> -(SP)
+       JE              (SP)+,#00 [FALSE] L0009
+       LOADB           G09,#04 -> -(SP)
+       JE              (SP)+,#01 [FALSE] L0008
+       LOADB           G09,#05 -> -(SP)
+       LOADB           G08,(SP)+ -> L06
+       STORE           L02,#00
+L0006: JL              L02,#06 [FALSE] L0008
+       LOADB           #21cb,L02 -> -(SP)
+       JE              L06,(SP)+ [FALSE] L0007
+       OUTPUT_STREAM   REDIRECT_ENABLE,#1955
+       LOADB           #21b9,L02 -> -(SP)
+       CALL_2N         R0024 ((SP)+)
+       CALL_1N         R0010
+       JUMP            L0002
+L0007: INC             L02
+       JUMP            L0006
+L0008: CALL_1N         R0012
+       JUMP            L0004
+L0009: LOADW           G09,#01 -> L01
+       LOADB           L01,#06 -> -(SP)
+       AND             (SP)+,#01 -> -(SP)
+       JE              (SP)+,#00 [FALSE] L0010
+       CALL_1N         R0012
+       JUMP            L0004
+L0010: LOADB           L01,#06 -> -(SP)
+       AND             (SP)+,#02 -> L07
+       JL              L05,#02 [FALSE] L0011
+       STORE           G0a,#00
+       JUMP            L0013
+L0011: LOADW           G09,#03 -> G0a
+       JE              G0a,#00 [TRUE] L0012
+       LOADB           G0a,#06 -> -(SP)
+       AND             (SP)+,#80 -> -(SP)
+       JE              (SP)+,#00 [FALSE] L0013
+L0012: JE              L07,#00 [FALSE] L0013
+       PRINT           "I don't know what a ""
+       CALL_1N         R0029
+       PRINT           "" is.
+"
+       JUMP            L0004
+L0013: CALL_2S         R0036 (G0a) -> G0a
+       CALL_2S         R0092 (G0a) -> G0e
+       GET_PARENT      "Lit flashlite" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0015
+       DEC             G07
+       JG              G07,#00 [TRUE] L0014
+       PRINT           "THE LIGHT HAS RUN OUT! "
+       SET_ATTR        "flags",#10
+       JUMP            L0015
+L0014: JL              G07,#18 [FALSE] L0015
+       PRINT           "The light will run out in "
+       PRINT_NUM       G07
+       PRINT           " turns. "
+L0015: LOADB           L01,#07 -> -(SP)
+       SUB             #ff,(SP)+ -> L02
+       LOADW           #00,#07 -> -(SP)
+       LOADW           (SP)+,L02 -> L03
+       LOADB           L03,#08 -> L04
+       LOADW           #23d6,L04 -> L04
+       JE              L07,#00 [TRUE] L0016
+       CALL_VS         L04 -> Gef
+       JUMP            L0003
+       JUMP            L0017
+L0016: OUTPUT_STREAM   REDIRECT_ENABLE,#1955
+       CALL_VS         L04 -> Gef
+       CALL_1N         R0010
+L0017: JUMP            L0001
+L0018: RTRUE
+
+Routine R0010, 3 locals
+
+       OUTPUT_STREAM   #fffd
+       LOADW           #1955,#00 -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0001
+       ADD             #1955,#02 -> L01
+       LOADW           #1955,#00 -> L02
+       PRINT_TABLE     L01,L02,#01
+       JE              L00,#00 [FALSE] L0001
+       NEW_LINE
+L0001: RTRUE
+
+Routine R0011, 7 locals
+
+       SUB             #50,#02 -> -(SP)
+       STOREB          #14ce,#00,(SP)+
+       STOREB          #14ce,#01,#00
+       READ            #14ce,#00 -> L00
+       LOADB           #14ce,#01 -> -(SP)
+       ADD             #02,(SP)+ -> -(SP)
+       STOREB          #14ce,(SP)+,#00
+       STORE           L05,#02
+       STORE           L02,#1591
+       STORE           L04,#02
+       PUSH            L04
+       INC             L04
+       LOADB           #14ce,(SP)+ -> L00
+L0001: JL              L01,#02 [FALSE] L0010
+       STORE           L03,#01
+L0002: JE              L00,#20 [FALSE] L0003
+       PUSH            L04
+       INC             L04
+       LOADB           #14ce,(SP)+ -> L00
+       JUMP            L0002
+L0003: JE              L00,#00 [FALSE] L0004
+       JUMP            L0010
+L0004: JG              #30,L00 [TRUE] L0005
+       JG              L00,#39 [TRUE] L0005
+       PUSH            L05
+       INC             L05
+       STOREB          G08,(SP)+,#64
+L0005: STORE           L06,G06
+       JE              L00,#24 [FALSE] L0006
+       PUSH            L04
+       INC             L04
+       LOADB           #14ce,(SP)+ -> L00
+       STORE           L06,#09
+L0006: JE              L00,#20 [TRUE] L0008
+       JE              L00,#00 [TRUE] L0008
+       JG              L06,#00 [FALSE] L0007
+       PUSH            L05
+       INC             L05
+       STOREB          G08,(SP)+,L00
+       DEC             L06
+L0007: PUSH            L03
+       INC             L03
+       STOREB          L02,(SP)+,L00
+       PUSH            L04
+       INC             L04
+       LOADB           #14ce,(SP)+ -> L00
+       JUMP            L0006
+L0008: PUSH            L05
+       INC             L05
+       STOREB          G08,(SP)+,#20
+       SUB             L03,#01 -> -(SP)
+       STOREB          L02,#00,(SP)+
+       JE              L02,#1591 [FALSE] L0009
+       STORE           L02,#15e1
+L0009: INC             L01
+       JUMP            L0001
+L0010: SUB             L05,#02 -> -(SP)
+       STOREB          G08,#01,(SP)+
+       RET             L01
+
+Routine R0012, 2 locals
+
+       PRINT           "I don't know how to ""
+       ADD             #1591,#01 -> L00
+       LOADB           #1591,#00 -> L01
+       PRINT_TABLE     L00,L01,#01
+       PRINT           "".
+"
+       RTRUE
+
+Routine R0013, 4 locals
+
+       CALL_VN         R0017 (G01,#1851)
+       JE              G01,G13 [TRUE] L0001
+       STORE           L01,#01
+       STORE           G13,G01
+L0001: CALL_1S         R0025 -> L00
+       JE              L00,G12 [TRUE] L0002
+       STORE           L01,#01
+       STORE           G12,L00
+L0002: LOADB           #1851,#00 -> -(SP)
+       LOADB           #174d,#00 -> -(SP)
+       JE              (SP)+,(SP)+ [TRUE] L0003
+       STORE           L01,#01
+       JUMP            L0006
+L0003: LOADB           #1851,#00 -> -(SP)
+       ADD             (SP)+,#02 -> -(SP)
+       DIV             (SP)+,#02 -> L02
+       STORE           L03,#00
+L0004: JL              L03,L02 [FALSE] L0006
+       LOADW           #1851,L03 -> -(SP)
+       LOADW           #174d,L03 -> -(SP)
+       JE              (SP)+,(SP)+ [TRUE] L0005
+       STORE           L01,#01
+       JUMP            L0006
+L0005: INC             L03
+       JUMP            L0004
+L0006: LOADB           #1851,#00 -> -(SP)
+       ADD             (SP)+,#02 -> L03
+       COPY_TABLE      #1851,#174d,L03
+       JE              L01,#00 [TRUE] L0007
+       CALL_2N         R0014 (L00)
+L0007: RTRUE
+
+Routine R0014, 6 locals
+
+       STORE           G15,#00
+       CALL_1N         R0010
+       STORE           G14,#1955
+       STOREW          G14,#00,#00
+       OUTPUT_STREAM   REDIRECT_ENABLE,G14
+       JE              L00,#00 [FALSE] L0001
+       PRINT           "It's too dark; I can't see."
+       JUMP            L0014
+       JUMP            L0002
+L0001: GET_PROP        G01,#08 -> -(SP)
+       PRINT_PADDR     (SP)+
+L0002: CALL_1N         R0015
+       PRINT           "Obvious exit"
+       STORE           L01,#00
+L0003: JL              L01,#06 [FALSE] L0005
+       LOADB           #21b9,L01 -> L02
+       GET_PROP        G01,L02 -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0004
+       INC             L03
+L0004: INC             L01
+       JUMP            L0003
+L0005: JE              L03,#01 [TRUE] L0006
+       PRINT           "s"
+L0006: PRINT           ": "
+       STORE           L01,#00
+L0007: JL              L01,#06 [FALSE] L0009
+       LOADB           #21b9,L01 -> L02
+       GET_PROP        G01,L02 -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0008
+       LOADW           #21bf,L01 -> -(SP)
+       PRINT_PADDR     (SP)+
+       PRINT           " "
+L0008: INC             L01
+       JUMP            L0007
+L0009: JE              L03,#00 [FALSE] L0010
+       PRINT           "NONE"
+L0010: CALL_1N         R0015
+       PRINT           "Visible items: "
+       LOADB           #1851,#00 -> L03
+       JE              L03,#00 [FALSE] L0011
+       PRINT           "None"
+       JUMP            L0014
+L0011: STORE           L01,#01
+L0012: JG              L01,L03 [TRUE] L0014
+       JG              L01,#01 [FALSE] L0013
+       PRINT           ", "
+L0013: LOADB           #1851,L01 -> -(SP)
+       PRINT_OBJ       (SP)+
+       INC             L01
+       JUMP            L0012
+L0014: CALL_1N         R0015
+       OUTPUT_STREAM   #fffd
+       JE              G16,#00 [TRUE] L0015
+       ERASE_WINDOW    #01
+L0015: ADD             G15,#01 -> G16
+       SPLIT_WINDOW    G16
+       SET_WINDOW      #01
+       CALL_1N         R0016
+       SET_CURSOR      G16,#01
+       ADD             G11,#01 -> L04
+       LOADB           G11,#00 -> L05
+       PRINT_TABLE     L04,L05,#01
+       SET_WINDOW      #00
+       BUFFER_MODE     #01
+       OUTPUT_STREAM   REDIRECT_ENABLE,#1955
+       RTRUE
+
+Routine R0015, 5 locals
+
+       OUTPUT_STREAM   #fffd
+       SUB             G0b,#01 -> L03
+       LOADW           G14,#00 -> L00
+       ADD             G14,#02 -> L01
+L0001: JL              L03,L00 [FALSE] L0004
+       INC             G15
+       STOREW          #2155,G15,L01
+       ADD             L01,L03 -> L02
+L0002: LOADB           L02,#00 -> -(SP)
+       JE              (SP)+,#20 [TRUE] L0003
+       DEC             L02
+       JUMP            L0002
+L0003: SUB             L02,L01 -> L04
+       STOREW          #2187,G15,L04
+       SUB             L00,L04 -> -(SP)
+       SUB             (SP)+,#01 -> L00
+       ADD             L02,#01 -> L01
+       JUMP            L0001
+L0004: JE              L00,#00 [TRUE] L0005
+       INC             G15
+       STOREW          #2155,G15,L01
+       STOREW          #2187,G15,L00
+L0005: LOADW           G14,#00 -> -(SP)
+       ADD             G14,(SP)+ -> -(SP)
+       ADD             (SP)+,#02 -> G14
+       STOREW          G14,#00,#00
+       OUTPUT_STREAM   REDIRECT_ENABLE,G14
+       RTRUE
+
+Routine R0016, 3 locals
+
+       STORE           L00,#01
+L0001: JG              L00,G15 [TRUE] L0002
+       SET_CURSOR      L00,#01
+       LOADW           #2155,L00 -> L01
+       LOADW           #2187,L00 -> L02
+       PRINT_TABLE     L01,L02,#01
+       INC             L00
+       JUMP            L0001
+L0002: JE              G10,#00 [FALSE] L0003
+       RTRUE
+L0003: SET_WINDOW      #00
+       OUTPUT_STREAM   #ffff
+       NEW_LINE
+       STORE           L00,#01
+L0004: JG              L00,G15 [TRUE] L0005
+       LOADW           #2155,L00 -> L01
+       LOADW           #2187,L00 -> L02
+       PRINT_TABLE     L01,L02,#01
+       NEW_LINE
+       INC             L00
+       JUMP            L0004
+L0005: OUTPUT_STREAM   OUTPUT_ENABLE
+       SET_WINDOW      #01
+       RTRUE
+
+Routine R0017, 6 locals
+
+       GET_CHILD       L00 -> L02 [TRUE] L0001
+L0001: JE              L02,#00 [TRUE] L0005
+       ADD             L04,#01 -> L03
+       GET_PROP        L02,#0a -> L05
+L0002: JG              L03,#01 [FALSE] L0003
+       SUB             L03,#01 -> -(SP)
+       LOADB           L01,(SP)+ -> -(SP)
+       GET_PROP        (SP)+,#0a -> -(SP)
+       JL              L05,(SP)+ [FALSE] L0003
+       SUB             L03,#01 -> -(SP)
+       LOADB           L01,(SP)+ -> -(SP)
+       STOREB          L01,L03,(SP)+
+       DEC             L03
+       JUMP            L0002
+L0003: STOREB          L01,L03,L02
+       INC             L04
+       GET_SIBLING     L02 -> L02 [TRUE] L0004
+L0004: JUMP            L0001
+L0005: ADD             L04,#01 -> -(SP)
+       STOREB          L01,(SP)+,#00
+       STOREB          L01,#00,L04
+       RTRUE
+
+Routine R0018, 2 locals
+
+       PRINT           "I'm carrying: "
+       CALL_VN         R0017 (#01,#1851)
+       LOADB           #1851,#00 -> L00
+       JE              L00,#00 [FALSE] L0001
+       PRINT           "Nothing"
+       JUMP            L0004
+L0001: STORE           L01,#01
+L0002: JG              L01,L00 [TRUE] L0004
+       JG              L01,#01 [FALSE] L0003
+       PRINT           ", "
+L0003: LOADB           #1851,L01 -> -(SP)
+       PRINT_OBJ       (SP)+
+       INC             L01
+       JUMP            L0002
+L0004: PRINT           " "
+       RTRUE
+
+Routine R0019, 4 locals
+
+       GET_PARENT      L00 -> L02
+       GET_PARENT      L01 -> L03
+       JE              L02,#00 [FALSE] L0001
+       REMOVE_OBJ      L01
+       JUMP            L0002
+L0001: INSERT_OBJ      L01,L02
+L0002: JE              L03,#00 [FALSE] L0003
+       REMOVE_OBJ      L00
+       JUMP            L0004
+L0003: INSERT_OBJ      L00,L03
+L0004: RTRUE
+
+Routine R0020, 1 local
+
+       STORE           Gef,#00
+       GET_CHILD       "player" -> -(SP) [FALSE] L0002
+L0001: INC             Gef
+       GET_SIBLING     (SP)+ -> -(SP) [TRUE] L0001
+L0002: ADD             (SP)+,Gef -> -(SP)
+       JL              (SP)+,G05 [TRUE] L0003
+       PRINT           "I'm carrying too much. "
+       JUMP            L0004
+L0003: INSERT_OBJ      L00,"player"
+L0004: RTRUE
+
+Routine R0021, 1 local
+
+       JE              G0a,#00 [FALSE] L0001
+       PRINT           "What? "
+       RFALSE
+L0001: CALL_VS         R0023 (G01,G0a) -> L00
+       JE              L00,#00 [TRUE] L0002
+       CALL_2N         R0020 (L00)
+       JUMP            L0004
+L0002: CALL_VS         R0023 (#01,G0a) -> L00
+       JE              L00,#00 [TRUE] L0003
+       PRINT           "I'm already carrying it! "
+       JUMP            L0004
+L0003: PRINT           "It's beyond my power to do that. "
+L0004: RTRUE
+
+Routine R0022, 1 local
+
+       JE              G0a,#00 [FALSE] L0001
+       PRINT           "What? "
+       RFALSE
+L0001: CALL_VS         R0023 (#01,G0a) -> L00
+       JE              L00,#00 [FALSE] L0002
+       PRINT           "I'm not carrying it. "
+       JUMP            L0003
+L0002: INSERT_OBJ      L00,G01
+L0003: RTRUE
+
+Routine R0023, 3 locals
+
+       GET_CHILD       L00 -> L02 [TRUE] L0001
+L0001: JE              L02,#00 [TRUE] L0004
+       GET_PROP        L02,#01 -> -(SP)
+       JE              (SP)+,L01 [FALSE] L0002
+       RET             L02
+L0002: GET_SIBLING     L02 -> L02 [TRUE] L0003
+L0003: JUMP            L0001
+L0004: RFALSE
+
+Routine R0024, 3 locals
+
+       CALL_1S         R0025 -> L02
+       GET_PROP        G01,L00 -> L01
+       JE              L02,#00 [FALSE] L0001
+       PRINT           "It's dangerous to move in the dark. "
+L0001: JE              L01,#00 [FALSE] L0004
+       JE              L02,#00 [TRUE] L0002
+       PRINT           "I can't go in that direction. "
+       JUMP            L0003
+L0002: PRINT           "I fell down and brok my neck! "
+       CLEAR_ATTR      "flags",#0f
+       STORE           G01,G02
+       CALL_1N         R0030
+L0003: JUMP            L0005
+L0004: STORE           G01,L01
+L0005: RTRUE
+
+Routine R0025, 1 local
+
+       GET_PARENT      "Lit flashlite" -> L00
+       TEST_ATTR       "flags",#0f [FALSE] L0001
+       JE              L00,#01,G01 [FALSE] L0002
+L0001: RTRUE
+L0002: RFALSE
+
+Routine R0026, 1 local
+
+       SAVE            -> L00
+       STORE           Gef,L00
+       JE              Gef,#00 [FALSE] L0001
+       PRINT           "Save failed. "
+       JUMP            L0003
+L0001: JE              Gef,#01 [FALSE] L0002
+       PRINT           "OK. "
+       JUMP            L0003
+L0002: JE              Gef,#02 [FALSE] L0003
+       ERASE_WINDOW    #ffff
+       STORE           G13,#00
+L0003: RTRUE
+
+Routine R0027, 2 locals
+
+       LOADW           #1631,L00 -> L01
+       STOREW          #1631,L00,G01
+       STORE           G01,L01
+       RTRUE
+
+Routine R0028, 2 locals
+
+       LOADW           #163d,L00 -> L01
+       STOREW          #163d,L00,G0f
+       STORE           G0f,L01
+       RTRUE
+
+Routine R0029, 2 locals
+
+       ADD             #15e1,#01 -> L00
+       LOADB           #15e1,#00 -> L01
+       PRINT_TABLE     L00,L01,#01
+       RTRUE
+
+Routine R0030, 0 locals
+
+       CALL_1N         R0010
+       PRINT           "This adventure is over. Do you want to try this
+adventure again? "
+       CALL_1S         R0008 -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0001
+       RESTART
+L0001: QUIT
+
+Routine R0031, 3 locals
+
+       GET_CHILD       G03 -> L02 [TRUE] L0001
+L0001: JE              L02,#00 [TRUE] L0004
+       TEST_ATTR       L02,#20 [FALSE] L0002
+       INC             L00
+L0002: GET_SIBLING     L02 -> L02 [TRUE] L0003
+L0003: JUMP            L0001
+L0004: MUL             #c8,L00 -> -(SP)
+       ADD             (SP)+,G04 -> L01
+       DIV             L01,G04 -> L01
+       DIV             L01,#02 -> L01
+       PRINT           "I've stored "
+       PRINT_NUM       L00
+       PRINT           " treasures. "
+       PRINT           "On a scale from 0 to 100 that rates a "
+       PRINT_NUM       L01
+       PRINT           ". "
+       JE              L00,G04 [FALSE] L0005
+       PRINT           "Well done."
+       CALL_1N         R0030
+L0005: RTRUE
+
+Routine R0032, 1 local
+
+       STORE           L00,#00
+       RTRUE
+
+Routine R0033, 1 local
+
+       CALL_2N         R0010 (#01)
+       READ_CHAR       #01,#02,R0032 -> L00
+       OUTPUT_STREAM   REDIRECT_ENABLE,#1955
+       RTRUE
+
+Routine R0034, 0 locals
+    Action routine for:
+        "script"
+
+       OUTPUT_STREAM   SCRIPTING_ENABLE
+       STORE           G10,#01
+       PRINT           "Start a transcript of "
+       CALL_1N         R0093
+       PRINT           ".
+"
+       STORE           G13,#00
+       RTRUE
+
+Routine R0035, 0 locals
+    Action routine for:
+        "noscript"
+
+       PRINT           "End of transcript.
+"
+       OUTPUT_STREAM   #fffe
+       STORE           G10,#00
+       RTRUE
+
+Routine R0036, 1 local
+
+       STORE           Gef,L00
+       JE              Gef,"liq" [FALSE] L0001
+       RET             "wat"
+L0001: JE              Gef,"bri" [FALSE] L0002
+       RET             "doo"
+L0002: JE              Gef,"mar" [FALSE] L0003
+       RET             "sto"
+L0003: JE              Gef,"win" [FALSE] L0004
+       RET             "bar"
+L0004: RET             L00
+
+Routine R0037, 1 local
+    Action routine for:
+        "cli"
+
+       JE              G0a,#00 [FALSE] L0001
+       PRINT           "Please give me a direction also."
+       RTRUE
+L0001: JE              G0e,#00 [TRUE] L0002
+       CALL_2N         R0024 (G0e)
+       RFALSE
+L0002: JE              G0a,"poo" [FALSE] L0004
+       INC             L00
+       JE              G01,#04 [TRUE] L0003
+       JUMP            L0004
+L0003: STORE           G01,#45
+       CALL_1N         R0013
+       RTRUE
+L0004: JE              G0a,"doo" [FALSE] L0007
+       INC             L00
+       GET_PARENT      "Open door" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0005
+       JUMP            L0007
+L0005: JE              G01,#07 [TRUE] L0006
+       JUMP            L0007
+L0006: STORE           G01,#0c
+       SET_ATTR        "flags",#0f
+       CALL_1N         R0013
+       RTRUE
+L0007: JE              G0a,"doo" [FALSE] L0010
+       INC             L00
+       GET_PARENT      "Door with large keyhole" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0008
+       JUMP            L0010
+L0008: JE              G01,#07 [TRUE] L0009
+       JUMP            L0010
+L0009: PRINT           "The right key could help (maybe). "
+       RTRUE
+L0010: JE              G0a,"hol" [FALSE] L0012
+       INC             L00
+       GET_PARENT      "Hole" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0011
+       JUMP            L0012
+L0011: STORE           G01,#0a
+       CALL_1N         R0013
+       RTRUE
+L0012: JE              G0a,"doo" [FALSE] L0015
+       INC             L00
+       JE              G01,#0a [TRUE] L0013
+       JUMP            L0015
+L0013: TEST_ATTR       "flags",#06 [TRUE] L0014
+       JUMP            L0015
+L0014: PRINT           "Something won't fit. "
+       RTRUE
+L0015: JE              G0a,"sar" [FALSE] L0017
+       INC             L00
+       GET_PARENT      "Open sarcophagus" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0016
+       JUMP            L0017
+L0016: STORE           G01,#11
+       CALL_1N         R0013
+       SET_ATTR        "flags",#0f
+       RTRUE
+L0017: JE              G0a,"doo" [FALSE] L0020
+       INC             L00
+       JE              G01,#0c [TRUE] L0018
+       JUMP            L0020
+L0018: GET_PARENT      "Open door" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0019
+       JUMP            L0020
+L0019: STORE           G01,#07
+       CLEAR_ATTR      "flags",#0f
+       CALL_1N         R0013
+       RTRUE
+L0020: JE              G0a,"alc" [FALSE] L0023
+       INC             L00
+       GET_PARENT      "Fearsome mummy" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0021
+       JUMP            L0023
+L0021: GET_PARENT      "Entrance to an alcove" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0022
+       JUMP            L0023
+L0022: PRINT           "Mummy "
+       PRINT           "won't let me "
+       RTRUE
+L0023: JE              G0a,"bar" [FALSE] L0025
+       INC             L00
+       GET_PARENT      "Metal bar protruding from ceiling" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0024
+       JUMP            L0025
+L0024: PRINT           "I can't reach it. "
+       RTRUE
+L0025: JE              G0a,"lad" [FALSE] L0027
+       INC             L00
+       GET_PARENT      "Ladder" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0026
+       JUMP            L0027
+L0026: STORE           G01,#32
+       CALL_1N         R0013
+       RTRUE
+L0027: JE              G0a,"arc" [FALSE] L0030
+       INC             L00
+       JE              G01,#24 [TRUE] L0028
+       JUMP            L0030
+L0028: TEST_ATTR       "flags",#0a [FALSE] L0029
+       JUMP            L0030
+L0029: PRINT           "Oyster won't let me "
+       RTRUE
+L0030: JE              G0a,"arc" [FALSE] L0034
+       INC             L00
+       JE              G01,#24 [TRUE] L0031
+       JUMP            L0034
+L0031: TEST_ATTR       "flags",#0a [TRUE] L0032
+       JUMP            L0034
+L0032: GET_PARENT      "Giant Oyster" -> -(SP)
+       JE              (SP)+,#01 [FALSE] L0033
+       JUMP            L0034
+L0033: STORE           G01,#28
+       CALL_1N         R0013
+       RTRUE
+L0034: JE              G0a,"pas" [FALSE] L0037
+       INC             L00
+       JE              G01,#2c [TRUE] L0035
+       JUMP            L0037
+L0035: GET_PARENT      "Passageway behind fireplace" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0036
+       JUMP            L0037
+L0036: STORE           G01,#30
+       CALL_1N         R0013
+       RTRUE
+L0037: JE              G0a,"ash" [FALSE] L0040
+       INC             L00
+       JE              G01,#2c [TRUE] L0038
+       JUMP            L0040
+L0038: GET_PARENT      "* GOLD NECKLACE *" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0039
+       JUMP            L0040
+L0039: PRINT           "I see something. "
+       RTRUE
+L0040: JE              G0a,"pas" [FALSE] L0043
+       INC             L00
+       JE              G01,#30 [TRUE] L0041
+       JUMP            L0043
+L0041: GET_PARENT      "Passageway" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0042
+       JUMP            L0043
+L0042: STORE           G01,#2c
+       CALL_1N         R0013
+       RTRUE
+L0043: JE              G0a,"por" [FALSE] L0045
+       INC             L00
+       GET_PARENT      "Closed portal" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0044
+       JUMP            L0045
+L0044: PRINT           "The right key could help (maybe). "
+       RTRUE
+L0045: JE              G0a,"por" [FALSE] L0047
+       INC             L00
+       GET_PARENT      "Open portal" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0046
+       JUMP            L0047
+L0046: PRINT           "Into the worm's mouth! "
+       STORE           G01,G02
+       RTRUE
+L0047: JE              G0a,"rop" [FALSE] L0050
+       INC             L00
+       JE              G01,#37 [TRUE] L0048
+       JUMP            L0050
+L0048: GET_PARENT      "Rope hanging from ceiling" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0049
+       JUMP            L0050
+L0049: STORE           G01,#3b
+       CALL_1N         R0013
+       RTRUE
+L0050: JE              G0a,"hol" [FALSE] L0053
+       INC             L00
+       JE              G01,#37 [TRUE] L0051
+       JUMP            L0053
+L0051: GET_PARENT      "Rope hanging from ceiling" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0052
+       JUMP            L0053
+L0052: STORE           G01,#3b
+       CALL_1N         R0013
+       RTRUE
+L0053: JE              G0a,"hol" [FALSE] L0056
+       INC             L00
+       JE              G01,#37 [TRUE] L0054
+       JUMP            L0056
+L0054: GET_PARENT      "Rope hanging from ceiling" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0055
+       JUMP            L0056
+L0055: PRINT           "I can't reach it. "
+       RTRUE
+L0056: JE              G0a,"poo" [FALSE] L0058
+       INC             L00
+       JE              G01,#37 [TRUE] L0057
+       JUMP            L0058
+L0057: PRINT           "Liquid is acid. "
+       STORE           G01,G02
+       RTRUE
+L0058: JE              G0a,"cha" [FALSE] L0060
+       INC             L00
+       GET_PARENT      "Iron statue of Pharoah seated on throne" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0059
+       JUMP            L0060
+L0059: PRINT           "I hear a hollow laugh. . . "
+       CALL_VN         R0019 (#3c,#7d)
+       PRINT           "The sound of machinery. "
+       RTRUE
+L0060: JE              G0a,"cha" [FALSE] L0062
+       INC             L00
+       GET_PARENT      "Standing iron statue" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0061
+       JUMP            L0062
+L0061: PRINT           "The sound of machinery. "
+       PRINT           "I hear a hollow laugh. . . "
+       CALL_VN         R0019 (#7e,#7d)
+       INSERT_OBJ      "Spiral Staircase",G01
+       RTRUE
+L0062: JE              G0a,"sta" [FALSE] L0064
+       INC             L00
+       GET_PARENT      "Iron Statue, slowly advancing. . ." -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0063
+       JUMP            L0064
+L0063: PRINT           "Iron Statue "
+       PRINT           "won't let me "
+       RTRUE
+L0064: JE              G0a,"sta" [FALSE] L0067
+       INC             L00
+       GET_PARENT      "Spiral Staircase" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0065
+       JUMP            L0067
+L0065: GET_PARENT      "Iron Statue, slowly advancing. . ." -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0066
+       JUMP            L0067
+L0066: STORE           G01,#40
+       CALL_1N         R0013
+       RTRUE
+L0067: JE              G0a,"bar" [FALSE] L0070
+       INC             L00
+       JE              G01,#40 [TRUE] L0068
+       JUMP            L0070
+L0068: GET_PARENT      "Open window" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0069
+       JUMP            L0070
+L0069: STORE           G01,#43
+       CALL_1N         R0013
+       RTRUE
+L0070: JE              G0a,"doo" [FALSE] L0072
+       INC             L00
+       GET_PARENT      "Open door" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0071
+       JUMP            L0072
+L0071: STORE           G01,#47
+       PRINT           "OK "
+       RTRUE
+L0072: JE              G0a,"pyr" [FALSE] L0073
+       INC             L00
+       PRINT           "I can't. "
+       RTRUE
+L0073: JE              G0a,"cha" [FALSE] L0078
+       INC             L00
+       JE              G01,#3b [TRUE] L0074
+       JUMP            L0078
+L0074: GET_PARENT      "Iron statue of Pharoah seated on throne" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0075
+       JUMP            L0078
+L0075: GET_PARENT      "Iron Statue, slowly advancing. . ." -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0076
+       JUMP            L0078
+L0076: GET_PARENT      "Standing iron statue" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0077
+       JUMP            L0078
+L0077: INSERT_OBJ      "Spiral Staircase",G01
+       PRINT           "I see something. "
+       RTRUE
+L0078: JE              G0a,"alc" [FALSE] L0081
+       INC             L00
+       GET_PARENT      "Entrance to an alcove" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0079
+       JUMP            L0081
+L0079: GET_PARENT      "Fearsome mummy" -> -(SP)
+       JE              (SP)+,G01 [FALSE] L0080
+       JUMP            L0081
+L0080: STORE           G01,#1a
+       CALL_1N         R0013
+       RTRUE
+L0081: JE              G0a,"sta" [FALSE] L0083
+       INC             L00
+       JE              G01,#11 [TRUE] L0082
+       JUMP            L0083
+L0082: STORE           G01,#13
+       CALL_1N         R0013
+       RTRUE
+L0083: JE              G0a,"ent" [FALSE] L0085
+       INC             L00
+       JE              G01,#0a [TRUE] L0084
+       JUMP            L0085
+L0084: PRINT           "I can't. "
+       RTRUE
+L0085: JE              G0a,"doo" [FALSE] L0087
+       INC             L00
+       JE              G01,#0a [TRUE] L0086
+       JUMP            L0087
+L0086: PRINT           "I can't. "
+       RTRUE
+L0087: JE              G0a,"ent" [FALSE] L0090
+       INC             L00
+       GET_PARENT      "Entrance to an alcove" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0088
+       JUMP            L0090
+L0088: GET_PARENT      "Fearsome mummy" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0089
+       JUMP            L0090
+L0089: PRINT           "Mummy "
+       PRINT           "won't let me "
+       RTRUE
+L0090: JE              G0a,"ent" [FALSE] L0093
+       INC             L00
+       GET_PARENT      "Entrance to an alcove" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0091
+       JUMP            L0093
+L0091: GET_PARENT      "Fearsome mummy" -> -(SP)
+       JE              (SP)+,G01 [FALSE] L0092
+       JUMP            L0093
+L0092: STORE           G01,#1a
+       CALL_1N         R0013
+       RTRUE
+L0093: JE              G0a,"pas" [FALSE] L0095
+       INC             L00
+       JE              G01,#17 [TRUE] L0094
+       JUMP            L0095
+L0094: PRINT           "I'm there. "
+       RTRUE
+L0095: JE              L00,#00 [TRUE] L0096
+       PRINT_PADDR     G18
+       JUMP            L0097
+L0096: PRINT_PADDR     G17
+L0097: RTRUE
+
+Routine R0038, 1 local
+    Action routine for:
+        "emp"
+
+       JE              G0a,"wat" [FALSE] L0009
+       INC             L00
+       GET_PARENT      "Full canteen" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0001
+       JUMP            L0009
+L0001: GET_PARENT      "Burning tanna leaves" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0002
+       JUMP            L0009
+L0002: CALL_VN         R0019 (#16,#5f)
+       SET_ATTR        "flags",#02
+       TEST_ATTR       "flags",#02 [TRUE] L0003
+       JUMP            L0008
+L0003: CALL_VN         R0019 (#4d,#4e)
+       TEST_ATTR       "flags",#02 [TRUE] L0004
+       JUMP            L0008
+L0004: GET_PARENT      "Fearsome mummy" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0005
+       JUMP            L0008
+L0005: CALL_VN         R0019 (#14,#5d)
+       CLEAR_ATTR      "flags",#02
+       TEST_ATTR       "flags",#02 [TRUE] L0006
+       JUMP            L0008
+L0006: GET_PARENT      "Enraged mummy" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0007
+       JUMP            L0008
+L0007: CALL_VN         R0019 (#5d,#5c)
+       CLEAR_ATTR      "flags",#02
+L0008: RTRUE
+L0009: JE              G0a,"wat" [FALSE] L0011
+       INC             L00
+       GET_PARENT      "Full canteen" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0010
+       JUMP            L0011
+L0010: PRINT           "OK "
+       CALL_VN         R0019 (#4d,#4e)
+       RTRUE
+L0011: JE              G0a,"wat" [FALSE] L0013
+       INC             L00
+       GET_PARENT      "Full canteen" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0012
+       JUMP            L0013
+L0012: CALL_VN         R0019 (#4e,#4d)
+       PRINT           "The sound of machinery. "
+       RTRUE
+L0013: JE              G0a,"can" [FALSE] L0014
+       INC             L00
+       PRINT           "Pour water? "
+       RTRUE
+L0014: JE              L00,#00 [TRUE] L0015
+       PRINT_PADDR     G18
+       JUMP            L0016
+L0015: PRINT_PADDR     G17
+L0016: RTRUE
+
+Routine R0039, 1 local
+    Action routine for:
+        "hel"
+
+       INC             L00
+       SET_ATTR        "flags",#14
+       PRINT           "A tiny voice says: `SEARCH AND YE SHALL FIND!` "
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0001
+       PRINT_PADDR     G18
+       JUMP            L0002
+L0001: PRINT_PADDR     G17
+L0002: RTRUE
+
+Routine R0040, 1 local
+    Action routine for:
+        "get"
+
+       JE              G0a,"inv" [FALSE] L0001
+       INC             L00
+       CALL_1N         R0018
+       SET_ATTR        "flags",#0c
+       RTRUE
+L0001: JE              G0a,"sto" [FALSE] L0005
+       INC             L00
+       JE              G01,#07 [TRUE] L0002
+       JUMP            L0005
+L0002: GET_PARENT      "Stone" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0003
+       JUMP            L0005
+L0003: GET_PARENT      "Door with large keyhole" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0004
+       JUMP            L0005
+L0004: INSERT_OBJ      "Door with large keyhole",G01
+       PRINT           "The sound of machinery. "
+       CALL_2N         R0020 (#08)
+       RTRUE
+L0005: JE              G0a,"wat" [FALSE] L0008
+       INC             L00
+       JE              G01,#45 [TRUE] L0006
+       JUMP            L0008
+L0006: GET_PARENT      "Empty canteen" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0007
+       JUMP            L0008
+L0007: REMOVE_OBJ      "Empty canteen"
+       CALL_2N         R0020 (#4e)
+       RTRUE
+L0008: JE              G0a,"wat" [FALSE] L0011
+       INC             L00
+       GET_PARENT      "Pool of liquid" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0009
+       JUMP            L0011
+L0009: GET_PARENT      "Empty canteen" -> -(SP)
+       JE              (SP)+,#01 [FALSE] L0010
+       JUMP            L0011
+L0010: PRINT           "No container. "
+       RTRUE
+L0011: JE              G0a,"wat" [FALSE] L0014
+       INC             L00
+       GET_PARENT      "Pool of liquid" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0012
+       JUMP            L0014
+L0012: GET_PARENT      "Full canteen" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0013
+       JUMP            L0014
+L0013: PRINT           "Canteen is full. "
+       RTRUE
+L0014: JE              G0a,"wat" [FALSE] L0017
+       INC             L00
+       JE              G01,#04 [TRUE] L0015
+       JUMP            L0017
+L0015: GET_PARENT      "Empty canteen" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0016
+       JUMP            L0017
+L0016: REMOVE_OBJ      "Empty canteen"
+       CALL_2N         R0020 (#4e)
+       RTRUE
+L0017: JE              G0a,"tap" [FALSE] L0019
+       INC             L00
+       GET_PARENT      "* ANTIQUE TAPESTRY *" -> -(SP)
+       JE              (SP)+,G01 [FALSE] L0018
+       JUMP            L0019
+L0018: PRINT           "I can't. "
+       RTRUE
+L0019: JE              G0a,"tap" [FALSE] L0021
+       INC             L00
+       GET_PARENT      "Fearsome mummy" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0020
+       JUMP            L0021
+L0020: PRINT           "Mummy "
+       PRINT           "won't let me "
+       RTRUE
+L0021: JE              G0a,"mum" [FALSE] L0023
+       INC             L00
+       GET_PARENT      "Fearsome mummy" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0022
+       JUMP            L0023
+L0022: PRINT           "Mummy "
+       PRINT           "won't let me "
+       PRINT           "You be weird. Cut that out. "
+       RTRUE
+L0023: JE              G0a,"lea" [FALSE] L0025
+       INC             L00
+       GET_PARENT      "Burning tanna leaves" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0024
+       JUMP            L0025
+L0024: PRINT           "Too hot. "
+       RTRUE
+L0025: JE              G0a,"pol" [FALSE] L0027
+       INC             L00
+       GET_PARENT      "Wooden pole sticking from sand" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0026
+       JUMP            L0027
+L0026: REMOVE_OBJ      "Wooden pole sticking from sand"
+       CALL_2N         R0020 (#52)
+       RTRUE
+L0027: JE              G0a,"tab" [FALSE] L0030
+       INC             L00
+       GET_PARENT      "Table" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0028
+       JUMP            L0030
+L0028: GET_PARENT      "* DIAMOND NECKLACE *" -> -(SP)
+       JE              (SP)+,#00 [FALSE] L0029
+       JUMP            L0030
+L0029: PRINT           "OK "
+       CALL_2N         R0020 (#23)
+       RTRUE
+L0030: JE              G0a,"sto" [FALSE] L0032
+       INC             L00
+       GET_PARENT      "Stone" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0031
+       JUMP            L0032
+L0031: CALL_2N         R0020 (#08)
+       PRINT           "OK "
+       RTRUE
+L0032: JE              G0a,"cob" [FALSE] L0034
+       INC             L00
+       GET_PARENT      "Hissing cobra" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0033
+       JUMP            L0034
+L0033: PRINT           "Cobra "
+       PRINT           "attacks! "
+       STORE           G01,G02
+       RTRUE
+L0034: JE              G0a,"bas" [FALSE] L0037
+       INC             L00
+       GET_PARENT      "Basket" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0035
+       JUMP            L0037
+L0035: GET_PARENT      "Passageway behind fireplace" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0036
+       JUMP            L0037
+L0036: PRINT           "Something falls out. "
+       INSERT_OBJ      "Hissing cobra",G01
+       RTRUE
+L0037: JE              G0a,"tab" [FALSE] L0040
+       INC             L00
+       GET_PARENT      "Table" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0038
+       JUMP            L0040
+L0038: GET_PARENT      "* DIAMOND NECKLACE *" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0039
+       JUMP            L0040
+L0039: CALL_2N         R0020 (#23)
+       PRINT           "OK "
+       PRINT           "I hear strange noises! "
+       RTRUE
+L0040: JE              G0a,"lad" [FALSE] L0042
+       INC             L00
+       GET_PARENT      "Ladder" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0041
+       JUMP            L0042
+L0041: PRINT           "It's stuck. "
+       RTRUE
+L0042: JE              G0a,"wat" [FALSE] L0045
+       INC             L00
+       JE              G01,#37 [TRUE] L0043
+       JUMP            L0045
+L0043: GET_PARENT      "Full canteen" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0044
+       JUMP            L0045
+L0044: PRINT           "Canteen is full. "
+       RTRUE
+L0045: JE              G0a,"wat" [FALSE] L0048
+       INC             L00
+       JE              G01,#37 [TRUE] L0046
+       JUMP            L0048
+L0046: GET_PARENT      "Empty canteen" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0047
+       JUMP            L0048
+L0047: PRINT           "Liquid is acid. "
+       PRINT           "Canteen dissolves. "
+       REMOVE_OBJ      "Empty canteen"
+       RTRUE
+L0048: JE              G0a,"wat" [FALSE] L0051
+       INC             L00
+       JE              G01,#37 [TRUE] L0049
+       JUMP            L0051
+L0049: GET_PARENT      "Empty canteen" -> -(SP)
+       JE              (SP)+,#01 [FALSE] L0050
+       JUMP            L0051
+L0050: PRINT           "No container. "
+       RTRUE
+L0051: JE              G0a,"sig" [FALSE] L0053
+       INC             L00
+       GET_PARENT      "Sign" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0052
+       JUMP            L0053
+L0052: PRINT           "It's stuck. "
+       RTRUE
+L0053: JE              G0a,"rub" [FALSE] L0056
+       INC             L00
+       GET_PARENT      " * RUBY *" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0054
+       JUMP            L0056
+L0054: GET_PARENT      "Standing iron statue" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0055
+       JUMP            L0056
+L0055: CALL_2N         R0020 (#7a)
+       CALL_VN         R0019 (#7d,#7e)
+       PRINT           "The sound of machinery. "
+       RTRUE
+L0056: JE              G0a,"rub" [FALSE] L0059
+       INC             L00
+       GET_PARENT      " * RUBY *" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0057
+       JUMP            L0059
+L0057: GET_PARENT      "Iron statue of Pharoah seated on throne" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0058
+       JUMP            L0059
+L0058: CALL_2N         R0020 (#7a)
+       CALL_VN         R0019 (#3c,#7e)
+       PRINT           "The sound of machinery. "
+       RTRUE
+L0059: JE              G0a,"oys" [FALSE] L0061
+       INC             L00
+       GET_PARENT      "Giant Oyster" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0060
+       JUMP            L0061
+L0060: PRINT           "I can't lift it. This is a big oyster "
+       RTRUE
+L0061: JE              G0a,"oys" [FALSE] L0063
+       INC             L00
+       GET_PARENT      "Giant Oyster" -> -(SP)
+       JE              (SP)+,G01 [FALSE] L0062
+       JUMP            L0063
+L0062: PRINT           "I don't see it "
+       RTRUE
+L0063: JE              G0a,"rub" [FALSE] L0065
+       INC             L00
+       GET_PARENT      " * RUBY *" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0064
+       JUMP            L0065
+L0064: CALL_2N         R0020 (#7a)
+       PRINT           "OK "
+       RTRUE
+L0065: JE              G0a,"tap" [FALSE] L0069
+       INC             L00
+       GET_PARENT      "Fearsome mummy" -> -(SP)
+       JE              (SP)+,G01 [FALSE] L0066
+       JUMP            L0069
+L0066: GET_PARENT      "Enraged mummy" -> -(SP)
+       JE              (SP)+,G01 [FALSE] L0067
+       JUMP            L0069
+L0067: GET_PARENT      "Entrance to an alcove" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0068
+       JUMP            L0069
+L0068: INSERT_OBJ      "Entrance to an alcove",G01
+       INSERT_OBJ      "* ANTIQUE TAPESTRY *","player"
+       PRINT           "OK "
+       RTRUE
+L0069: JE              G0a,"tap" [FALSE] L0071
+       INC             L00
+       GET_PARENT      "Enraged mummy" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0070
+       JUMP            L0071
+L0070: PRINT           "Mummy "
+       PRINT           "won't let me "
+       RTRUE
+L0071: JE              G0a,"hea" [FALSE] L0072
+       INC             L00
+       PRINT           "Pharoah's heart is red like yours, yet evil has
+darkened it! "
+       RTRUE
+L0072: JE              G0a,"bar" [FALSE] L0074
+       INC             L00
+       JE              G01,#1e [TRUE] L0073
+       JUMP            L0074
+L0073: PRINT           "I can't reach it. "
+       RTRUE
+L0074: JE              G0a,"bas" [FALSE] L0076
+       INC             L00
+       GET_PARENT      "Basket" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0075
+       JUMP            L0076
+L0075: CALL_2N         R0020 (#2e)
+       PRINT           "OK "
+       RTRUE
+L0076: JE              G0a,"ash" [FALSE] L0078
+       INC             L00
+       GET_PARENT      "Ashes" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0077
+       JUMP            L0078
+L0077: PRINT           "I can't. "
+       PRINT           "Too hot. "
+       RTRUE
+L0078: JE              G0a,"tap" [FALSE] L0082
+       INC             L00
+       GET_PARENT      "Fearsome mummy" -> -(SP)
+       JE              (SP)+,G01 [FALSE] L0079
+       JUMP            L0082
+L0079: GET_PARENT      "Enraged mummy" -> -(SP)
+       JE              (SP)+,G01 [FALSE] L0080
+       JUMP            L0082
+L0080: GET_PARENT      "Entrance to an alcove" -> -(SP)
+       JE              (SP)+,#00 [FALSE] L0081
+       JUMP            L0082
+L0081: PRINT           "OK "
+       INSERT_OBJ      "* ANTIQUE TAPESTRY *","player"
+       RTRUE
+L0082: JE              G0a,"lea" [FALSE] L0084
+       INC             L00
+       GET_PARENT      "Wet tanna leaves" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0083
+       JUMP            L0084
+L0083: CALL_2N         R0020 (#5f)
+       PRINT           "OK "
+       RTRUE
+L0084: JE              G0a,"bar" [FALSE] L0086
+       INC             L00
+       GET_PARENT      "* PLATINUM BAR *" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0085
+       JUMP            L0086
+L0085: CALL_2N         R0020 (#44)
+       PRINT           "OK "
+       RTRUE
+L0086: JE              L00,#00 [TRUE] L0087
+       PRINT_PADDR     G18
+       JUMP            L0088
+L0087: CALL_1N         R0021
+L0088: RTRUE
+
+Routine R0041, 1 local
+    Action routine for:
+        "rea"
+
+       JE              G0a,"sig" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "Sign" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           "Sign: He who defiles the tombs of Egypt shall surely
+perish! "
+       RTRUE
+L0002: JE              G0a,"mur" [FALSE] L0004
+       INC             L00
+       JE              G01,#3b [TRUE] L0003
+       JUMP            L0004
+L0003: PRINT           "Mural: Seek ye well the HEART of Iron. "
+       RTRUE
+L0004: JE              G0a,"sto" [FALSE] L0007
+       INC             L00
+       GET_PARENT      "Stone" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0005
+       GET_PARENT      "Stone" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0005
+       JUMP            L0007
+L0005: JE              G01,#2a [FALSE] L0006
+       JUMP            L0007
+L0006: PRINT           "Confusing. Part appears missing. "
+       RTRUE
+L0007: JE              G0a,"hie" [FALSE] L0011
+       INC             L00
+       JE              G01,#2a [TRUE] L0008
+       JUMP            L0011
+L0008: GET_PARENT      "Stone" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0009
+       GET_PARENT      "Stone" -> -(SP)
+       JE              (SP)+,G01 [FALSE] L0010
+L0009: JUMP            L0011
+L0010: PRINT           "Confusing. Part appears missing. "
+       RTRUE
+L0011: JE              G0a,"hie" [FALSE] L0014
+       INC             L00
+       JE              G01,#2a [TRUE] L0012
+       JUMP            L0014
+L0012: GET_PARENT      "Stone" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0013
+       GET_PARENT      "Stone" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0013
+       JUMP            L0014
+L0013: PRINT           "OK "
+       PRINT           "It says: `LEAVE *TREASURES* HERE!` "
+       RTRUE
+L0014: JE              G0a,"sto" [FALSE] L0017
+       INC             L00
+       GET_PARENT      "Stone" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0015
+       GET_PARENT      "Stone" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0015
+       JUMP            L0017
+L0015: JE              G01,#2a [TRUE] L0016
+       JUMP            L0017
+L0016: PRINT           "OK "
+       PRINT           "It says: `LEAVE *TREASURES* HERE!` "
+       RTRUE
+L0017: JE              L00,#00 [TRUE] L0018
+       PRINT_PADDR     G18
+       JUMP            L0019
+L0018: PRINT_PADDR     G17
+L0019: RTRUE
+
+Routine R0042, 1 local
+    Action routine for:
+        "bre"
+
+       JE              G0a,"ske" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "Decapitated skeleton" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           "Crash!!! "
+       PRINT           "I hear a hollow laugh. . . "
+       CALL_VN         R0019 (#20,#59)
+       RTRUE
+L0002: JE              G0a,"rub" [FALSE] L0004
+       INC             L00
+       GET_PARENT      " * RUBY *" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0003
+       JUMP            L0004
+L0003: PRINT           "I can't. "
+       RTRUE
+L0004: JE              G0a,"mir" [FALSE] L0006
+       INC             L00
+       JE              G01,#47 [TRUE] L0005
+       JUMP            L0006
+L0005: PRINT           "1000 years bad luck starts with a cave in! "
+       STORE           G01,G02
+       RTRUE
+L0006: INC             L00
+       PRINT           "I can't. "
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0007
+       PRINT_PADDR     G18
+       JUMP            L0008
+L0007: PRINT_PADDR     G17
+L0008: RTRUE
+
+Routine R0044, 1 local
+    Action routine for:
+        "ope"
+
+       JE              G0a,"doo" [FALSE] L0004
+       INC             L00
+       GET_PARENT      "Door with large keyhole" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0001
+       JUMP            L0004
+L0001: GET_PARENT      "Large key" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0002
+       JUMP            L0004
+L0002: TEST_ATTR       "flags",#06 [TRUE] L0003
+       JUMP            L0004
+L0003: CALL_VN         R0019 (#55,#56)
+       RTRUE
+L0004: JE              G0a,"doo" [FALSE] L0007
+       INC             L00
+       GET_PARENT      "Door with large keyhole" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0005
+       JUMP            L0007
+L0005: GET_PARENT      "Large key" -> -(SP)
+       JE              (SP)+,#01 [FALSE] L0006
+       JUMP            L0007
+L0006: PRINT           "The right key could help (maybe). "
+       RTRUE
+L0007: JE              G0a,"doo" [FALSE] L0011
+       INC             L00
+       GET_PARENT      "Door with large keyhole" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0008
+       JUMP            L0011
+L0008: GET_PARENT      "Large key" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0009
+       JUMP            L0011
+L0009: TEST_ATTR       "flags",#06 [FALSE] L0010
+       JUMP            L0011
+L0010: PRINT           "Large stone falls on me! "
+       STORE           G01,G02
+       RTRUE
+L0011: JE              G0a,"doo" [FALSE] L0014
+       INC             L00
+       JE              G01,#0a [TRUE] L0012
+       JUMP            L0014
+L0012: GET_PARENT      "Tiny key" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0013
+       JUMP            L0014
+L0013: PRINT           "I hear strange noises! "
+       PRINT           "The sound of machinery. "
+       SET_ATTR        "flags",#06
+       CALL_VN         R0019 (#5a,#0b)
+       RTRUE
+L0014: JE              G0a,"doo" [FALSE] L0017
+       INC             L00
+       JE              G01,#0a [TRUE] L0015
+       JUMP            L0017
+L0015: GET_PARENT      "Tiny key" -> -(SP)
+       JE              (SP)+,#01 [FALSE] L0016
+       JUMP            L0017
+L0016: PRINT           "The right key could help (maybe). "
+       RTRUE
+L0017: JE              G0a,"sar" [FALSE] L0019
+       INC             L00
+       GET_PARENT      "Closed sarcophagus" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0018
+       JUMP            L0019
+L0018: CALL_VN         R0019 (#0d,#58)
+       RTRUE
+L0019: JE              G0a,"fla" [FALSE] L0021
+       INC             L00
+       GET_PARENT      "Lit flashlite" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0020
+       JUMP            L0021
+L0020: CALL_VN         R0019 (#51,#50)
+       CALL_1N         R0013
+       RTRUE
+L0021: JE              G0a,"por" [FALSE] L0023
+       INC             L00
+       GET_PARENT      "Closed portal" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0022
+       JUMP            L0023
+L0022: INSERT_OBJ      "Purple Worm",G01
+       CALL_VN         R0019 (#36,#75)
+       RTRUE
+L0023: JE              G0a,"che" [FALSE] L0029
+       INC             L00
+       JE              G01,#3b [TRUE] L0024
+       JUMP            L0029
+L0024: GET_PARENT      "Iron statue of Pharoah seated on throne" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0025
+       JUMP            L0029
+L0025: GET_PARENT      "Standing iron statue" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0026
+       JUMP            L0029
+L0026: GET_PARENT      "Iron Statue, slowly advancing. . ." -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0027
+       JUMP            L0029
+L0027: GET_PARENT      "* PLATINUM CROWN *" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0028
+       JUMP            L0029
+L0028: PRINT           "I see something. "
+       INSERT_OBJ      "* PLATINUM CROWN *",G01
+       RTRUE
+L0029: JE              G0a,"che" [FALSE] L0031
+       INC             L00
+       JE              G01,#3b [TRUE] L0030
+       JUMP            L0031
+L0030: PRINT           "Iron Statue "
+       PRINT           "won't let me "
+       RTRUE
+L0031: JE              G0a,"bar" [FALSE] L0034
+       INC             L00
+       JE              G01,#40 [TRUE] L0032
+       JUMP            L0034
+L0032: GET_PARENT      "Saw" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0033
+       JUMP            L0034
+L0033: CALL_VN         R0019 (#81,#42)
+       RTRUE
+L0034: JE              G0a,"cof" [FALSE] L0038
+       INC             L00
+       GET_PARENT      "Treasure coffer" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0035
+       JUMP            L0038
+L0035: GET_PARENT      "I'm wearing an iron glove" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0036
+       JUMP            L0038
+L0036: GET_PARENT      "Tiny key" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0037
+       JUMP            L0038
+L0037: CALL_VN         R0019 (#64,#41)
+       RTRUE
+L0038: JE              G0a,"cof" [FALSE] L0042
+       INC             L00
+       GET_PARENT      "Treasure coffer" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0039
+       JUMP            L0042
+L0039: GET_PARENT      "I'm wearing an iron glove" -> -(SP)
+       JE              (SP)+,#01 [FALSE] L0040
+       JUMP            L0042
+L0040: GET_PARENT      "Tiny key" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0041
+       JUMP            L0042
+L0041: PRINT           "ARRGH! Poison needle in the lock. "
+       STORE           G01,G02
+       RTRUE
+L0042: JE              G0a,"oys" [FALSE] L0044
+       INC             L00
+       GET_PARENT      "Giant Oyster" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0043
+       JUMP            L0044
+L0043: PRINT           "Oyster won't let me "
+       RTRUE
+L0044: JE              G0a,"cof" [FALSE] L0047
+       INC             L00
+       GET_PARENT      "Treasure coffer" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0045
+       JUMP            L0047
+L0045: GET_PARENT      "Tiny key" -> -(SP)
+       JE              (SP)+,#01 [FALSE] L0046
+       JUMP            L0047
+L0046: PRINT           "Its locked. "
+       RTRUE
+L0047: JE              L00,#00 [TRUE] L0048
+       PRINT_PADDR     G18
+       JUMP            L0049
+L0048: PRINT_PADDR     G17
+L0049: RTRUE
+
+Routine R0045, 1 local
+    Action routine for:
+        "sco"
+
+       INC             L00
+       CALL_1N         R0031
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0001
+       PRINT_PADDR     G18
+       JUMP            L0002
+L0001: PRINT_PADDR     G17
+L0002: RTRUE
+
+Routine R0047, 1 local
+    Action routine for:
+        "qui"
+
+       INC             L00
+       CALL_1N         R0030
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0001
+       PRINT_PADDR     G18
+       JUMP            L0002
+L0001: PRINT_PADDR     G17
+L0002: RTRUE
+
+Routine R0049, 1 local
+    Action routine for:
+        "dro"
+
+       JE              L00,#00 [TRUE] L0001
+       PRINT_PADDR     G18
+       JUMP            L0002
+L0001: CALL_1N         R0022
+L0002: RTRUE
+
+Routine R0050, 1 local
+    Action routine for:
+        "pet"
+
+       JE              L00,#00 [TRUE] L0001
+       PRINT_PADDR     G18
+       JUMP            L0002
+L0001: PRINT_PADDR     G17
+L0002: RTRUE
+
+Routine R0051, 1 local
+    Action routine for:
+        "att"
+
+       JE              G0a,"ske" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "Decapitated skeleton" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           "Crash!!! "
+       PRINT           "I hear a hollow laugh. . . "
+       CALL_VN         R0019 (#20,#59)
+       RTRUE
+L0002: INC             L00
+       GET_PARENT      "Small Nomad" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0003
+       JUMP            L0004
+L0003: PRINT           "Bare-handed? "
+       RTRUE
+L0004: JE              L00,#00 [TRUE] L0005
+       PRINT_PADDR     G18
+       JUMP            L0006
+L0005: PRINT_PADDR     G17
+L0006: RTRUE
+
+Routine R0052, 1 local
+    Action routine for:
+        "sho"
+
+       INC             L00
+       GET_PARENT      "Pistol" -> -(SP)
+       JE              (SP)+,#01 [FALSE] L0001
+       JUMP            L0002
+L0001: PRINT           "Bare-handed? "
+       RTRUE
+L0002: INC             L00
+       JE              G0f,#00 [TRUE] L0003
+       JUMP            L0004
+L0003: PRINT           "No bullets. "
+       RTRUE
+L0004: JE              G0a,"nom" [FALSE] L0005
+       INC             L00
+       SET_ATTR        "flags",#0b
+       SET_ATTR        "flags",#01
+       RTRUE
+L0005: JE              G0a,"mum" [FALSE] L0007
+       INC             L00
+       GET_PARENT      "Fearsome mummy" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0006
+       JUMP            L0007
+L0006: PRINT           "Doesn't bother him. "
+       CALL_VN         R0019 (#5c,#14)
+       SET_ATTR        "flags",#01
+       RTRUE
+L0007: JE              G0a,"mum" [FALSE] L0009
+       INC             L00
+       GET_PARENT      "Enraged mummy" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0008
+       JUMP            L0009
+L0008: PRINT           "Doesn't bother him. "
+       SET_ATTR        "flags",#01
+       RTRUE
+L0009: JE              G0a,"mum" [FALSE] L0011
+       INC             L00
+       GET_PARENT      "Decapitated skeleton" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0010
+       JUMP            L0011
+L0010: PRINT           "Doesn't bother him. "
+       SET_ATTR        "flags",#01
+       RTRUE
+L0011: JE              G0a,"wor" [FALSE] L0013
+       INC             L00
+       GET_PARENT      "Purple Worm" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0012
+       JUMP            L0013
+L0012: PRINT           "Doesn't bother him. "
+       SET_ATTR        "flags",#01
+       RTRUE
+L0013: JE              G0a,"rat" [FALSE] L0016
+       INC             L00
+       GET_PARENT      "Starving rats" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0014
+       JUMP            L0016
+L0014: JE              G01,#30 [TRUE] L0015
+       JUMP            L0016
+L0015: INSERT_OBJ      "Starving rats","Room 14"
+       PRINT           "Missed... "
+       SET_ATTR        "flags",#01
+       PRINT           "Noise scares them off "
+       RTRUE
+L0016: JE              G0a,"rat" [FALSE] L0019
+       INC             L00
+       GET_PARENT      "Starving rats" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0017
+       JUMP            L0019
+L0017: GET_PARENT      "Starving rats" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0018
+       JUMP            L0019
+L0018: INSERT_OBJ      "Starving rats","Room 17"
+       PRINT           "Missed... "
+       SET_ATTR        "flags",#01
+       PRINT           "Noise scares them off "
+       RTRUE
+L0019: INC             L00
+       PRINT           "OK "
+       SET_ATTR        "flags",#01
+       PRINT           "Missed... "
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0020
+       PRINT_PADDR     G18
+       JUMP            L0021
+L0020: PRINT_PADDR     G17
+L0021: RTRUE
+
+Routine R0054, 1 local
+    Action routine for:
+        "yes"
+
+       INC             L00
+       PRINT           "Sorry, won't work. "
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0001
+       PRINT_PADDR     G18
+       JUMP            L0002
+L0001: PRINT_PADDR     G17
+L0002: RTRUE
+
+Routine R0055, 1 local
+    Action routine for:
+        "bur"
+
+       INC             L00
+       JE              G01,#3b [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           ". "
+       REMOVE_OBJ      "Fireplace"
+       RTRUE
+L0002: JE              L00,#00 [TRUE] L0003
+       PRINT_PADDR     G18
+       JUMP            L0004
+L0003: PRINT_PADDR     G17
+L0004: RTRUE
+
+Routine R0056, 1 local
+    Action routine for:
+        "dig"
+
+       INC             L00
+       GET_PARENT      "Shovel" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0001
+       JUMP            L0004
+L0001: GET_PARENT      "Tiny key" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0002
+       JUMP            L0004
+L0002: JE              G01,#02 [TRUE] L0003
+       JUMP            L0004
+L0003: PRINT           "I see something. "
+       INSERT_OBJ      "Tiny key",G01
+       RTRUE
+L0004: INC             L00
+       GET_PARENT      "Shovel" -> -(SP)
+       JE              (SP)+,#01 [FALSE] L0005
+       JUMP            L0006
+L0005: PRINT           "Bare-handed? "
+       RTRUE
+L0006: INC             L00
+       GET_PARENT      "Shovel" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0007
+       JUMP            L0010
+L0007: GET_PARENT      "Tiny key" -> -(SP)
+       JE              (SP)+,#00 [FALSE] L0008
+       JUMP            L0010
+L0008: JE              G01,#02 [TRUE] L0009
+       JUMP            L0010
+L0009: PRINT           "I see nothing special. "
+       RTRUE
+L0010: INC             L00
+       JE              G01,#03 [TRUE] L0011
+       JUMP            L0012
+L0011: PRINT           "I see nothing special. "
+       RTRUE
+L0012: INC             L00
+       JE              G01,#03 [TRUE] L0013
+       JUMP            L0015
+L0013: GET_PARENT      "Lump of coal" -> -(SP)
+       JE              (SP)+,#00 [FALSE] L0014
+       JUMP            L0015
+L0014: PRINT           "I see nothing special. "
+       RTRUE
+L0015: INC             L00
+       GET_PARENT      "Shovel" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0016
+       JUMP            L0019
+L0016: GET_PARENT      "Hole" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0017
+       JUMP            L0019
+L0017: JE              G01,#07 [TRUE] L0018
+       JUMP            L0019
+L0018: INSERT_OBJ      "Hole",G01
+       RTRUE
+L0019: INC             L00
+       GET_PARENT      "Shovel" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0020
+       JUMP            L0022
+L0020: GET_PARENT      "Hole" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0021
+       JUMP            L0022
+L0021: PRINT           "I see nothing special. "
+       RTRUE
+L0022: INC             L00
+       GET_PARENT      "Shovel" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0023
+       JUMP            L0024
+L0023: PRINT           "I see nothing special. "
+       RTRUE
+L0024: JE              L00,#00 [TRUE] L0025
+       PRINT_PADDR     G18
+       JUMP            L0026
+L0025: PRINT_PADDR     G17
+L0026: RTRUE
+
+Routine R0057, 1 local
+    Action routine for:
+        "fla"
+
+       JE              G0a,"fla" [FALSE] L0003
+       INC             L00
+       GET_PARENT      "Unlit flashlite" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0001
+       JUMP            L0003
+L0001: TEST_ATTR       "flags",#10 [FALSE] L0002
+       JUMP            L0003
+L0002: CALL_VN         R0019 (#51,#50)
+       CALL_1N         R0013
+       RTRUE
+L0003: JE              L00,#00 [TRUE] L0004
+       PRINT_PADDR     G18
+       JUMP            L0005
+L0004: PRINT_PADDR     G17
+L0005: RTRUE
+
+Routine R0058, 1 local
+    Action routine for:
+        "loo"
+
+       JE              G0a,"hie" [FALSE] L0002
+       INC             L00
+       JE              G01,#2a [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           "OK "
+       PRINT           "Strange markings are present. "
+       RTRUE
+L0002: JE              G0a,"sto" [FALSE] L0004
+       INC             L00
+       GET_PARENT      "Stone" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0003
+       GET_PARENT      "Stone" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0003
+       JUMP            L0004
+L0003: PRINT           "OK "
+       PRINT           "Strange markings are present. "
+       RTRUE
+L0004: JE              G0a,"fir" [FALSE] L0009
+       INC             L00
+       GET_PARENT      "Fireplace" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0005
+       JUMP            L0009
+L0005: GET_PARENT      "Lump of coal" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0006
+       JUMP            L0009
+L0006: GET_PARENT      " * RUBY *" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0007
+       JUMP            L0009
+L0007: TEST_ATTR       "flags",#11 [FALSE] L0008
+       JUMP            L0009
+L0008: PRINT           "I see something. "
+       INSERT_OBJ      "Lump of coal",G01
+       RTRUE
+L0009: JE              G0a,"exp" [FALSE] L0012
+       INC             L00
+       GET_PARENT      "Dead explorer chained to wall" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0010
+       JUMP            L0012
+L0010: GET_PARENT      "* GOLD PIN *" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0011
+       JUMP            L0012
+L0011: PRINT           "Something falls out. "
+       INSERT_OBJ      "* GOLD PIN *",G01
+       RTRUE
+L0012: JE              G0a,"sku" [FALSE] L0015
+       INC             L00
+       GET_PARENT      "Skull" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0013
+       GET_PARENT      "Skull" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0013
+       JUMP            L0015
+L0013: GET_PARENT      "* GOLD TEETH *" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0014
+       JUMP            L0015
+L0014: INSERT_OBJ      "* GOLD TEETH *",G01
+       PRINT           "Something falls out. "
+       RTRUE
+L0015: JE              G0a,"box" [FALSE] L0020
+       INC             L00
+       GET_PARENT      "Box" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0016
+       GET_PARENT      "Box" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0016
+       JUMP            L0020
+L0016: GET_PARENT      "Iron glove" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0017
+       JUMP            L0020
+L0017: GET_PARENT      "I'm wearing an iron glove" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0018
+       JUMP            L0020
+L0018: GET_PARENT      "Bones" -> -(SP)
+       JE              (SP)+,#00 [FALSE] L0019
+       JUMP            L0020
+L0019: PRINT           "I see something. "
+       PRINT           "Something falls out. "
+       INSERT_OBJ      "Iron glove",G01
+       RTRUE
+L0020: JE              G0a,"ash" [FALSE] L0023
+       INC             L00
+       JE              G01,#2c [TRUE] L0021
+       JUMP            L0023
+L0021: GET_PARENT      "* GOLD NECKLACE *" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0022
+       JUMP            L0023
+L0022: PRINT           "I see something. "
+       INSERT_OBJ      "* GOLD NECKLACE *",G01
+       RTRUE
+L0023: JE              G0a,"bas" [FALSE] L0027
+       INC             L00
+       GET_PARENT      "Hissing cobra" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0024
+       JUMP            L0027
+L0024: JE              G01,#2c [TRUE] L0025
+       JUMP            L0027
+L0025: GET_PARENT      "Passageway behind fireplace" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0026
+       JUMP            L0027
+L0026: INSERT_OBJ      "Hissing cobra",G01
+       PRINT           "I see something. "
+       RTRUE
+L0027: JE              G0a,"rub" [FALSE] L0030
+       INC             L00
+       GET_PARENT      "Pile of Rubbish" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0028
+       JUMP            L0030
+L0028: GET_PARENT      "* JADE CARVING *" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0029
+       JUMP            L0030
+L0029: PRINT           "I see something. "
+       INSERT_OBJ      "* JADE CARVING *",G01
+       RTRUE
+L0030: JE              G0a,"rub" [FALSE] L0033
+       INC             L00
+       GET_PARENT      "Pile of Rubbish" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0031
+       JUMP            L0033
+L0031: GET_PARENT      "* JADE CARVING *" -> -(SP)
+       JE              (SP)+,#00 [FALSE] L0032
+       JUMP            L0033
+L0032: PRINT           "I just caught dengue fever. Very bad. "
+       STORE           G01,G02
+       RTRUE
+L0033: JE              G0a,"cof" [FALSE] L0036
+       INC             L00
+       GET_PARENT      "Open treasure coffer" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0034
+       JUMP            L0036
+L0034: GET_PARENT      "* EMERALD BRACELET *" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0035
+       JUMP            L0036
+L0035: INSERT_OBJ      "* EMERALD BRACELET *",G01
+       PRINT           "I see something. "
+       RTRUE
+L0036: JE              G0a,"sig" [FALSE] L0038
+       INC             L00
+       GET_PARENT      "Sign" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0037
+       JUMP            L0038
+L0037: PRINT           "Sign: He who defiles the tombs of Egypt shall surely
+perish! "
+       RTRUE
+L0038: JE              G0a,"mur" [FALSE] L0040
+       INC             L00
+       JE              G01,#3b [TRUE] L0039
+       JUMP            L0040
+L0039: PRINT           "Mural: Seek ye well the HEART of Iron. "
+       RTRUE
+L0040: JE              G0a,"box" [FALSE] L0043
+       INC             L00
+       GET_PARENT      "Box" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0041
+       GET_PARENT      "Box" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0041
+       JUMP            L0043
+L0041: GET_PARENT      "Bones" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0042
+       JUMP            L0043
+L0042: PRINT           "I see something. "
+       PRINT           "Something falls out. "
+       INSERT_OBJ      "Bones",G01
+       RTRUE
+L0043: JE              G0a,"coa" [FALSE] L0045
+       INC             L00
+       GET_PARENT      "Lump of coal" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0044
+       GET_PARENT      "Lump of coal" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0044
+       JUMP            L0045
+L0044: PRINT           "Its black, dirty & dusty "
+       RTRUE
+L0045: INC             L00
+       PRINT           "I see nothing special. "
+       CALL_1N         R0013
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0046
+       PRINT_PADDR     G18
+       JUMP            L0047
+L0046: PRINT_PADDR     G17
+L0047: RTRUE
+
+Routine R0059, 1 local
+    Action routine for:
+        "pla"
+
+       JE              G0a,"flu" [FALSE] L0004
+       INC             L00
+       JE              G01,#2c [TRUE] L0001
+       JUMP            L0004
+L0001: GET_PARENT      "Passageway behind fireplace" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0002
+       JUMP            L0004
+L0002: GET_PARENT      "Flute" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0003
+       JUMP            L0004
+L0003: PRINT           "Cobra crawls out, presses a loose brick and then
+disappears intoa passage which appeared. "
+       INSERT_OBJ      "Passageway behind fireplace",G01
+       REMOVE_OBJ      "Hissing cobra"
+       INSERT_OBJ      "Passageway","Room 17"
+       RTRUE
+L0004: JE              G0a,"flu" [FALSE] L0006
+       INC             L00
+       GET_PARENT      "Flute" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0005
+       JUMP            L0006
+L0005: PRINT           "Ah, 'tis music to my ears. "
+       RTRUE
+L0006: JE              L00,#00 [TRUE] L0007
+       PRINT_PADDR     G18
+       JUMP            L0008
+L0007: PRINT_PADDR     G17
+L0008: RTRUE
+
+Routine R0060, 1 local
+    Action routine for:
+        "bal"
+
+       JE              L00,#00 [TRUE] L0001
+       PRINT_PADDR     G18
+       JUMP            L0002
+L0001: PRINT_PADDR     G17
+L0002: RTRUE
+
+Routine R0061, 1 local
+    Action routine for:
+        "rub"
+
+       INC             L00
+       PRINT           "You be weird. Cut that out. "
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0001
+       PRINT_PADDR     G18
+       JUMP            L0002
+L0001: PRINT_PADDR     G17
+L0002: RTRUE
+
+Routine R0063, 1 local
+    Action routine for:
+        "gra"
+
+       JE              G0a,"bar" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "Metal bar protruding from ceiling" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           "I can't reach it. "
+       RTRUE
+L0002: JE              G0a,"cha" [FALSE] L0004
+       INC             L00
+       GET_PARENT      "Iron statue of Pharoah seated on throne" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0003
+       JUMP            L0004
+L0003: PRINT           "I hear a hollow laugh. . . "
+       CALL_VN         R0019 (#3c,#7d)
+       PRINT           "The sound of machinery. "
+       RTRUE
+L0004: JE              G0a,"cha" [FALSE] L0006
+       INC             L00
+       GET_PARENT      "Standing iron statue" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0005
+       JUMP            L0006
+L0005: PRINT           "The sound of machinery. "
+       PRINT           "I hear a hollow laugh. . . "
+       CALL_VN         R0019 (#7e,#7d)
+       INSERT_OBJ      "Spiral Staircase",G01
+       RTRUE
+L0006: JE              G0a,"cha" [FALSE] L0011
+       INC             L00
+       JE              G01,#3b [TRUE] L0007
+       JUMP            L0011
+L0007: GET_PARENT      "Iron statue of Pharoah seated on throne" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0008
+       JUMP            L0011
+L0008: GET_PARENT      "Iron Statue, slowly advancing. . ." -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0009
+       JUMP            L0011
+L0009: GET_PARENT      "Standing iron statue" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0010
+       JUMP            L0011
+L0010: INSERT_OBJ      "Spiral Staircase",G01
+       PRINT           "I see something. "
+       RTRUE
+L0011: JE              G0a,"cha" [FALSE] L0013
+       INC             L00
+       GET_PARENT      "Iron Statue, slowly advancing. . ." -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0012
+       JUMP            L0013
+L0012: PRINT           "OK "
+       PRINT           "I hear a hollow laugh. . . "
+       PRINT           "Nomad: `RUN YOU FOOL!` "
+       RTRUE
+L0013: JE              L00,#00 [TRUE] L0014
+       PRINT_PADDR     G18
+       JUMP            L0015
+L0014: PRINT_PADDR     G17
+L0015: RTRUE
+
+Routine R0064, 1 local
+    Action routine for:
+        "clo"
+
+       JE              G0a,"sar" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "Open sarcophagus" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0001
+       JUMP            L0002
+L0001: CALL_VN         R0019 (#0d,#58)
+       PRINT           "OK "
+       RTRUE
+L0002: INC             L00
+       PRINT           "I can't. "
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0003
+       PRINT_PADDR     G18
+       JUMP            L0004
+L0003: PRINT_PADDR     G17
+L0004: RTRUE
+
+Routine R0065, 1 local
+    Action routine for:
+        "thr"
+
+       JE              G0a,"sto" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "Stone" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0001
+       JUMP            L0002
+L0001: INSERT_OBJ      "Stone",G01
+       PRINT           "OK "
+       RTRUE
+L0002: JE              G0a,"rop" [FALSE] L0005
+       INC             L00
+       JE              G01,#37 [TRUE] L0003
+       JUMP            L0005
+L0003: GET_PARENT      "Rope" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0004
+       JUMP            L0005
+L0004: REMOVE_OBJ      "Rope"
+       INSERT_OBJ      "Rope hanging from ceiling",G01
+       RTRUE
+L0005: JE              G0a,"rub" [FALSE] L0008
+       INC             L00
+       GET_PARENT      " * RUBY *" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0006
+       JUMP            L0008
+L0006: JE              G01,#37 [TRUE] L0007
+       JUMP            L0008
+L0007: REMOVE_OBJ      " * RUBY *"
+       REMOVE_OBJ      "Iron Statue, slowly advancing. . ."
+       REMOVE_OBJ      "Standing iron statue"
+       SET_ATTR        "flags",#11
+       PRINT           "OK "
+       PRINT           "Ruby falls into pool of acid, burns up. "
+       RTRUE
+L0008: JE              G0a,"rub" [FALSE] L0010
+       INC             L00
+       GET_PARENT      " * RUBY *" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0009
+       JUMP            L0010
+L0009: PRINT           "OK "
+       INSERT_OBJ      " * RUBY *",G01
+       RTRUE
+L0010: JE              G0a,"rop" [FALSE] L0012
+       INC             L00
+       GET_PARENT      "Rope" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0011
+       JUMP            L0012
+L0011: INSERT_OBJ      "Rope",G01
+       PRINT           "OK "
+       RTRUE
+L0012: JE              G0a,"sto" [FALSE] L0014
+       INC             L00
+       GET_PARENT      "Stone" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0013
+       JUMP            L0014
+L0013: INSERT_OBJ      "Stone",G01
+       PRINT           "Strange . . . Nothing happens. "
+       RTRUE
+L0014: INC             L00
+       PRINT           "I don't see any reason to throw a  "
+       CALL_1N         R0029
+       PRINT           " "
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0015
+       PRINT_PADDR     G18
+       JUMP            L0016
+L0015: PRINT_PADDR     G17
+L0016: RTRUE
+
+Routine R0067, 1 local
+    Action routine for:
+        "saw"
+
+       JE              G0a,"bar" [FALSE] L0003
+       INC             L00
+       JE              G01,#1e [TRUE] L0001
+       JUMP            L0003
+L0001: GET_PARENT      "Saw" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0002
+       JUMP            L0003
+L0002: PRINT           "I can't reach it. "
+       RTRUE
+L0003: JE              G0a,"tab" [FALSE] L0007
+       INC             L00
+       GET_PARENT      "Saw" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0004
+       GET_PARENT      "Saw" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0004
+       JUMP            L0007
+L0004: GET_PARENT      "Table" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0005
+       GET_PARENT      "Table" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0005
+       JUMP            L0007
+L0005: GET_PARENT      "* DIAMOND NECKLACE *" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0006
+       JUMP            L0007
+L0006: PRINT           "I see something. "
+       INSERT_OBJ      "* DIAMOND NECKLACE *",G01
+       RTRUE
+L0007: JE              G0a,"bar" [FALSE] L0010
+       INC             L00
+       JE              G01,#40 [TRUE] L0008
+       JUMP            L0010
+L0008: GET_PARENT      "Saw" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0009
+       JUMP            L0010
+L0009: CALL_VN         R0019 (#81,#42)
+       RTRUE
+L0010: JE              G0a,"cha" [FALSE] L0013
+       INC             L00
+       GET_PARENT      "Saw" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0011
+       JUMP            L0013
+L0011: GET_PARENT      "Dead explorer chained to wall" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0012
+       JUMP            L0013
+L0012: PRINT           "Chain too tough. "
+       RTRUE
+L0013: JE              G0a,"cha" [FALSE] L0016
+       INC             L00
+       GET_PARENT      "Saw" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0014
+       JUMP            L0016
+L0014: GET_PARENT      "Iron statue of Pharoah seated on throne" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0015
+       JUMP            L0016
+L0015: PRINT           "Chain too tough. "
+       RTRUE
+L0016: JE              L00,#00 [TRUE] L0017
+       PRINT_PADDR     G18
+       JUMP            L0018
+L0017: PRINT_PADDR     G17
+L0018: RTRUE
+
+Routine R0068, 1 local
+    Action routine for:
+        "wea"
+
+       JE              G0a,"glo" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "Iron glove" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0001
+       JUMP            L0002
+L0001: CALL_VN         R0019 (#57,#67)
+       RTRUE
+L0002: JE              L00,#00 [TRUE] L0003
+       PRINT_PADDR     G18
+       JUMP            L0004
+L0003: PRINT_PADDR     G17
+L0004: RTRUE
+
+Routine R0069, 1 local
+    Action routine for:
+        "glo"
+
+       JE              L00,#00 [TRUE] L0001
+       PRINT_PADDR     G18
+       JUMP            L0002
+L0001: PRINT_PADDR     G17
+L0002: RTRUE
+
+Routine R0070, 1 local
+    Action routine for:
+        "dri"
+
+       JE              G0a,"wat" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "Full canteen" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           "Thanks. "
+       CALL_VN         R0019 (#4d,#4e)
+       RTRUE
+L0002: JE              G0a,"wat" [FALSE] L0004
+       INC             L00
+       JE              G01,#37 [TRUE] L0003
+       JUMP            L0004
+L0003: PRINT           "Liquid is acid. "
+       STORE           G01,G02
+       RTRUE
+L0004: JE              G0a,"wat" [FALSE] L0006
+       INC             L00
+       JE              G01,#45 [TRUE] L0005
+       JUMP            L0006
+L0005: PRINT           "OK "
+       PRINT           "Thanks. "
+       RTRUE
+L0006: JE              L00,#00 [TRUE] L0007
+       PRINT_PADDR     G18
+       JUMP            L0008
+L0007: PRINT_PADDR     G17
+L0008: RTRUE
+
+Routine R0071, 1 local
+    Action routine for:
+        "sav"
+
+       JE              G0a,"gam" [FALSE] L0001
+       INC             L00
+       CALL_1N         R0026
+       RTRUE
+L0001: JE              L00,#00 [TRUE] L0002
+       PRINT_PADDR     G18
+       JUMP            L0003
+L0002: PRINT_PADDR     G17
+L0003: RTRUE
+
+Routine R0072, 1 local
+    Action routine for:
+        "inv"
+
+       INC             L00
+       CALL_1N         R0018
+       SET_ATTR        "flags",#0c
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0001
+       PRINT_PADDR     G18
+       JUMP            L0002
+L0001: PRINT_PADDR     G17
+L0002: RTRUE
+
+Routine R0074, 1 local
+    Action routine for:
+        "dra"
+
+       JE              L00,#00 [TRUE] L0001
+       PRINT_PADDR     G18
+       JUMP            L0002
+L0001: PRINT_PADDR     G17
+L0002: RTRUE
+
+Routine R0075, 1 local
+    Action routine for:
+        "loa"
+
+       JE              G0a,"pis" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "Pistol" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           "TRY: `TAKE INVENTORY` "
+       RTRUE
+L0002: JE              L00,#00 [TRUE] L0003
+       PRINT_PADDR     G18
+       JUMP            L0004
+L0003: PRINT_PADDR     G17
+L0004: RTRUE
+
+Routine R0076, 1 local
+    Action routine for:
+        "smo"
+
+       JE              G0a,"lea" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "Burning tanna leaves" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           "WOW, man, crazy... "
+       RTRUE
+L0002: JE              L00,#00 [TRUE] L0003
+       PRINT_PADDR     G18
+       JUMP            L0004
+L0003: PRINT_PADDR     G17
+L0004: RTRUE
+
+Routine R0077, 1 local
+    Action routine for:
+        "swi"
+
+       INC             L00
+       JE              G01,#45 [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           "OK "
+       PRINT           "That feels good. "
+       RTRUE
+L0002: INC             L00
+       JE              G01,#37 [TRUE] L0003
+       JUMP            L0004
+L0003: PRINT           "OK "
+       PRINT           "Liquid is acid. "
+       STORE           G01,G02
+       RTRUE
+L0004: JE              L00,#00 [TRUE] L0005
+       PRINT_PADDR     G18
+       JUMP            L0006
+L0005: PRINT_PADDR     G17
+L0006: RTRUE
+
+Routine R0078, 1 local
+    Action routine for:
+        "jum"
+
+       INC             L00
+       JE              G01,#37 [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           "OK "
+       PRINT           "Liquid is acid. "
+       STORE           G01,G02
+       RTRUE
+L0002: INC             L00
+       PRINT           "OK "
+       PRINT           "Strange . . . Nothing happens. "
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0003
+       PRINT_PADDR     G18
+       JUMP            L0004
+L0003: PRINT_PADDR     G17
+L0004: RTRUE
+
+Routine R0079, 1 local
+    Action routine for:
+        "pus"
+
+       INC             L00
+       PRINT           "Strange . . . Nothing happens. "
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0001
+       PRINT_PADDR     G18
+       JUMP            L0002
+L0001: PRINT_PADDR     G17
+L0002: RTRUE
+
+Routine R0081, 1 local
+    Action routine for:
+        "rem"
+
+       JE              G0a,"glo" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "I'm wearing an iron glove" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0001
+       JUMP            L0002
+L0001: CALL_VN         R0019 (#57,#67)
+       RTRUE
+L0002: JE              L00,#00 [TRUE] L0003
+       PRINT_PADDR     G18
+       JUMP            L0004
+L0003: PRINT_PADDR     G17
+L0004: RTRUE
+
+Routine R0082, 1 local
+    Action routine for:
+        "eat"
+
+       JE              G0a,"jer" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "Dried Camel Jerky" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           "OK "
+       PRINT           "Thanks. "
+       REMOVE_OBJ      "Dried Camel Jerky"
+       RTRUE
+L0002: JE              L00,#00 [TRUE] L0003
+       PRINT_PADDR     G18
+       JUMP            L0004
+L0003: PRINT_PADDR     G17
+L0004: RTRUE
+
+Routine R0083, 1 local
+    Action routine for:
+        "wet"
+
+       INC             L00
+       PRINT           "Pour water? "
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0001
+       PRINT_PADDR     G18
+       JUMP            L0002
+L0001: PRINT_PADDR     G17
+L0002: RTRUE
+
+Routine R0085, 1 local
+    Action routine for:
+        "ask"
+
+       JE              G0a,"nom" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "Small Nomad" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           "The nomad stuck out his tongue at me. "
+       RTRUE
+L0002: INC             L00
+       PRINT           "Strange . . . Nothing happens. "
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0003
+       PRINT_PADDR     G18
+       JUMP            L0004
+L0003: PRINT_PADDR     G17
+L0004: RTRUE
+
+Routine R0086, 1 local
+    Action routine for:
+        "hug"
+
+       JE              L00,#00 [TRUE] L0001
+       PRINT_PADDR     G18
+       JUMP            L0002
+L0001: PRINT_PADDR     G17
+L0002: RTRUE
+
+Routine R0087, 1 local
+    Action routine for:
+        "unc"
+
+       JE              G0a,"exp" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "Dead explorer chained to wall" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           "Chain too tough. "
+       RTRUE
+L0002: JE              L00,#00 [TRUE] L0003
+       PRINT_PADDR     G18
+       JUMP            L0004
+L0003: PRINT_PADDR     G17
+L0004: RTRUE
+
+Routine R0088, 1 local
+    Action routine for:
+        "cle"
+
+       JE              G0a,"coa" [FALSE] L0003
+       INC             L00
+       GET_PARENT      "Lump of coal" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0001
+       GET_PARENT      "Lump of coal" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0001
+       JUMP            L0003
+L0001: GET_PARENT      "Full canteen" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0002
+       GET_PARENT      "Full canteen" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0002
+       JUMP            L0003
+L0002: CALL_VN         R0019 (#7a,#54)
+       PRINT           "OK "
+       RTRUE
+L0003: JE              G0a,"coa" [FALSE] L0006
+       INC             L00
+       GET_PARENT      "Lump of coal" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0004
+       GET_PARENT      "Lump of coal" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0004
+       JUMP            L0006
+L0004: JE              G01,#45 [TRUE] L0005
+       JUMP            L0006
+L0005: CALL_VN         R0019 (#7a,#54)
+       PRINT           "OK "
+       RTRUE
+L0006: JE              L00,#00 [TRUE] L0007
+       PRINT_PADDR     G18
+       JUMP            L0008
+L0007: PRINT_PADDR     G17
+L0008: RTRUE
+
+Routine R0089, 1 local
+    Action routine for:
+        "fee"
+
+       INC             L00
+       GET_PARENT      "* GOLD COIN *" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0001
+       JUMP            L0003
+L0001: JE              G01,#47 [TRUE] L0002
+       JUMP            L0003
+L0002: PRINT           "I feel a coin on the floor "
+       INSERT_OBJ      "* GOLD COIN *",G01
+       RTRUE
+L0003: JE              G0a,"rat" [FALSE] L0006
+       INC             L00
+       GET_PARENT      "Starving rats" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0004
+       JUMP            L0006
+L0004: GET_PARENT      "Dried Camel Jerky" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0005
+       GET_PARENT      "Dried Camel Jerky" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0005
+       JUMP            L0006
+L0005: PRINT           "OK "
+       CALL_VN         R0019 (#6f,#31)
+       REMOVE_OBJ      "Dried Camel Jerky"
+       RTRUE
+L0006: JE              G0a,"oys" [FALSE] L0009
+       INC             L00
+       GET_PARENT      "Giant Oyster" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0007
+       JUMP            L0009
+L0007: GET_PARENT      "Dried Camel Jerky" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0008
+       JUMP            L0009
+L0008: REMOVE_OBJ      "Dried Camel Jerky"
+       SET_ATTR        "flags",#0a
+       INSERT_OBJ      "* BLACK PEARL *",G01
+       PRINT           "Oyster makes a slobbering noise "
+       RTRUE
+L0009: INC             L00
+       PRINT           "You be weird. Cut that out. "
+       RTRUE
+
+orphan code fragment:
+
+       JE              L00,#00 [TRUE] L0010
+       PRINT_PADDR     G18
+       JUMP            L0011
+L0010: PRINT_PADDR     G17
+L0011: RTRUE
+
+Routine R0090, 1 local
+    Action routine for:
+        "hit"
+
+       JE              G0a,"nom" [FALSE] L0002
+       INC             L00
+       GET_PARENT      "Small Nomad" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0001
+       JUMP            L0002
+L0001: PRINT           "won't let me "
+       PRINT           "Rats "
+       PRINT           "The nomad stuck out his tongue at me. "
+       RTRUE
+L0002: JE              G0a,"doo" [FALSE] L0005
+       INC             L00
+       GET_PARENT      "Bricked up doorway" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0003
+       JUMP            L0005
+L0003: GET_PARENT      "I'm wearing an iron glove" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0004
+       JUMP            L0005
+L0004: CALL_VN         R0019 (#61,#18)
+       PRINT           "OK "
+       PRINT           "Crash!!! "
+       RTRUE
+L0005: INC             L00
+       GET_PARENT      "I'm wearing an iron glove" -> -(SP)
+       JE              (SP)+,#01 [FALSE] L0006
+       JUMP            L0007
+L0006: PRINT           "Bare-handed? "
+       RTRUE
+L0007: JE              L00,#00 [TRUE] L0008
+       PRINT_PADDR     G18
+       JUMP            L0009
+L0008: PRINT_PADDR     G17
+L0009: RTRUE
+
+Routine R0091, 0 locals
+
+       RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0002
+       TEST_ATTR       "flags",#03 [FALSE] L0001
+       JUMP            L0002
+L0001: SET_ATTR        "flags",#03
+       PRINT           "Welcome to Adventure: 8 `PYRAMID OF DOOM` "
+       PRINT           "By Alvin Files & Scott Adams Dedicated to Ray Harshaw!
+"
+L0002: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#32 [TRUE] L0004
+       GET_PARENT      "Starving rats" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0003
+       JUMP            L0004
+L0003: PRINT           "Rats "
+       PRINT           "attacks! "
+       STORE           G01,G02
+L0004: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0007
+       TEST_ATTR       "flags",#10 [TRUE] L0005
+       JUMP            L0007
+L0005: GET_PARENT      "Lit flashlite" -> -(SP)
+       JE              (SP)+,#00 [FALSE] L0006
+       JUMP            L0007
+L0006: CALL_VN         R0019 (#50,#51)
+       CALL_1N         R0013
+L0007: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#02 [TRUE] L0009
+       GET_PARENT      "Small Nomad" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0008
+       JUMP            L0009
+L0008: INSERT_OBJ      "Small Nomad",G01
+       PRINT           "A small desert nomad appears... "
+L0009: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0011
+       TEST_ATTR       "flags",#0e [FALSE] L0010
+       JUMP            L0011
+L0010: SET_ATTR        "flags",#0e
+       STORE           G0f,#04
+L0011: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0015
+       TEST_ATTR       "flags",#0c [TRUE] L0012
+       JUMP            L0015
+L0012: GET_PARENT      "Pistol" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0013
+       JUMP            L0015
+L0013: JG              G0f,#01 [TRUE] L0014
+       JUMP            L0015
+L0014: PRINT           "Pistol has "
+       PRINT_NUM       G0f
+       PRINT           " "
+       PRINT           "bullets "
+L0015: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0017
+       TEST_ATTR       "flags",#0c [TRUE] L0016
+       JUMP            L0017
+L0016: CLEAR_ATTR      "flags",#0c
+L0017: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#46 [TRUE] L0019
+       TEST_ATTR       "flags",#0b [TRUE] L0018
+       JUMP            L0019
+L0018: PRINT           "Got him!! "
+       PRINT           "Nomad vanishes in a puff of yellow smoke. "
+       CLEAR_ATTR      "flags",#0b
+       REMOVE_OBJ      "Small Nomad"
+L0019: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0021
+       TEST_ATTR       "flags",#0b [TRUE] L0020
+       JUMP            L0021
+L0020: CLEAR_ATTR      "flags",#0b
+       PRINT           "Missed... "
+L0021: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#0a [TRUE] L0023
+       GET_PARENT      "Fearsome mummy" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0022
+       JUMP            L0023
+L0022: CALL_VN         R0019 (#5c,#14)
+       PRINT           "Mummy moves toward me. "
+L0023: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#14 [TRUE] L0025
+       GET_PARENT      "Enraged mummy" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0024
+       JUMP            L0025
+L0024: PRINT           "Mummy has me by the throat! "
+       STORE           G01,G02
+L0025: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#0a [TRUE] L0027
+       GET_PARENT      "I'm wearing an iron glove" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0026
+       JUMP            L0027
+L0026: REMOVE_OBJ      "I'm wearing an iron glove"
+       INSERT_OBJ      "Iron glove",G01
+       PRINT           "Glove falls off my sweaty hand "
+L0027: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#19 [TRUE] L0032
+       GET_PARENT      "Small Nomad" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0028
+       JUMP            L0032
+L0028: JE              G01,#1e [TRUE] L0029
+       JUMP            L0032
+L0029: GET_PARENT      "Glowing skeleton" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0030
+       JUMP            L0032
+L0030: TEST_ATTR       "flags",#14 [TRUE] L0031
+       JUMP            L0032
+L0031: PRINT           "Nomad: `Look up decapitated!` "
+       CLEAR_ATTR      "flags",#14
+L0032: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0035
+       GET_PARENT      "Decapitated skeleton" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0033
+       JUMP            L0035
+L0033: GET_PARENT      "Skull" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0034
+       JUMP            L0035
+L0034: PRINT           "Skeleton places skull on his shoulders, grasps "
+       PRINT           "metal bar, pulls down ladder "
+       INSERT_OBJ      "Glowing skeleton",G01
+       INSERT_OBJ      "Ladder",G01
+L0035: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0038
+       GET_PARENT      "Decapitated skeleton" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0036
+       JUMP            L0038
+L0036: GET_PARENT      "Skull" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0037
+       JUMP            L0038
+L0037: REMOVE_OBJ      "Decapitated skeleton"
+       REMOVE_OBJ      "Skull"
+       REMOVE_OBJ      "Metal bar protruding from ceiling"
+L0038: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0041
+       GET_PARENT      "Small Nomad" -> -(SP)
+       JE              (SP)+,#00 [FALSE] L0039
+       JUMP            L0041
+L0039: GET_PARENT      "Small Nomad" -> -(SP)
+       JE              (SP)+,G01 [FALSE] L0040
+       JUMP            L0041
+L0040: INSERT_OBJ      "Small Nomad",G01
+L0041: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0044
+       GET_PARENT      "Giant Oyster" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0042
+       JUMP            L0044
+L0042: GET_PARENT      "Dried Camel Jerky" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0043
+       JUMP            L0044
+L0043: REMOVE_OBJ      "Dried Camel Jerky"
+       PRINT           "Oyster makes a slobbering noise "
+       SET_ATTR        "flags",#0a
+       INSERT_OBJ      "* BLACK PEARL *",G01
+L0044: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#14 [TRUE] L0047
+       GET_PARENT      "Small Nomad" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0045
+       JUMP            L0047
+L0045: JE              G01,#33 [TRUE] L0046
+       JUMP            L0047
+L0046: PRINT           "Nomad: `RUN YOU FOOL!` "
+L0047: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#19 [TRUE] L0052
+       GET_PARENT      "Small Nomad" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0048
+       JUMP            L0052
+L0048: GET_PARENT      "Giant Oyster" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0049
+       JUMP            L0052
+L0049: GET_PARENT      "* BLACK PEARL *" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0050
+       JUMP            L0052
+L0050: TEST_ATTR       "flags",#14 [TRUE] L0051
+       JUMP            L0052
+L0051: PRINT           "Nomad: `Oyster thirsty?` "
+       CLEAR_ATTR      "flags",#14
+L0052: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0055
+       TEST_ATTR       "flags",#11 [TRUE] L0053
+       JUMP            L0055
+L0053: GET_PARENT      "Pile of Melted iron" -> -(SP)
+       JE              (SP)+,#00 [TRUE] L0054
+       JUMP            L0055
+L0054: INSERT_OBJ      "Pile of Melted iron","Room 21"
+       REMOVE_OBJ      "Iron statue of Pharoah seated on throne"
+L0055: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0058
+       GET_PARENT      "Dried Camel Jerky" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0056
+       JUMP            L0058
+L0056: GET_PARENT      "Starving rats" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0057
+       JUMP            L0058
+L0057: REMOVE_OBJ      "Dried Camel Jerky"
+       CALL_VN         R0019 (#6f,#31)
+L0058: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#1e [TRUE] L0060
+       GET_PARENT      "Hissing cobra" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0059
+       JUMP            L0060
+L0059: PRINT           "Cobra "
+       PRINT           "attacks! "
+       STORE           G01,G02
+L0060: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#0a [TRUE] L0062
+       GET_PARENT      "Starving rats" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0061
+       JUMP            L0062
+L0061: PRINT           "Rats "
+       PRINT           "attacks! "
+       STORE           G01,G02
+L0062: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#28 [TRUE] L0064
+       GET_PARENT      "Purple Worm" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0063
+       JUMP            L0064
+L0063: PRINT           "Purple worm devours me. "
+       STORE           G01,G02
+L0064: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#14 [TRUE] L0066
+       GET_PARENT      "Iron Statue, slowly advancing. . ." -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0065
+       JUMP            L0066
+L0065: PRINT           "Iron Statue tears me apart! "
+       STORE           G01,G02
+L0066: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0069
+       JE              G01,#43 [TRUE] L0067
+       JUMP            L0069
+L0067: TEST_ATTR       "flags",#0f [TRUE] L0068
+       JUMP            L0069
+L0068: CLEAR_ATTR      "flags",#0f
+       CALL_1N         R0013
+L0069: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0072
+       JE              G01,#47 [TRUE] L0070
+       JUMP            L0072
+L0070: GET_PARENT      "Lit flashlite" -> -(SP)
+       JE              (SP)+,#01 [TRUE] L0071
+       GET_PARENT      "Lit flashlite" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0071
+       JUMP            L0072
+L0071: CALL_VN         R0019 (#50,#51)
+       PRINT           "Mirrors EVERYWHERE! Light blinds me, so I shut it OFF!
+"
+       CALL_1N         R0013
+L0072: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0074
+       JE              G01,#4a [TRUE] L0073
+       JUMP            L0074
+L0073: CALL_1N         R0031
+       CALL_1N         R0030
+L0074: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#64 [TRUE] L0076
+       TEST_ATTR       "flags",#01 [TRUE] L0075
+       JUMP            L0076
+L0075: CLEAR_ATTR      "flags",#01
+       SUB             G0f,#01 -> G0f
+L0076: RANDOM          #64 -> -(SP)
+       JG              (SP)+,#01 [TRUE] L0079
+       GET_PARENT      "Small Nomad" -> -(SP)
+       JE              (SP)+,G01 [TRUE] L0077
+       JUMP            L0079
+L0077: GET_PARENT      "Pistol" -> -(SP)
+       JE              (SP)+,#01 [FALSE] L0078
+       JUMP            L0079
+L0078: PRINT           "What! The nomad jumped me while my back was turned! "
+       STORE           G01,G02
+L0079: RTRUE
+
+Routine R0092, 1 local
+
+       STORE           Gef,L00
+       JE              Gef,"north" [FALSE] L0001
+       RET             #02
+L0001: JE              Gef,"south" [FALSE] L0002
+       RET             #03
+L0002: JE              Gef,"east" [FALSE] L0003
+       RET             #04
+L0003: JE              Gef,"west" [FALSE] L0004
+       RET             #05
+L0004: JE              Gef,"up" [FALSE] L0005
+       RET             #06
+L0005: JE              Gef,"down" [FALSE] L0006
+       RET             #07
+L0006: RET             #00
+
+orphan code fragment:
+
+       RTRUE
+
+Routine R0093, 0 locals
+
+       PRINT           "PYRAMID OF DOOM"
+       RTRUE
+
+[End of code]
+
+[Start of text]
+
+S001: "TRS-80"
+S002: "1.00"
+S003: "NORTH"
+S004: "SOUTH"
+S005: "EAST"
+S006: "WEST"
+S007: "UP"
+S008: "DOWN"
+S009: "I don't understand your command. "
+S010: "I can't do that yet. "
+S011: "S"
+S012: "Start the game"
+S013: "R"
+S014: "Restore a saved game"
+S015: "C"
+S016: "Show credits"
+S017: "I"
+S018: "Info about playing"
+S019: "Q"
+S020: "Quit"
+S021: "I'm in a desert"
+S022: "I'm in a desert"
+S023: "I'm in a desert"
+S024: "I'm in a desert next to a pyramid"
+S025: "I'm in a hole"
+S026: "I'm in a "
+S027: "I'm in a sarcophagus"
+S028: "I'm in a burial room"
+S029: "I'm in a long, narrow passageway"
+S030: "I'm in a hidden alcove"
+S031: "I'm in a tall room"
+S032: "I'm in a dining hall"
+S033: "I'm in a hallway"
+S034: "I'm in a round altar room"
+S035: "I'm in a hieroglyphics room"
+S036: "I'm in a sitting room"
+S037: "I'm in a sloping crawlway"
+S038: "I'm in a Revolving cavern"
+S039: "I'm in a prison cell"
+S040: "I'm on a narrow ledge"
+S041: "I'm in a throne room"
+S042: "I'm in a treasure room"
+S043: "I'm on top of a pyramid"
+S044: "I'm in a Pool of water"
+S045: "I'm in a ."
+S046: "I'm in a dressing room"
+S047: "I'm in a lot of TROUBLE!"
+
+[End of text]
+
+[End of file]
