@@ -1,0 +1,2940 @@
+! "pyramid.z5", 26112 bytes
+! Z-machine version 5, release 1, serial 980329
+!
+! Decompiled by Reform release 6, serial 040226
+! using symbol file "pyramid.reform"
+
+! Grammar
+
+Verb 'hit' 'pun'
+    * 							-> Action46
+;
+
+Verb 'fee' 'gro' 'tou'
+    * 							-> Action45
+;
+
+Verb 'cle' 'was'
+    * 							-> Action44
+;
+
+Verb 'unc'
+    * 							-> Action43
+;
+
+Verb 'hug'
+    * 							-> Action42
+;
+
+Verb 'ask' 'kic' 'say' 'scr' 'tal' 'tic' 'yel'
+    * 							-> Action41
+;
+
+Verb 'wet'
+    * 							-> Action40
+;
+
+Verb 'eat'
+    * 							-> Action39
+;
+
+Verb 'rem'
+    * 							-> Action38
+;
+
+Verb 'pus' 'sha' 'sme' 'wav'
+    * 							-> Action37
+;
+
+Verb 'jum'
+    * 							-> Action36
+;
+
+Verb 'swi'
+    * 							-> Action35
+;
+
+Verb 'smo'
+    * 							-> Action34
+;
+
+Verb 'loa'
+    * 							-> Action33
+;
+
+Verb 'dra'
+    * 							-> Action32
+;
+
+Verb 'inv'
+    * 							-> Action31
+;
+
+Verb 'sav'
+    * 							-> Action30
+;
+
+Verb 'dri'
+    * 							-> Action29
+;
+
+Verb 'glo'
+    * 							-> Action28
+;
+
+Verb 'wea'
+    * 							-> Action27
+;
+
+Verb 'saw'
+    * 							-> Action26
+;
+
+Verb 'thr'
+    * 							-> Action25
+;
+
+Verb 'clo' 'shu'
+    * 							-> Action24
+;
+
+Verb 'gra' 'pul'
+    * 							-> Action23
+;
+
+Verb 'rub'
+    * 							-> Action22
+;
+
+Verb 'bal'
+    * 							-> Action21
+;
+
+Verb 'pla'
+    * 							-> Action20
+;
+
+Verb 'loo' 'sea'
+    * 							-> Action19
+;
+
+Verb 'fla' 'lig'
+    * 							-> Action18
+;
+
+Verb 'dig'
+    * 							-> Action17
+;
+
+Verb 'bur'
+    * 							-> Action16
+;
+
+Verb 'yes'
+    * 							-> Action15
+;
+
+Verb 'sho'
+    * 							-> Action14
+;
+
+Verb 'att' 'kil'
+    * 							-> Action13
+;
+
+Verb 'pet'
+    * 							-> Action12
+;
+
+Verb 'dro' 'lea' 'put'
+    * 							-> Action11
+;
+
+Verb 'qui'
+    * 							-> Action10
+;
+
+Verb 'sco'
+    * 							-> Action9
+;
+
+Verb 'ope' 'unl'
+    * 							-> Action8
+;
+
+Verb 'bre'
+    * 							-> Action7
+;
+
+Verb 'rea'
+    * 							-> Action6
+;
+
+Verb 'get' 'tak'
+    * 							-> Action5
+;
+
+Verb 'hel'
+    * 							-> Action4
+;
+
+Verb 'emp' 'pou' 'spi'
+    * 							-> Action3
+;
+
+Verb 'cli' 'ent' 'go' 'run' 'wal'
+    * 							-> Action2
+;
+
+Verb 'noscript' 'unscript'
+    * 							-> Action1
+;
+
+Verb 'script'
+    * 							-> Action0
+;
+
+! Object tree
+
+
+Object obj1_player "player"	! 1 / 0x1
+  has	;
+
+Object -> obj77_Empty_canteen "Empty canteen"	! 77 / 0x4d
+  with	prop1 'can',
+	prop9 [0 1],
+	prop10 [0 4],
+  has	;
+
+Object -> obj80_Unlit_flashlite "Unlit flashlite"	! 80 / 0x50
+  with	prop1 'fla',
+	prop9 [0 1],
+	prop10 [0 8],
+  has	;
+
+Object obj2_Room_1 "Room 1"	! 2 / 0x2
+  with	prop3 [0 7],
+	prop5 [0 3],
+	prop8 "I'm in a desert",
+  has	;
+
+Object obj3_Room_2 "Room 2"	! 3 / 0x3
+  with	prop3 [0 4],
+	prop4 [0 2],
+	prop8 "I'm in a desert",
+  has	;
+
+Object obj4_Room_3 "Room 3"	! 4 / 0x4
+  with	prop2 [0 3],
+	prop4 [0 7],
+	prop8 "I'm in a desert",
+  has	;
+
+Object -> obj5_Wooden_pole_sticking_from_sand "Wooden pole sticking from sand"	! 5 / 0x5
+  with	prop9 [0 4],
+	prop10 [0 a],
+  has	;
+
+Object -> obj6_Pool_of_liquid "Pool of liquid"	! 6 / 0x6
+  with	prop9 [0 4],
+	prop10 [0 e],
+  has	;
+
+Object obj7_Room_4 "Room 4"	! 7 / 0x7
+  with	prop2 [0 2],
+	prop5 [0 4],
+	prop8 "I'm in a desert next to a pyramid",
+  has	;
+
+Object -> obj8_Stone "Stone"	! 8 / 0x8
+  with	prop1 'sto',
+	prop9 [0 7],
+	prop10 [0 1],
+  has	;
+
+Object -> obj9_Sign "Sign"	! 9 / 0x9
+  with	prop9 [0 7],
+	prop10 [0 f],
+  has	;
+
+Object obj10_Room_5 "Room 5"	! 10 / 0xa
+  with	prop6 [0 7],
+	prop8 "I'm in a hole",
+  has	;
+
+Object -> obj11_Tiny_locked_door "Tiny locked door"	! 11 / 0xb
+  with	prop9 [0 a],
+	prop10 [0 7],
+  has	;
+
+Object obj12_Room_6 "Room 6"	! 12 / 0xc
+  with	prop2 [0 22],
+	prop3 [0 2c],
+	prop8 "I'm in a ",
+  has	;
+
+Object -> obj13_Closed_sarcophagus "Closed sarcophagus"	! 13 / 0xd
+  with	prop9 [0 c],
+	prop10 [0 14],
+  has	;
+
+Object -> obj14_Mouldy_bandages "Mouldy bandages"	! 14 / 0xe
+  with	prop1 'ban',
+	prop9 [0 c],
+	prop10 [0 15],
+  has	;
+
+Object -> obj15_Open_door "Open door"	! 15 / 0xf
+  with	prop9 [0 c],
+	prop10 [0 19],
+  has	;
+
+Object -> obj16_Pistol "Pistol"	! 16 / 0x10
+  with	prop1 'pis',
+	prop9 [0 c],
+	prop10 [0 1c],
+  has	;
+
+Object obj17_Room_7 "Room 7"	! 17 / 0x11
+  with	prop5 [0 c],
+	prop7 [0 13],
+	prop8 "I'm in a sarcophagus",
+  has	;
+
+Object -> obj18_Stairs "Stairs"	! 18 / 0x12
+  with	prop9 [0 11],
+	prop10 [0 17],
+  has	;
+
+Object obj19_Room_8 "Room 8"	! 19 / 0x13
+  with	prop2 [0 17],
+	prop3 [0 1e],
+	prop6 [0 11],
+	prop8 "I'm in a burial room",
+  has	;
+
+Object -> obj20_Fearsome_mummy "Fearsome mummy"	! 20 / 0x14
+  with	prop9 [0 13],
+	prop10 [0 1d],
+  has	;
+
+Object -> obj21___ANTIQUE_TAPESTRY__ "* ANTIQUE TAPESTRY *"	! 21 / 0x15
+  with	prop1 'tap',
+	prop9 [0 13],
+	prop10 [0 1e],
+  has	attrib32;
+
+Object -> obj22_Burning_tanna_leaves "Burning tanna leaves"	! 22 / 0x16
+  with	prop9 [0 13],
+	prop10 [0 1f],
+  has	;
+
+Object obj23_Room_9 "Room 9"	! 23 / 0x17
+  with	prop3 [0 13],
+	prop8 "I'm in a long, narrow passageway",
+  has	;
+
+Object -> obj24_Bricked_up_doorway "Bricked up doorway"	! 24 / 0x18
+  with	prop9 [0 17],
+	prop10 [0 26],
+  has	;
+
+Object -> obj25_Rope "Rope"	! 25 / 0x19
+  with	prop1 'rop',
+	prop9 [0 17],
+	prop10 [0 2d],
+  has	;
+
+Object obj26_Room_10 "Room 10"	! 26 / 0x1a
+  with	prop5 [0 13],
+	prop8 "I'm in a hidden alcove",
+  has	;
+
+Object -> obj27_Chopping_block "Chopping block"	! 27 / 0x1b
+  with	prop1 'blo',
+	prop9 [0 1a],
+	prop10 [0 2f],
+  has	;
+
+Object -> obj28_Skull "Skull"	! 28 / 0x1c
+  with	prop1 'sku',
+	prop9 [0 1a],
+	prop10 [0 30],
+  has	;
+
+Object -> obj29_Box "Box"	! 29 / 0x1d
+  with	prop1 'box',
+	prop9 [0 1a],
+	prop10 [0 31],
+  has	;
+
+Object obj30_Room_11 "Room 11"	! 30 / 0x1e
+  with	prop2 [0 13],
+	prop8 "I'm in a tall room",
+  has	;
+
+Object -> obj31_Metal_bar_protruding_from_ceiling "Metal bar protruding from ceiling"	! 31 / 0x1f
+  with	prop9 [0 1e],
+	prop10 [0 35],
+  has	;
+
+Object -> obj32_Decapitated_skeleton "Decapitated skeleton"	! 32 / 0x20
+  with	prop9 [0 1e],
+	prop10 [0 36],
+  has	;
+
+Object -> obj33_Saw "Saw"	! 33 / 0x21
+  with	prop1 'saw',
+	prop9 [0 1e],
+	prop10 [0 37],
+  has	;
+
+Object obj34_Room_12 "Room 12"	! 34 / 0x22
+  with	prop3 [0 c],
+	prop4 [0 24],
+	prop8 "I'm in a dining hall",
+  has	;
+
+Object -> obj35_Table "Table"	! 35 / 0x23
+  with	prop1 'tab',
+	prop9 [0 22],
+	prop10 [0 3c],
+  has	;
+
+Object obj36_Room_13 "Room 13"	! 36 / 0x24
+  with	prop5 [0 22],
+	prop8 "I'm in a hallway",
+  has	;
+
+Object -> obj37_Archway "Archway"	! 37 / 0x25
+  with	prop9 [0 24],
+	prop10 [0 34],
+  has	;
+
+Object -> obj38_Giant_Oyster "Giant Oyster"	! 38 / 0x26
+  with	prop9 [0 24],
+	prop10 [0 3f],
+  has	;
+
+Object -> obj39_Flute "Flute"	! 39 / 0x27
+  with	prop1 'flu',
+	prop9 [0 24],
+	prop10 [0 41],
+  has	;
+
+Object obj40_Room_14 "Room 14"	! 40 / 0x28
+  with	prop2 [0 24],
+	prop3 [0 30],
+	prop4 [0 2a],
+	prop8 "I'm in a round altar room",
+  has	;
+
+Object -> obj41_Blood_stained_altar "Blood-stained altar"	! 41 / 0x29
+  with	prop9 [0 28],
+	prop10 [0 42],
+  has	;
+
+Object obj42_Room_15 "Room 15"	! 42 / 0x2a
+  with	prop5 [0 28],
+	prop8 "I'm in a hieroglyphics room",
+  has	;
+
+Object -> obj43_Dried_Camel_Jerky "Dried Camel Jerky"	! 43 / 0x2b
+  with	prop1 'jer',
+	prop9 [0 2a],
+	prop10 [0 3],
+  has	;
+
+Object obj44_Room_16 "Room 16"	! 44 / 0x2c
+  with	prop2 [0 c],
+	prop8 "I'm in a sitting room",
+  has	;
+
+Object -> obj45_Ashes "Ashes"	! 45 / 0x2d
+  with	prop9 [0 2c],
+	prop10 [0 29],
+  has	;
+
+Object -> obj46_Basket "Basket"	! 46 / 0x2e
+  with	prop1 'bas',
+	prop9 [0 2c],
+	prop10 [0 2a],
+  has	;
+
+Object -> obj47_Fireplace "Fireplace"	! 47 / 0x2f
+  with	prop9 [0 2c],
+	prop10 [0 38],
+  has	;
+
+Object obj48_Room_17 "Room 17"	! 48 / 0x30
+  with	prop2 [0 28],
+	prop8 "I'm in a sloping crawlway",
+  has	;
+
+Object -> obj49_Starving_rats "Starving rats"	! 49 / 0x31
+  with	prop1 'rat',
+	prop9 [0 30],
+	prop10 [0 47],
+  has	;
+
+Object obj50_Room_18 "Room 18"	! 50 / 0x32
+  with	prop2 [0 33],
+	prop3 [0 37],
+	prop7 [0 1e],
+	prop8 "I'm in a Revolving cavern",
+  has	;
+
+Object obj51_Room_19 "Room 19"	! 51 / 0x33
+  with	prop3 [0 37],
+	prop5 [0 32],
+	prop8 "I'm in a prison cell",
+  has	;
+
+Object -> obj52_Dead_explorer_chained_to_wall "Dead explorer chained to wall"	! 52 / 0x34
+  with	prop9 [0 33],
+	prop10 [0 4c],
+  has	;
+
+Object -> obj53_Pile_of_Rubbish "Pile of Rubbish"	! 53 / 0x35
+  with	prop9 [0 33],
+	prop10 [0 4d],
+  has	;
+
+Object -> obj54_Closed_portal "Closed portal"	! 54 / 0x36
+  with	prop9 [0 33],
+	prop10 [0 4e],
+  has	;
+
+Object obj55_Room_20 "Room 20"	! 55 / 0x37
+  with	prop3 [0 33],
+	prop5 [0 32],
+	prop8 "I'm on a narrow ledge",
+  has	;
+
+Object -> obj56___SAPPHIRE__ "* SAPPHIRE *"	! 56 / 0x38
+  with	prop1 'sap',
+	prop9 [0 37],
+	prop10 [0 53],
+  has	attrib32;
+
+Object -> obj57_Hole_in_the_ceiling "Hole in the ceiling"	! 57 / 0x39
+  with	prop9 [0 37],
+	prop10 [0 54],
+  has	;
+
+Object -> obj58_Pool_of_liquid__far_below_ledge_ "Pool of liquid (far below ledge)"	! 58 / 0x3a
+  with	prop9 [0 37],
+	prop10 [0 5b],
+  has	;
+
+Object obj59_Room_21 "Room 21"	! 59 / 0x3b
+  with	prop7 [0 37],
+	prop8 "I'm in a throne room",
+  has	;
+
+Object -> obj60_Iron_statue_of_Pharoah_seated_on_throne "Iron statue of Pharoah seated on throne"	! 60 / 0x3c
+  with	prop9 [0 3b],
+	prop10 [0 56],
+  has	;
+
+Object -> obj61_Chain_hanging_from_ceiling "Chain hanging from ceiling"	! 61 / 0x3d
+  with	prop9 [0 3b],
+	prop10 [0 57],
+  has	;
+
+Object -> obj62_Chest "Chest"	! 62 / 0x3e
+  with	prop9 [0 3b],
+	prop10 [0 58],
+  has	;
+
+Object -> obj63_Wall_Mural "Wall Mural"	! 63 / 0x3f
+  with	prop9 [0 3b],
+	prop10 [0 59],
+  has	;
+
+Object obj64_Room_22 "Room 22"	! 64 / 0x40
+  with	prop7 [0 3b],
+	prop8 "I'm in a treasure room",
+  has	;
+
+Object -> obj65_Treasure_coffer "Treasure coffer"	! 65 / 0x41
+  with	prop9 [0 40],
+	prop10 [0 63],
+  has	;
+
+Object -> obj66_Barred_window "Barred window"	! 66 / 0x42
+  with	prop9 [0 40],
+	prop10 [0 64],
+  has	;
+
+Object obj67_Room_23 "Room 23"	! 67 / 0x43
+  with	prop5 [0 40],
+	prop8 "I'm on top of a pyramid",
+  has	;
+
+Object -> obj68___PLATINUM_BAR__ "* PLATINUM BAR *"	! 68 / 0x44
+  with	prop1 'bar',
+	prop9 [0 43],
+	prop10 [0 43],
+  has	attrib32;
+
+Object obj69_Room_24 "Room 24"	! 69 / 0x45
+  with	prop4 [0 4],
+	prop8 "I'm in a Pool of water",
+  has	;
+
+Object -> obj70_Large_key "Large key"	! 70 / 0x46
+  with	prop1 'key',
+	prop9 [0 45],
+	prop10 [0 12],
+  has	;
+
+Object obj71_Room_25 "Room 25"	! 71 / 0x47
+  with	prop2 [0 17],
+	prop3 [0 17],
+	prop4 [0 48],
+	prop5 [0 17],
+	prop6 [0 17],
+	prop7 [0 17],
+	prop8 "I'm in a .",
+  has	;
+
+Object obj72_Room_26 "Room 26"	! 72 / 0x48
+  with	prop5 [0 47],
+	prop8 "I'm in a dressing room",
+  has	;
+
+Object -> obj73___GOLD_SCARAB__ "* GOLD SCARAB *"	! 73 / 0x49
+  with	prop1 'sca',
+	prop9 [0 48],
+	prop10 [0 22],
+  has	attrib32;
+
+Object obj74_Room_27 "Room 27"	! 74 / 0x4a
+  with	prop8 "I'm in a lot of TROUBLE!",
+  has	;
+
+Object obj75_ITEM0 "ITEM0"	! 75 / 0x4b
+  with	prop9 [0 0],
+	prop10 [0 0],
+  has	;
+
+Object obj76_Door_with_large_keyhole "Door with large keyhole"	! 76 / 0x4c
+  with	prop9 [0 0],
+	prop10 [0 2],
+  has	;
+
+Object obj78_Full_canteen "Full canteen"	! 78 / 0x4e
+  with	prop1 'can',
+	prop9 [0 0],
+	prop10 [0 5],
+  has	;
+
+Object obj79_Hole "Hole"	! 79 / 0x4f
+  with	prop9 [0 0],
+	prop10 [0 6],
+  has	;
+
+Object obj81_Lit_flashlite "Lit flashlite"	! 81 / 0x51
+  with	prop1 'fla',
+	prop9 [0 0],
+	prop10 [0 9],
+  has	;
+
+Object obj82_Shovel "Shovel"	! 82 / 0x52
+  with	prop1 'sho',
+	prop9 [0 0],
+	prop10 [0 b],
+  has	;
+
+Object obj83_Tiny_key "Tiny key"	! 83 / 0x53
+  with	prop1 'key',
+	prop9 [0 0],
+	prop10 [0 c],
+  has	;
+
+Object obj84_Lump_of_coal "Lump of coal"	! 84 / 0x54
+  with	prop1 'coa',
+	prop9 [0 0],
+	prop10 [0 d],
+  has	;
+
+Object obj85_Door_with_large_keyhole "Door with large keyhole"	! 85 / 0x55
+  with	prop9 [0 0],
+	prop10 [0 10],
+  has	;
+
+Object obj86_Open_door "Open door"	! 86 / 0x56
+  with	prop9 [0 0],
+	prop10 [0 11],
+  has	;
+
+Object obj87_I_m_wearing_an_iron_glove "I'm wearing an iron glove"	! 87 / 0x57
+  with	prop9 [0 0],
+	prop10 [0 13],
+  has	;
+
+Object obj88_Open_sarcophagus "Open sarcophagus"	! 88 / 0x58
+  with	prop9 [0 0],
+	prop10 [0 16],
+  has	;
+
+Object obj89_Bones "Bones"	! 89 / 0x59
+  with	prop1 'bon',
+	prop9 [0 0],
+	prop10 [0 18],
+  has	;
+
+Object obj90_Tiny_open_door "Tiny open door"	! 90 / 0x5a
+  with	prop9 [0 0],
+	prop10 [0 1a],
+  has	;
+
+Object obj91_Small_Nomad "Small Nomad"	! 91 / 0x5b
+  with	prop9 [0 0],
+	prop10 [0 1b],
+  has	;
+
+Object obj92_Enraged_mummy "Enraged mummy"	! 92 / 0x5c
+  with	prop9 [0 0],
+	prop10 [0 20],
+  has	;
+
+Object obj93_Sleeping_mummy "Sleeping mummy"	! 93 / 0x5d
+  with	prop9 [0 0],
+	prop10 [0 21],
+  has	;
+
+Object obj94__ "."	! 94 / 0x5e
+  with	prop9 [0 0],
+	prop10 [0 23],
+  has	;
+
+Object obj95_Wet_tanna_leaves "Wet tanna leaves"	! 95 / 0x5f
+  with	prop1 'lea',
+	prop9 [0 0],
+	prop10 [0 24],
+  has	;
+
+Object obj96_Entrance_to_an_alcove "Entrance to an alcove"	! 96 / 0x60
+  with	prop9 [0 0],
+	prop10 [0 25],
+  has	;
+
+Object obj97_Open_door "Open door"	! 97 / 0x61
+  with	prop9 [0 0],
+	prop10 [0 27],
+  has	;
+
+Object obj98___GOLD_COIN__ "* GOLD COIN *"	! 98 / 0x62
+  with	prop1 'coi',
+	prop9 [0 0],
+	prop10 [0 28],
+  has	attrib32;
+
+Object obj99_Passageway_behind_fireplace "Passageway behind fireplace"	! 99 / 0x63
+  with	prop9 [0 0],
+	prop10 [0 2b],
+  has	;
+
+Object obj100_Open_treasure_coffer "Open treasure coffer"	! 100 / 0x64
+  with	prop9 [0 0],
+	prop10 [0 2c],
+  has	;
+
+Object obj101_ITEM46 "ITEM46"	! 101 / 0x65
+  with	prop9 [0 0],
+	prop10 [0 2e],
+  has	;
+
+Object obj102___GOLD_TEETH__ "* GOLD TEETH *"	! 102 / 0x66
+  with	prop1 'tee',
+	prop9 [0 0],
+	prop10 [0 32],
+  has	attrib32;
+
+Object obj103_Iron_glove "Iron glove"	! 103 / 0x67
+  with	prop1 'glo',
+	prop9 [0 0],
+	prop10 [0 33],
+  has	;
+
+Object obj104_ITEM57 "ITEM57"	! 104 / 0x68
+  with	prop9 [0 0],
+	prop10 [0 39],
+  has	;
+
+Object obj105_Ladder "Ladder"	! 105 / 0x69
+  with	prop9 [0 0],
+	prop10 [0 3a],
+  has	;
+
+Object obj106_Glowing_skeleton "Glowing skeleton"	! 106 / 0x6a
+  with	prop9 [0 0],
+	prop10 [0 3b],
+  has	;
+
+Object obj107_ITEM61 "ITEM61"	! 107 / 0x6b
+  with	prop9 [0 0],
+	prop10 [0 3d],
+  has	;
+
+Object obj108_ITEM62 "ITEM62"	! 108 / 0x6c
+  with	prop9 [0 0],
+	prop10 [0 3e],
+  has	;
+
+Object obj109___BLACK_PEARL__ "* BLACK PEARL *"	! 109 / 0x6d
+  with	prop1 'pea',
+	prop9 [0 0],
+	prop10 [0 40],
+  has	attrib32;
+
+Object obj110___DIAMOND_NECKLACE__ "* DIAMOND NECKLACE *"	! 110 / 0x6e
+  with	prop1 'nec',
+	prop9 [0 0],
+	prop10 [0 44],
+  has	attrib32;
+
+Object obj111_Satisfied_rats "Satisfied rats"	! 111 / 0x6f
+  with	prop1 'rat',
+	prop9 [0 0],
+	prop10 [0 45],
+  has	;
+
+Object obj112_ITEM70 "ITEM70"	! 112 / 0x70
+  with	prop9 [0 0],
+	prop10 [0 46],
+  has	;
+
+Object obj113_ITEM72 "ITEM72"	! 113 / 0x71
+  with	prop9 [0 0],
+	prop10 [0 48],
+  has	;
+
+Object obj114_Hissing_cobra "Hissing cobra"	! 114 / 0x72
+  with	prop9 [0 0],
+	prop10 [0 49],
+  has	;
+
+Object obj115___GOLD_NECKLACE__ "* GOLD NECKLACE *"	! 115 / 0x73
+  with	prop1 'nec',
+	prop9 [0 0],
+	prop10 [0 4a],
+  has	attrib32;
+
+Object obj116_Passageway "Passageway"	! 116 / 0x74
+  with	prop9 [0 0],
+	prop10 [0 4b],
+  has	;
+
+Object obj117_Open_portal "Open portal"	! 117 / 0x75
+  with	prop9 [0 0],
+	prop10 [0 4f],
+  has	;
+
+Object obj118_Purple_Worm "Purple Worm"	! 118 / 0x76
+  with	prop9 [0 0],
+	prop10 [0 50],
+  has	;
+
+Object obj119___GOLD_PIN__ "* GOLD PIN *"	! 119 / 0x77
+  with	prop1 'pin',
+	prop9 [0 0],
+	prop10 [0 51],
+  has	attrib32;
+
+Object obj120___JADE_CARVING__ "* JADE CARVING *"	! 120 / 0x78
+  with	prop1 'car',
+	prop9 [0 0],
+	prop10 [0 52],
+  has	attrib32;
+
+Object obj121_Rope_hanging_from_ceiling "Rope hanging from ceiling"	! 121 / 0x79
+  with	prop9 [0 0],
+	prop10 [0 55],
+  has	;
+
+Object obj122____RUBY__ " * RUBY *"	! 122 / 0x7a
+  with	prop1 'rub',
+	prop9 [0 0],
+	prop10 [0 5a],
+  has	;
+
+Object obj123_Spiral_Staircase "Spiral Staircase"	! 123 / 0x7b
+  with	prop9 [0 0],
+	prop10 [0 5c],
+  has	;
+
+Object obj124___PLATINUM_CROWN__ "* PLATINUM CROWN *"	! 124 / 0x7c
+  with	prop1 'cro',
+	prop9 [0 0],
+	prop10 [0 5d],
+  has	attrib32;
+
+Object obj125_Standing_iron_statue "Standing iron statue"	! 125 / 0x7d
+  with	prop9 [0 0],
+	prop10 [0 5e],
+  has	;
+
+Object obj126_Iron_Statue__slowly_advancing_____ "Iron Statue, slowly advancing. . ."	! 126 / 0x7e
+  with	prop9 [0 0],
+	prop10 [0 5f],
+  has	;
+
+Object obj127_Pile_of_Melted_iron "Pile of Melted iron"	! 127 / 0x7f
+  with	prop9 [0 0],
+	prop10 [0 60],
+  has	;
+
+Object obj128___EMERALD_BRACELET__ "* EMERALD BRACELET *"	! 128 / 0x80
+  with	prop1 'bra',
+	prop9 [0 0],
+	prop10 [0 61],
+  has	attrib32;
+
+Object obj129_Open_window "Open window"	! 129 / 0x81
+  with	prop9 [0 0],
+	prop10 [0 62],
+  has	;
+
+Object obj130_flags "flags"	! 130 / 0x82
+  has	;
+
+! Constants
+
+! Globals
+
+Global global0 = 6305["TRS-80"?];
+Global global1 = 4[obj4_Room_3?];
+Global global2 = 74[obj74_Room_27?];
+Global global3 = 42[obj42_Room_15?];
+Global global4 = 13[obj13_Closed_sarcophagus?];
+Global global5 = 8[obj8_Stone?];
+Global global6 = 3[obj3_Room_2?];
+Global global7 = 555[?];
+Global global8 = 5407[?];
+Global global9 = 5488[?];
+Global global10;
+Global global11;
+Global global12;
+Global global13 = 1[?];
+Global global14;
+Global global15;
+Global global16;
+Global global17 = 5709[?];
+Global global18 = 65535[?];
+Global global19;
+Global global20;
+Global global21;
+Global global22;
+Global global23 = 6320["I don't ..."?];
+Global global24 = 6326["I can't ..."?];
+Global global25;
+Global global26;
+Global global27;
+Global global28;
+Global global29;
+Global global30;
+Global global31;
+Global global32;
+Global global33;
+Global global34;
+Global global35;
+Global global36;
+Global global37;
+Global global38;
+Global global39;
+Global global40;
+Global global41;
+Global global42;
+Global global43;
+Global global44;
+Global global45;
+Global global46;
+Global global47;
+Global global48;
+Global global49;
+Global global50;
+Global global51;
+Global global52;
+Global global53;
+Global global54;
+Global global55;
+Global global56;
+Global global57;
+Global global58;
+Global global59;
+Global global60;
+Global global61;
+Global global62;
+Global global63;
+Global global64;
+Global global65;
+Global global66;
+Global global67;
+Global global68;
+Global global69;
+Global global70;
+Global global71;
+Global global72;
+Global global73;
+Global global74;
+Global global75;
+Global global76;
+Global global77;
+Global global78;
+Global global79;
+Global global80;
+Global global81;
+Global global82;
+Global global83;
+Global global84;
+Global global85;
+Global global86;
+Global global87;
+Global global88;
+Global global89;
+Global global90;
+Global global91;
+Global global92;
+Global global93;
+Global global94;
+Global global95;
+Global global96;
+Global global97;
+Global global98;
+Global global99;
+Global global100;
+Global global101;
+Global global102;
+Global global103;
+Global global104;
+Global global105;
+Global global106;
+Global global107;
+Global global108;
+Global global109;
+Global global110;
+Global global111;
+Global global112;
+Global global113;
+Global global114;
+Global global115;
+Global global116;
+Global global117;
+Global global118;
+Global global119;
+Global global120;
+Global global121;
+Global global122;
+Global global123;
+Global global124;
+Global global125;
+Global global126;
+Global global127;
+Global global128;
+Global global129;
+Global global130;
+Global global131;
+Global global132;
+Global global133;
+Global global134;
+Global global135;
+Global global136;
+Global global137;
+Global global138;
+Global global139;
+Global global140;
+Global global141;
+Global global142;
+Global global143;
+Global global144;
+Global global145;
+Global global146;
+Global global147;
+Global global148;
+Global global149;
+Global global150;
+Global global151;
+Global global152;
+Global global153;
+Global global154;
+Global global155;
+Global global156;
+Global global157;
+Global global158;
+Global global159;
+Global global160;
+Global global161;
+Global global162;
+Global global163;
+Global global164;
+Global global165;
+Global global166;
+Global global167;
+Global global168;
+Global global169;
+Global global170;
+Global global171;
+Global global172;
+Global global173;
+Global global174;
+Global global175;
+Global global176;
+Global global177;
+Global global178;
+Global global179;
+Global global180;
+Global global181;
+Global global182;
+Global global183;
+Global global184;
+Global global185;
+Global global186;
+Global global187;
+Global global188;
+Global global189;
+Global global190;
+Global global191;
+Global global192;
+Global global193;
+Global global194;
+Global global195;
+Global global196;
+Global global197;
+Global global198;
+Global global199;
+Global global200;
+Global global201;
+Global global202;
+Global global203;
+Global global204;
+Global global205;
+Global global206;
+Global global207;
+Global global208;
+Global global209;
+Global global210;
+Global global211;
+Global global212;
+Global global213;
+Global global214;
+Global global215;
+Global global216;
+Global global217;
+Global global218;
+Global global219;
+Global global220;
+Global global221;
+Global global222;
+Global global223;
+Global global224;
+Global global225;
+Global global226;
+Global global227;
+Global global228;
+Global global229;
+Global global230;
+Global global231;
+Global global232;
+Global global233;
+Global global234;
+Global global235;
+Global global236;
+Global global237;
+Global global238;
+Global global239;
+
+! Arrays
+
+! Routines
+
+[ routine10676 ;	! 10676 / 0x29b4
+    routine10688[[29b6]]();
+    routine10740[[29b9]]();
+    @quit;
+];
+
+! Code appears to end here. If the strings below look like
+! garbage, try adding this directive to the symbol file:
+!   FalseEnd	0x29b4	1
+
+! 10684 (0x29bc): "g  "
+! 10688 (0x29c0): " ck    ask    b   as   b   t"
+! 10704 (0x29d0): "   sor"
+! 10708 (0x29d4): "cc    h c   cv k sk           t"
+! 10728 (0x29e8): "0"
+! 10732 (0x29ec): "vz"
+! 10736 (0x29f0): " dyg  "
+! 10740 (0x29f4): " jhjzzzzn"
+! 10748 (0x29fc): "aep   s"
+! 10752 (0x2a00): "azn"
+! 10756 (0x2a04): "zjl"
+! 10760 (0x2a08): "nsz"
+! 10764 (0x2a0c): "   xcv   ps  k   jz e   s"
+! 10780 (0x2a1c): "  i"
+! 10784 (0x2a20): "c   zs"
+! 10788 (0x2a24): "zu"
+! 10792 (0x2a28): "jzq   s"
+! 10796 (0x2a2c): "ayj"
+! 10800 (0x2a30): "pc     as             zs "
+! 10816 (0x2a40): " g    )t pjz jzkjz    xrl"
+! 10832 (0x2a50): "zs          b e             c   ciwp"
+! 10852 (0x2a64): " ggzzj"
+! 10856 (0x2a68): "yc"
+! 10860 (0x2a6c): "a/a\yc"
+! 10868 (0x2a74): "a(a)yc"
+! 10876 (0x2a7c): "aa   aYc"
+! 10884 (0x2a84): "aabaacyc"
+! 10892 (0x2a8c): "aagaahxnz"
+! 10900 (0x2a94): "vdz"
+! 10904 (0x2a98): "fjz i   zz"
+! 10912 (0x2aa0): "  c   f"
+! 10916 (0x2aa4): "owg"
+! 10920 (0x2aa8): "kgr"
+! 10924 (0x2aac): "ok    j        "
+! 10932 (0x2ab4): "da   zz"
+! 10936 (0x2ab8): "su    c   e"
+! 10944 (0x2ac0): "  rkgr"
+! 10948 (0x2ac4): "zvd"
+! 10952 (0x2ac8): "   j   j    "
+! 10960 (0x2ad0): ")z"
+! 10964 (0x2ad4): "     og"
+! 10968 (0x2ad8): "zsx"
+! 10972 (0x2adc): " mpasq            zs "
+! 10984 (0x2ae8): "krz g    )t pjz jzkjz    xrl"
+! 11004 (0x2afc): "fc"
+! 11008 (0x2b00): " .  "
+! 11012 (0x2b04): "fc"
+! 11016 (0x2b08): "g  "
+! 11020 (0x2b0c): " hy jzzu"
+! 11028 (0x2b14): "kpm"
+! 11032 (0x2b18): "store failed^Press RETURN to continue..."
+! 11068 (0x2b3c): " c     "
+! 11072 (0x2b40): " jlzs   kl"
+! 11080 (0x2b48): "frb   lzs gko"
+! 11088 (0x2b50): "tgw"
+! 11092 (0x2b54): "aVgkr"
+! 11096 (0x2b58): "    q "
+! 11100 (0x2b5c): "hsuy   qdd"
+! 11108 (0x2b64): "  l"
+! 11112 (0x2b68): "/c"
+! 11116 (0x2b6c): "         ddcbtu"
+! 11124 (0x2b74): "deg"
+! 11128 (0x2b78): "y   "
+! 11132 (0x2b7c): "dgh"
+! 11136 (0x2b80): "gkq"
+! 11140 (0x2b84): "uc   kz   vmmjgfs   mpduelB   fc    h"
+! 11164 (0x2b9c): "kbgdhm"
+! 11168 (0x2ba0): "1502"
+! 11176 (0x2ba8): "lgwdxm"
+! 11180 (0x2bac): "The original version was probably written by either Scott Adams or Brian Howarth, in the the ~Scott Adams format~. If written by Scott Adams, it is still under copyright and this translated version can only be used by the legal owner of the original adventure; it must not be given away or distributed on the Net.^^"
+! 11408 (0x2c90): "x      ehc       t?v   mhc   ek "
+! 11428 (0x2ca4): "t   "
+! 11432 (0x2ca8): "       mwkv"
+! 11440 (0x2cb0): "adoou"
+! 11444 (0x2cb4): "      m"
+! 11448 (0x2cb8): "dne"
+! 11452 (0x2cbc): "dnhmc "
+! 11456 (0x2cc0): "   l"
+! 11460 (0x2cc4): "jkqs   h "
+! 11468 (0x2ccc): "ek   dc   d   fm"
+! 11480 (0x2cd8): "a   "
+! 11484 (0x2cdc): "   d"
+! 11488 (0x2ce0): "   hc     k"
+! 11496 (0x2ce8): "s l   gs"
+! 11504 (0x2cf0): "b   adc"
+! 11508 (0x2cf4): "adpk   olc"
+! 11516 (0x2cfc): "qte"
+! 11520 (0x2d00): "   niclxtdlecdwo"
+! 11532 (0x2d0c): "Thanks to Graham Nelson, for creating Inform, and for documenting the Z-machine.^^"
+! 11596 (0x2d4c): "fcuw   aek   mtlo"
+! 11608 (0x2d58): "Te"
+! 11612 (0x2d5c): "s uuc    u"
+! 11620 (0x2d64): "c m"
+! 11624 (0x2d68): "   g   ms   "
+! 11632 (0x2d70): "q   otk"
+! 11636 (0x2d74): "   n    "
+! 11640 (0x2d78): "~"
+! 11644 (0x2d7c): "tmq"
+! 11648 (0x2d80): "    "
+! 11652 (0x2d84): "ek"
+! 11656 (0x2d88): "ps   mh"
+! 11660 (0x2d8c): "h      nod   c   mukqlgwdxm"
+! 11676 (0x2d9c): "[Please press SPACE.]^"
+! 11700 (0x2db4): "xnz"
+! 11704 (0x2db8): "g  "
+! 11708 (0x2dbc): " jlzs   kl"
+! 11716 (0x2dc4): "lqhiblzs gko"
+! 11724 (0x2dcc): "tcw"
+! 11728 (0x2dd0): "okuuf    my   ac   s"
+! 11740 (0x2ddc): "   jemh    b   fc   tc"
+! 11752 (0x2de8): "   afm    "
+! 11760 (0x2df0): "   c   s   nfdc   mgen   h"
+! 11776 (0x2e00): "Mc"
+! 11780 (0x2e04): "  uuk "
+! 11784 (0x2e08): "ofk"
+! 11788 (0x2e0c): "amhemzaem   r"
+! 11796 (0x2e14): "c l"
+! 11800 (0x2e18): "Cm"
+! 11804 (0x2e1c): "   sakl"
+! 11808 (0x2e20): "l   "
+! 11812 (0x2e24): "a k"
+! 11816 (0x2e28): "    "
+! 11820 (0x2e2c): "l   "
+! 11824 (0x2e30): "s n     m"
+! 11832 (0x2e38): "gs "
+! 11836 (0x2e3c): "   sSn"
+! 11840 (0x2e40): "t   Sn"
+! 11844 (0x2e44): "d   'n"
+! 11848 (0x2e48): "lec"
+! 11852 (0x2e4c): "thm"
+! 11856 (0x2e50): " this particular adventure, you may abbreviate any word by typing its first "
+! 11908 (0x2e84): "tpz"
+! 11912 (0x2e88): " letters, and directions by typing one letter.^^"
+! 11948 (0x2eac): "gkn"
+! 11952 (0x2eb0): "uk "
+! 11956 (0x2eb4): "a   mk   nLfl"
+! 11964 (0x2ebc): "   lmhi  qst"
+! 11972 (0x2ec4): "ocs"
+! 11976 (0x2ec8): "gko"
+! 11980 (0x2ecc): "ico"
+! 11984 (0x2ed0): "   xpf"
+! 11988 (0x2ed4): "ic"
+! 11992 (0x2ed8): "y    s "
+! 11996 (0x2edc): "k   "
+! 12000 (0x2ee0): "aewov"
+! 12004 (0x2ee4): "~uicq"
+! 12008 (0x2ee8): "s rdcsd   y   vmr"
+! 12020 (0x2ef4): "      Dk"
+! 12028 (0x2efc): "   xpf"
+! 12032 (0x2f00): "ic"
+! 12036 (0x2f04): "y    tg"
+! 12040 (0x2f08): "adpk   tmj"
+! 12048 (0x2f10): "pf"
+! 12052 (0x2f14): "dhm"
+! 12056 (0x2f18): "b"
+! 12060 (0x2f1c): "kng"
+! 12064 (0x2f20): "ln      un"
+! 12072 (0x2f28): "   o   l"
+! 12076 (0x2f2c): "   cgko"
+! 12080 (0x2f30): "kro"
+! 12084 (0x2f34): "zs   hk jqzs   e   ft  b"
+! 12100 (0x2f44): "qc  xkgc "
+! 12108 (0x2f4c): "   j   jnns   ep   g"
+! 12120 (0x2f58): "   n"
+! 12124 (0x2f5c): "zhv"
+! 12128 (0x2f60): " c   jn"
+! 12132 (0x2f64): "ns   ep   r"
+! 12140 (0x2f6c): "   xwuj"
+! 12144 (0x2f70): " stpgj   hwtz"
+! 12152 (0x2f78): "zzx"
+! 12156 (0x2f7c): "   o"
+! 12160 (0x2f80): "c n   o   m"
+! 12168 (0x2f88): "   s   Q"
+! 12176 (0x2f90): "   b      k      z"
+! 12188 (0x2f9c): "'t"
+! 12192 (0x2fa0): "yxd"
+! 12196 (0x2fa4): " c nst c kc    lukac            o t    w s  b          sa    o   "
+! 12236 (0x2fcc): " s scb   abnns   epo   "
+! 12252 (0x2fdc): " s qlj"
+! 12256 (0x2fe0): "   r J   x   z"
+! 12264 (0x2fe8): "zP wgzyr"
+! 12272 (0x2ff0): " og"
+! 12276 (0x2ff4): "nst c       k mc  c kc       j      bz"
+! 12300 (0x300c): " ka                   c   u G    nst sukcu     kaka                 kcc   c.I don't know what a ~"
+! 12364 (0x304c): "oxm"
+! 12368 (0x3050): "is.^"
+! 12372 (0x3054): "   z"
+! 12376 (0x3058): "fsibcuaqtfss   u"
+! 12388 (0x3064): "               "
+! 12396 (0x306c): "8r"
+! 12400 (0x3070): "  dxmTHE LIGHT HAS RUN OUT! "
+! 12432 (0x3090): "msz"
+! 12436 (0x3094): "G    kkra  bxmThe light will run out in "
+! 12464 (0x30b0): "tpz"
+! 12468 (0x30b4): " turns. "
+! 12476 (0x30bc): "    hjz     s     vs  sO    ,tj"
+! 12496 (0x30d0): "cyq   8cc      js"
+! 12508 (0x30dc): "zwg"
+! 12512 (0x30e0): "    "
+! 12516 (0x30e4): "ns   eps)"
+! 12524 (0x30ec): "   g"
+! 12528 (0x30f0): "zni"
+! 12532 (0x30f4): " znjzzzij"
+! 12540 (0x30fc): "pc          t"
+! 12548 (0x3104): "p z"
+! 12552 (0x3108): " k   sz"
+! 12556 (0x310c): "aep     pb"
+! 12564 (0x3114): " e   c      xk"
+! 12572 (0x311c): "   po    b   sonk "
+! 12584 (0x3128): "'onk"
+! 12588 (0x312c): " bBsonk "
+! 12596 (0x3134): "bsonk"
+! 12600 (0x3138): "     k  b   sonk "
+! 12612 (0x3144): "      ej"
+! 12616 (0x3148): " spCh"
+! 12620 (0x314c): "      )"
+! 12624 (0x3150): "   p   kfsonk "
+! 12632 (0x3158): " e   k      c e   d   ku)"
+! 12648 (0x3168): "   p   kfsonk "
+! 12656 (0x3170): " ggzzj"
+! 12660 (0x3174): "kc        g    tk g E   dt  g"
+! 12680 (0x3188): "   p      ss"
+! 12688 (0x3190): "fcb.   d  ku)"
+! 12700 (0x319c): "   kfsonk "
+! 12708 (0x31a4): "   dkc    g    c     "
+! 12720 (0x31b0): "ksb      cjsa"
+! 12728 (0x31b8): "0a"
+! 12732 (0x31bc): "a   gq   cjs"
+! 12740 (0x31c4): "0"
+! 12744 (0x31c8): " s  jcjs"
+! 12752 (0x31d0): "o   "
+! 12756 (0x31d4): "     bz"
+! 12760 (0x31d8): "nzc"
+! 12764 (0x31dc): "0a"
+! 12768 (0x31e0): "a  c         b   s"
+! 12780 (0x31ec): "kgj"
+! 12784 (0x31f0): "C "
+! 12788 (0x31f4): "ns   j   c"
+! 12796 (0x31fc): "rmp      b   ss"
+! 12804 (0x3204): " c es"
+! 12808 (0x3208): " pmI don't know how to ~"
+! 12828 (0x321c): "4l c    z"
+! 12836 (0x3224): "     pb"
+! 12840 (0x3228): " c   hm~.^"
+! 12848 (0x3230): "g  "
+! 12852 (0x3234): "   tcshesla   sclcw    h k   d   gc   p f   d    c"
+! 12880 (0x3250): "      dhck    z"
+! 12888 (0x3258): "a      o z"
+! 12896 (0x3260): "   sc      h k     "
+! 12908 (0x326c): "hakbssoc                  sh    sk s bqjfssoc ajfsrnc         c"
+! 12948 (0x3294): "      gg  b0"
+! 12956 (0x329c): "   z"
+! 12960 (0x32a0): "bssoc          bx   socrncKc       ufsgfs"
+! 12988 (0x32bc): "   hdc    g"
+! 12996 (0x32c4): "ntAepsgr"
+! 13004 (0x32cc): " bnvs       c     gkl"
+! 13016 (0x32d8): "qcr"
+! 13020 (0x32dc): "h      uw o"
+! 13028 (0x32e4): "   s   utf      moqlgg ?    "
+! 13044 (0x32f4): "   lCc 5 J   sgkm"
+! 13056 (0x3300): "   h"
+! 13060 (0x3304): "    fr"
+! 13064 (0x3308): "dch"
+! 13068 (0x330c): "kk   k aakft   c"
+! 13080 (0x3318): "C           "
+! 13088 (0x3320): "0"
+! 13092 (0x3324): "   z"
+! 13096 (0x3328): "       "
+! 13100 (0x332c): "gr "
+! 13104 (0x3330): ": "
+! 13108 (0x3334): "     ka    o   "
+! 13116 (0x333c): "cht k   cl s kc      jft   s"
+! 13136 (0x3350): " . "
+! 13140 (0x3354): "0"
+! 13144 (0x3358): "rm"
+! 13148 (0x335c): "  dgkm"
+! 13152 (0x3360): "t   Wl"
+! 13156 (0x3364): "lgj   sgkn"
+! 13164 (0x336c): "lu"
+! 13168 (0x3370): "emf   o   kbssoc           egkm"
+! 13188 (0x3384): "lgg  z      f   k  r"
+! 13200 (0x3390): "ks   c    m, "
+! 13208 (0x3398): "o   "
+! 13212 (0x339c): " k ek "
+! 13216 (0x33a0): "0"
+! 13220 (0x33a4): "uJ"
+! 13224 (0x33a8): "wtz"
+! 13228 (0x33ac): "kda     hzs       daupz"
+! 13244 (0x33bc): "zs   sh"
+! 13248 (0x33c0): "7jbta"
+! 13252 (0x33c4): " eocc   ekcc    yds"
+! 13264 (0x33d0): "      vz"
+! 13268 (0x33d4): " bmzs   uj"
+! 13276 (0x33dc): "phk      njzzzep"
+! 13288 (0x33e8): "   jd   eod    n          1"
+! 13304 (0x33f8): "sdf"
+! 13308 (0x33fc): "dc                 kc c    q wgzzo"
+! 13328 (0x3410): "xc   k'df"
+! 13336 (0x3418): "dc:c   c pc  c       c   bz"
+! 13352 (0x3428): "mm"
+! 13356 (0x342c): "  k"
+! 13360 (0x3430): "sdf"
+! 13364 (0x3434): "dc   df"
+! 13368 (0x3438): "cgbdc   t   x      p   lSgr"
+! 13388 (0x344c): " bnvs   8    sh c   s   g bbjbs"
+! 13408 (0x3460): " ijft   c   qjft   s"
+! 13420 (0x346c): " zyds"
+! 13424 (0x3470): " s   c"
+! 13428 (0x3474): "   z"
+! 13432 (0x3478): "c       bf"
+! 13440 (0x3480): "wtz"
+! 13444 (0x3484): "ish"
+! 13448 (0x3488): "ss   g aijft   c   qjft   s"
+! 13464 (0x3498): " zyds"
+! 13468 (0x349c): " s   wp"
+! 13472 (0x34a0): " ggzza"
+! 13476 (0x34a4): "wvz"
+! 13480 (0x34a8): "zs     "
+! 13484 (0x34ac): "      c   m"
+! 13492 (0x34b4): "    "
+! 13496 (0x34b8): " cOc   kaks c dep          k       e          opc c w      spf"
+! 13536 (0x34e0): " Q   gzyu"
+! 13544 (0x34e8): " k wp      s   og"
+! 13556 (0x34f4): "p  c spb"
+! 13564 (0x34fc): " b   s"
+! 13568 (0x3500): "  4  "
+! 13572 (0x3504): " pmI'm carrying: "
+! 13588 (0x3514): "   f csoikbssoc  e   c   ggkm"
+! 13608 (0x3528): "fqh"
+! 13612 (0x352c): "  z      f   k    r"
+! 13624 (0x3538): " c    m, "
+! 13632 (0x3540): "a    k ek "
+! 13640 (0x3548): "   z"
+! 13644 (0x354c): " "
+! 13648 (0x3550): "      c   s"
+! 13656 (0x3558): " s   bec"
+! 13664 (0x3560): "   i k   c      d gg  \k   8    chzs "
+! 13688 (0x3578): "K"
+! 13692 (0x357c): "7z"
+! 13696 (0x3580): " )yvo"
+! 13700 (0x3584): " bz      p  s"
+! 13708 (0x358c): "gkl"
+! 13712 (0x3590): "k   puz"
+! 13716 (0x3594): "nmh"
+! 13720 (0x3598): " "
+! 13724 (0x359c): "dic"
+! 13728 (0x35a0): "  ,k   hk    e   k   egkn"
+! 13744 (0x35b0): "   v"
+! 13748 (0x35b4): "   ls   "
+! 13752 (0x35b8): "   jCu e   c   e"
+! 13764 (0x35c4): "   x gg    s v"
+! 13772 (0x35cc): "   j cu e   c   u"
+! 13784 (0x35d8): "lf"
+! 13788 (0x35dc): "htcmfs"
+! 13792 (0x35e0): "   uxvt"
+! 13796 (0x35e4): "otk"
+! 13800 (0x35e8): "h "
+! 13804 (0x35ec): "  vgkl"
+! 13808 (0x35f0): "qcr"
+! 13812 (0x35f4): "unu"
+! 13816 (0x35f8): "Ns2n   w"
+! 13824 (0x3600): "   kadoqgq"
+! 13832 (0x3608): " e   k   egkn"
+! 13840 (0x3610): "   v"
+! 13844 (0x3614): "   ls v"
+! 13848 (0x3618): "   j cu e   c   qgkl"
+! 13860 (0x3624): "lf"
+! 13864 (0x3628): "ac"
+! 13868 (0x362c): "zlu"
+! 13872 (0x3630): "qgq"
+! 13876 (0x3634): "  \k   hk    x   c   m"
+! 13892 (0x3644): "  o"
+! 13896 (0x3648): " c sc  k    f x   s   og"
+! 13912 (0x3658): "gc "
+! 13916 (0x365c): " wc   p vlC   m   s   xgkl"
+! 13932 (0x366c): "qcr"
+! 13936 (0x3670): "dmh   y"
+! 13940 (0x3674): "an "
+! 13944 (0x3678): "Mnuk   s"
+! 13952 (0x3680): "   uwQ"
+! 13956 (0x3684): "k    k     kc    b.I can't go in that direction. "
+! 13992 (0x36a8): "d.I fell down and brok my neck! "
+! 14016 (0x36c0): "n z"
+! 14020 (0x36c4): "   hCm   h"
+! 14028 (0x36cc): "  3cl pk    g       iebs  kj"
+! 14048 (0x36e0): "kgv"
+! 14052 (0x36e4): "C  xkgc "
+! 14060 (0x36ec): " hy bz dhzs"
+! 14068 (0x36f4): "kjz   .Save failed. "
+! 14084 (0x3704): "    "
+! 14088 (0x3708): "zs"
+! 14092 (0x370c): "gkm"
+! 14096 (0x3710): "go "
+! 14100 (0x3714): "  ikjz k    hjzzzsh"
+! 14112 (0x3720): "cs g  "
+! 14116 (0x3724): " qjfsqgc   r   sqgc   dhC     "
+! 14136 (0x3738): " qjfsqjc   r   sqjc   thbs     "
+! 14156 (0x374c): " qobspsc"
+! 14164 (0x3754): "bspsc "
+! 14168 (0x3758): " ryds"
+! 14172 (0x375c): " k     "
+! 14176 (0x3760): " J   xgkn"
+! 14184 (0x3768): "  titeyfeuk"
+! 14192 (0x3770): "q "
+! 14196 (0x3774): "tec"
+! 14200 (0x3778): "    "
+! 14204 (0x377c): "   j"
+! 14208 (0x3780): "    "
+! 14212 (0x3784): "fdv  titeyfeuk "
+! 14224 (0x3790): "owq"
+! 14228 (0x3794): "   i         "
+! 14236 (0x379c): "hxu"
+! 14240 (0x37a0): " x   s   m"
+! 14248 (0x37a8): "  k"
+! 14252 (0x37ac): "c     p h   s   og"
+! 14264 (0x37b8): "hqc c x      s       s   k   kl"
+! 14284 (0x37cc): "uk   emup"
+! 14292 (0x37d4): "js"
+! 14296 (0x37d8): "htcq   "
+! 14300 (0x37dc): "un "
+! 14304 (0x37e0): "dhm"
+! 14308 (0x37e4): " a scale from 0 to 100 that rates a "
+! 14336 (0x3800): "tpz"
+! 14340 (0x3804): ". "
+! 14344 (0x3808): "     mWell done."
+! 14356 (0x3814): "   h"
+! 14360 (0x3818): " ch c g  "
+! 14368 (0x3820): " iubsgjc   mn"
+! 14376 (0x3828): " c   ka jnns   epg  "
+! 14388 (0x3834): " bnzs   d  hmStart a transcript of "
+! 14412 (0x384c): "   s"
+! 14416 (0x3850): ".^"
+! 14420 (0x3854): "      8 .End of transcript.^"
+! 14444 (0x386c): "zzy"
+! 14448 (0x3870): " 8    dhzs"
+! 14456 (0x3878): "kgj"
+! 14460 (0x387c): "qs "
+! 14464 (0x3880): "ef   gj"
+! 14468 (0x3884): "zt"
+! 14472 (0x3888): "   fdh kgj"
+! 14480 (0x3890): "xk "
+! 14484 (0x3894): "eankgj"
+! 14488 (0x3898): "ztd"
+! 14492 (0x389c): "   fdaues"
+! 14500 (0x38a4): " e   k   wgkm"
+! 14508 (0x38ac): "gdc"
+! 14512 (0x38b0): "   vuk   k k   "
+! 14520 (0x38b8): "ptd"
+! 14524 (0x38bc): "S "
+! 14528 (0x38c0): "   c"
+! 14532 (0x38c4): "kcy     ufsh'y"
+! 14544 (0x38d0): "   u"
+! 14548 (0x38d4): "  n0"
+! 14552 (0x38d8): "kcl       g  d   llgj   hga"
+! 14568 (0x38e8): "   u"
+! 14572 (0x38ec): "    0"
+! 14576 (0x38f0): "Uq"
+! 14580 (0x38f4): "  l  "
+! 14584 (0x38f8): "    "
+! 14588 (0x38fc): "Cb  "
+! 14592 (0x3900): "    "
+! 14596 (0x3904): "Cg      wj   hga"
+! 14608 (0x3910): "dh     0"
+! 14616 (0x3918): "      l  "
+! 14624 (0x3920): "dm   cb  "
+! 14632 (0x3928): "bpmThe right key could help (maybe). "
+! 14660 (0x3944): "ga"
+! 14664 (0x3948): "dns  q0"
+! 14672 (0x3950): "      l  "
+! 14680 (0x3958): "   hCe   g"
+! 14688 (0x3960): "kgj"
+! 14692 (0x3964): "c  "
+! 14696 (0x3968): " e   ce  "
+! 14704 (0x3970): "b e ka"
+! 14708 (0x3974): "  "
+! 14712 (0x3978): ".Something won't fit. "
+! 14732 (0x398c): "   u"
+! 14736 (0x3990): "  t0"
+! 14740 (0x3994): "Us"
+! 14744 (0x3998): "  l  "
+! 14748 (0x399c): "    "
+! 14752 (0x39a0): "Cl   g"
+! 14756 (0x39a4): "   f"
+! 14760 (0x39a8): "ga"
+! 14764 (0x39ac): "dh     0"
+! 14772 (0x39b4): "       g  rSj"
+! 14780 (0x39bc): "      l  "
+! 14788 (0x39c4): "   hCb      wj   hga"
+! 14800 (0x39d0): "   u"
+! 14804 (0x39d4): "    0"
+! 14808 (0x39d8): "So"
+! 14812 (0x39dc): "  l  "
+! 14816 (0x39e0): "    "
+! 14820 (0x39e4): "s  sc G    g  pgkm"
+! 14832 (0x39f0): "qmero dhm"
+! 14840 (0x39f8): "'t let me "
+! 14848 (0x3a00): "ga"
+! 14852 (0x3a04): "dau  z0"
+! 14860 (0x3a0c): "      l  "
+! 14868 (0x3a14): "PmI can't reach it. "
+! 14884 (0x3a24): "ga"
+! 14888 (0x3a28): "dq   q0"
+! 14896 (0x3a30): "      l  "
+! 14904 (0x3a38): "   hDm   g"
+! 14912 (0x3a40): "kgj"
+! 14916 (0x3a44): "d  "
+! 14920 (0x3a48): " e   d  "
+! 14928 (0x3a50): "b e ke"
+! 14932 (0x3a54): "      "
+! 14936 (0x3a58): ".Oyster won't let me "
+! 14956 (0x3a6c): "   u"
+! 14960 (0x3a70): "    0"
+! 14964 (0x3a74): "kcld    g  w      o    g  oTa"
+! 14984 (0x3a88): "          "
+! 14992 (0x3a90): "Dc   g"
+! 14996 (0x3a94): "   k"
+! 15000 (0x3a98): "albo  bop e   dg  "
+! 15012 (0x3aa4): "    "
+! 15016 (0x3aa8): "ss sc G    g  d   lgJ   hga"
+! 15036 (0x3abc): "d5    0"
+! 15044 (0x3ac4): "f    g  xVn"
+! 15052 (0x3acc): "         "
+! 15060 (0x3ad4): "PmI see something. "
+! 15076 (0x3ae4): "ga"
+! 15080 (0x3ae8): "duk  y0"
+! 15088 (0x3af0): "g    g  oVo"
+! 15096 (0x3af8): "      l  "
+! 15104 (0x3b00): "   hDg   g"
+! 15112 (0x3b08): "kgj"
+! 15116 (0x3b0c): "a  "
+! 15120 (0x3b10): " gnhk sc G    g  ygkn"
+! 15136 (0x3b20): "~t   "
+! 15140 (0x3b24): "   k   "
+! 15144 (0x3b28): "am"
+! 15148 (0x3b2c): "oeo   ulnsukr"
+! 15156 (0x3b34): "tic"
+! 15160 (0x3b38): "kgj"
+! 15164 (0x3b3c): "a  "
+! 15168 (0x3b40): " gnxc sc G    g  tgkl"
+! 15184 (0x3b50): "    "
+! 15188 (0x3b54): "   "
+! 15192 (0x3b58): "    an"
+! 15196 (0x3b5c): "dik"
+! 15200 (0x3b60): "Cmga"
+! 15204 (0x3b64): "   u"
+! 15208 (0x3b68): "  y0"
+! 15212 (0x3b6c): "kclhw    g  oVt"
+! 15224 (0x3b78): "  l  "
+! 15228 (0x3b7c): "    "
+! 15232 (0x3b80): "Dv   g"
+! 15236 (0x3b84): "   k"
+! 15240 (0x3b88): "alay  bop e   dr  "
+! 15252 (0x3b94): "    "
+! 15256 (0x3b98): "yc sc G    g  d   liwj   hga"
+! 15276 (0x3bac): "dns    0"
+! 15284 (0x3bb4): "hw    g  xVt"
+! 15292 (0x3bbc): "         "
+! 15300 (0x3bc4): "PmI can't reach it. "
+! 15316 (0x3bd4): "ga"
+! 15320 (0x3bd8): "dwj  x0"
+! 15328 (0x3be0): "hw    g  ngkm"
+! 15336 (0x3be8): "fmvnl          gq"
+! 15348 (0x3bf4): "Cmga"
+! 15352 (0x3bf8): "   u"
+! 15356 (0x3bfc): "    0"
+! 15360 (0x3c00): "Tw"
+! 15364 (0x3c04): "  l  "
+! 15368 (0x3c08): "    "
+! 15372 (0x3c0c): "I hear a hollow laugh. . . "
+! 15396 (0x3c24): "   oj   gkn"
+! 15404 (0x3c2c): "a   ot   Kt   uumzlic"
+! 15420 (0x3c3c): "kgj"
+! 15424 (0x3c40): "jc kwp gnzc sc G    g    gkn"
+! 15444 (0x3c54): "a   ot   Kt   uumzlic"
+! 15460 (0x3c64): "I hear a hollow laugh. . . "
+! 15484 (0x3c7c): "   oznxfnvHkkgj"
+! 15496 (0x3c88): "mk "
+! 15500 (0x3c8c): " gnzk sc G    g  tgkl"
+! 15516 (0x3c9c): "s nacvipc   mwon't let me "
+! 15536 (0x3cb0): "   u"
+! 15540 (0x3cb4): "    0"
+! 15544 (0x3cb8): "Vv"
+! 15548 (0x3cbc): "  l  "
+! 15552 (0x3cc0): "    "
+! 15556 (0x3cc4): "zk kc      g  d   lkJ   hga"
+! 15576 (0x3cd8): "dau  y0"
+! 15584 (0x3ce0): "k    g  oW"
+! 15592 (0x3ce8): "      l  "
+! 15600 (0x3cf0): "   hE   sg"
+! 15608 (0x3cf8): "kgj"
+! 15612 (0x3cfc): "c  "
+! 15616 (0x3d00): " gnsc sc G    g  f   llxmOK "
+! 15636 (0x3d14): "ga"
+! 15640 (0x3d18): "dyi  i0"
+! 15648 (0x3d20): "k   "
+! 15652 (0x3d24): "agqk8kgj"
+! 15660 (0x3d2c): "jc kP e   dv  "
+! 15672 (0x3d38): "honj  kc      g    Vy"
+! 15688 (0x3d48): "     "
+! 15692 (0x3d4c): "    "
+! 15696 (0x3d50): "zc kc      g  pfnvHmI see something. "
+! 15724 (0x3d6c): "ga"
+! 15728 (0x3d70): "dV    0"
+! 15736 (0x3d78): "      l  "
+! 15744 (0x3d80): "N  sc C    g  d   laoj   hga"
+! 15764 (0x3d94): "   u"
+! 15768 (0x3d98): "  n0"
+! 15772 (0x3d9c): "kclG    g  d   lWj   hga"
+! 15788 (0x3dac): "   u"
+! 15792 (0x3db0): "  q0"
+! 15796 (0x3db4): "kcl       g  ggkl"
+! 15808 (0x3dc0): "osr"
+! 15812 (0x3dc4): "k8kgj"
+! 15816 (0x3dc8): "al0  "
+! 15820 (0x3dcc): "!p e   ce  "
+! 15828 (0x3dd4): "    "
+! 15832 (0x3dd8): "I can't. "
+! 15840 (0x3de0): "ga"
+! 15844 (0x3de4): "djc    0"
+! 15852 (0x3dec): "      l  "
+! 15860 (0x3df4): "cN  sc G    g  pgkm"
+! 15876 (0x3e04): "ro dhm"
+! 15880 (0x3e08): "won't let me "
+! 15892 (0x3e14): "   u"
+! 15896 (0x3e18): "    0"
+! 15900 (0x3e1c): "V "
+! 15904 (0x3e20): "  l  "
+! 15908 (0x3e24): "    "
+! 15912 (0x3e28): "  sc C    g  d   laoj   hga"
+! 15932 (0x3e3c): "duk  s0"
+! 15940 (0x3e44): "-    g  igkl"
+! 15948 (0x3e4c): "lf"
+! 15952 (0x3e50): "emx"
+! 15956 (0x3e54): "   kkc       heG  Fdb"
+! 15972 (0x3e64): " i   su"
+! 15976 (0x3e68): "ef      0"
+! 15984 (0x3e70): "          "
+! 15992 (0x3e78): "rgn8 sc G    g    ycr"
+! 16008 (0x3e88): ".z      ke k"
+! 16016 (0x3e90): "  "
+! 16020 (0x3e94): "kbt'hp   nke k"
+! 16032 (0x3ea0): "    "
+! 16036 (0x3ea4): "  sc G    g    ycr"
+! 16048 (0x3eb0): "   o         ke k"
+! 16060 (0x3ebc): "    "
+! 16064 (0x3ec0): "r  sc G    g  fycr"
+! 16076 (0x3ecc): "   orew      pkkgj"
+! 16088 (0x3ed8): "ss awp gnnk kc  g    g  igkm"
+! 16108 (0x3eec): "   t'hp   npkkgj"
+! 16120 (0x3ef8): "ss egp gnnk kc  g    g  wycr"
+! 16140 (0x3f0c): "nmhgkn"
+! 16144 (0x3f10): "fdca   ot   Kt   uumzlic"
+! 16160 (0x3f20): "   kkgj"
+! 16164 (0x3f24): "al2s P hmPour water? "
+! 16184 (0x3f38): " c   b"
+! 16188 (0x3f3c): "fdc"
+! 16192 (0x3f40): "   hdxk gp cf ko"
+! 16204 (0x3f4c): "k   "
+! 16208 (0x3f50): "aulm   "
+! 16212 (0x3f54): "a vq r"
+! 16216 (0x3f58): "c o"
+! 16220 (0x3f5c): "a l"
+! 16224 (0x3f60): "'l"
+! 16228 (0x3f64): "   sSl"
+! 16232 (0x3f68): "c nl   "
+! 16236 (0x3f6c): "       k"
+! 16240 (0x3f70): "l   "
+! 16244 (0x3f74): "   l"
+! 16248 (0x3f78): "   q"
+! 16252 (0x3f7c): "s dhk"
+! 16256 (0x3f80): "kc       heG  Fdb"
+! 16268 (0x3f8c): "g  "
+! 16272 (0x3f90): " i   su"
+! 16276 (0x3f94): "doe  f0"
+! 16284 (0x3f9c): "kcf kg"
+! 16288 (0x3fa0): "ga"
+! 16292 (0x3fa4): "ean    0"
+! 16300 (0x3fac): "       g    Sc"
+! 16308 (0x3fb4): "      l  "
+! 16316 (0x3fbc): "egnpc kc      g  yfmpHmThe sound of machinery. "
+! 16352 (0x3fe0): "   x   kkgj"
+! 16360 (0x3fe8): "ss bwp e   e  "
+! 16372 (0x3ff4): "4nnc kc  g    g  eaeh"
+! 16388 (0x4004): "   xnpkkgj"
+! 16396 (0x400c): "ss eP gn    sc G    g  vUh"
+! 16416 (0x4020): "          "
+! 16424 (0x4028): "No container. "
+! 16436 (0x4034): "ga"
+! 16440 (0x4038): "ef      0"
+! 16448 (0x4040): "      l  "
+! 16456 (0x4048): "bgnnk kc  g    g  mgkl"
+! 16472 (0x4058): "eles       oeGo "
+! 16484 (0x4064): "kgj"
+! 16488 (0x4068): "ss bwp e   c  "
+! 16500 (0x4074): "4nnc kc  g    g  eaeh"
+! 16516 (0x4084): "   xnpkkgj"
+! 16524 (0x408c): "   agp gn0 sc C    g  ggkl"
+! 16544 (0x40a0): "osr"
+! 16548 (0x40a4): "k8kgj"
+! 16552 (0x40a8): "ald   cop gn  sc G    g  pgkm"
+! 16572 (0x40bc): "qmero dhm"
+! 16580 (0x40c4): "'t let me "
+! 16588 (0x40cc): "ga"
+! 16592 (0x40d0): "dsc    0"
+! 16600 (0x40d8): "      l  "
+! 16608 (0x40e0): "f.Mummy "
+! 16616 (0x40e8): "gnm"
+! 16620 (0x40ec): "ac   nPc   mYou be weird. Cut that out. "
+! 16652 (0x410c): "   u"
+! 16656 (0x4110): "  t0"
+! 16660 (0x4114): "Sq"
+! 16664 (0x4118): "  l  "
+! 16668 (0x411c): "    "
+! 16672 (0x4120): "Too hot. "
+! 16680 (0x4128): "ga"
+! 16684 (0x412c): "dwa  r0"
+! 16692 (0x4134): "      l  "
+! 16700 (0x413c): "   t   ubshremga"
+! 16712 (0x4148): "eb    0"
+! 16720 (0x4150): "      l  "
+! 16728 (0x4158): "aNvk kc       g  hgkm"
+! 16744 (0x4168): "   ubshrd   a"
+! 16752 (0x4170): "   u"
+! 16756 (0x4174): "  u0"
+! 16760 (0x4178): "Sc"
+! 16764 (0x417c): "  l  "
+! 16768 (0x4180): "    "
+! 16772 (0x4184): "bshrccgkm"
+! 16780 (0x418c): "   kkgj"
+! 16784 (0x4190): "al-s cwp gnwk sc G    g  qgkl"
+! 16804 (0x41a4): " yto "
+! 16808 (0x41a8): "dhm"
+! 16812 (0x41ac): "acks! "
+! 16820 (0x41b4): "Pkkgj"
+! 16824 (0x41b8): "alSs "
+! 16828 (0x41bc): "fwp gnfk sc G    g    V"
+! 16844 (0x41cc): "         "
+! 16852 (0x41d4): ":mSomething falls out. "
+! 16872 (0x41e8): "Hkkgj"
+! 16876 (0x41ec): "alctc "
+! 16880 (0x41f0): "iP gncs sc G    g    Vi"
+! 16896 (0x4200): "         "
+! 16904 (0x4208): "caubshrd   km"
+! 16912 (0x4210): "    "
+! 16916 (0x4214): "I hear strange noises! "
+! 16936 (0x4228): "   u"
+! 16940 (0x422c): "  v0"
+! 16944 (0x4230): "Vd"
+! 16948 (0x4234): "  l  "
+! 16952 (0x4238): "    "
+! 16956 (0x423c): "It's stuck. "
+! 16968 (0x4248): "   u"
+! 16972 (0x424c): "    0"
+! 16976 (0x4250): "kclhw    g  xUi"
+! 16988 (0x425c): "      "
+! 16992 (0x4260): "    "
+! 16996 (0x4264): "Canteen is full. "
+! 17012 (0x4274): "   u"
+! 17016 (0x4278): "    0"
+! 17020 (0x427c): "kclhw    g    Uh"
+! 17032 (0x4288): "      "
+! 17036 (0x428c): "    "
+! 17040 (0x4290): "Liquid is acid. "
+! 17052 (0x429c): "gkl"
+! 17056 (0x42a0): "eles   q   "
+! 17064 (0x42a8): "qQkTnhkkgj"
+! 17072 (0x42b0): "aldss dgp e   dr  "
+! 17084 (0x42bc): "    "
+! 17088 (0x42c0): "nc kc  c    g  kgkm"
+! 17100 (0x42cc): "x       dluumwgo "
+! 17112 (0x42d8): "kgj"
+! 17116 (0x42dc): "    "
+! 17120 (0x42e0): " gn    sc G    g  igkl"
+! 17136 (0x42f0): "a    fdQk8kgj"
+! 17148 (0x42fc): "    igp gnyk sc G    g    Vx"
+! 17168 (0x4310): "  l  "
+! 17172 (0x4314): "    "
+! 17176 (0x4318): "bshrfuycr"
+! 17184 (0x4320): "zfygkn"
+! 17188 (0x4324): "fdca   ot   Kt   uumzlic"
+! 17204 (0x4334): "   kkgj"
+! 17208 (0x4338): "alc    igp gnyk sc G    g    Tw"
+! 17228 (0x434c): "      l  "
+! 17236 (0x4354): "ciubshrfuycr"
+! 17244 (0x435c): "   oj   gkn"
+! 17252 (0x4364): "a   ot   Kt   uumzlic"
+! 17268 (0x4374): "kgj"
+! 17272 (0x4378): "ls fgp gndk sc G    g    gkl"
+! 17292 (0x438c): "osr"
+! 17296 (0x4390): "fljc   dec   3n "
+! 17308 (0x439c): "    vlk"
+! 17312 (0x43a0): "   ahes8"
+! 17320 (0x43a8): "albls bgp gndk sc C    g  kgkl"
+! 17340 (0x43bc): "k   "
+! 17344 (0x43c0): "ac   lc      kkgj"
+! 17356 (0x43cc): "    aop gnyk sc G    g  hqkz"
+! 17376 (0x43e0): "ypmOK "
+! 17384 (0x43e8): "   u"
+! 17388 (0x43ec): "    0"
+! 17392 (0x43f0): "So"
+! 17396 (0x43f4): "  l      "
+! 17404 (0x43fc): "r  sc C    g  tV "
+! 17416 (0x4408): "         "
+! 17424 (0x4410): "   is l   p hmOK "
+! 17436 (0x441c): "ga"
+! 17440 (0x4420): "ec     0"
+! 17448 (0x4428): "      l  "
+! 17456 (0x4430): "5mMummy "
+! 17464 (0x4438): "gnm"
+! 17468 (0x443c): "ac   nPc   kkgj"
+! 17480 (0x4448): "p  gop hmPharoah's heart is red like yours, yet evil has darkened it! "
+! 17532 (0x447c): "   u"
+! 17536 (0x4480): "  w0"
+! 17540 (0x4484): "kclbo    g  mgkl"
+! 17552 (0x4490): "osr"
+! 17556 (0x4494): "ukt"
+! 17560 (0x4498): "qgq"
+! 17564 (0x449c): "kgj"
+! 17568 (0x44a0): "ss "
+! 17572 (0x44a4): " gnfk sc G    g  hqkz"
+! 17588 (0x44b4): "fpmOK "
+! 17596 (0x44bc): "   u"
+! 17600 (0x44c0): "    0"
+! 17604 (0x44c4): "Th"
+! 17608 (0x44c8): "  l  "
+! 17612 (0x44cc): "    "
+! 17616 (0x44d0): "I can't. "
+! 17624 (0x44d8): "gkn"
+! 17628 (0x44dc): "   ndic   kkgj"
+! 17636 (0x44e4): "ald   fop gn  sc C    g    Uw"
+! 17656 (0x44f8): "      l      "
+! 17664 (0x4500): "!ns  kc       g  fgkm"
+! 17680 (0x4510): "   i0   a"
+! 17688 (0x4518): "dqd  u0"
+! 17696 (0x4520): "      l  "
+! 17704 (0x4528): "   ubshrezgkm"
+! 17712 (0x4530): "    "
+! 17716 (0x4534): "kgj"
+! 17720 (0x4538): "qk "
+! 17724 (0x453c): " gnl  sc G    g  hqkz"
+! 17740 (0x454c): "l.OK "
+! 17748 (0x4554): " c   b"
+! 17752 (0x4558): "fdc"
+! 17756 (0x455c): "   j   eg  "
+! 17764 (0x4564): " i   su"
+! 17768 (0x4568): "eF    0"
+! 17776 (0x4570): "      l  "
+! 17784 (0x4578): "g.Sign: He who defiles the tombs of Egypt shall surely perish! "
+! 17832 (0x45a8): "   u"
+! 17836 (0x45ac): "    0"
+! 17840 (0x45b0): "kcliw    g    gkm"
+! 17852 (0x45bc): "ocr"
+! 17856 (0x45c0): "   e    k   oeAdpk ld   "
+! 17872 (0x45d0): "t   "
+! 17876 (0x45d4): "   ux   "
+! 17880 (0x45d8): "go "
+! 17884 (0x45dc): "kgj"
+! 17888 (0x45e0): "os "
+! 17892 (0x45e4): " gn    kc  g    n    sc G    g    kclek    g  ygkl"
+! 17924 (0x4604): "yn   tk"
+! 17928 (0x4608): "gk "
+! 17932 (0x460c): "yc "
+! 17936 (0x4610): "lmz    q   "
+! 17944 (0x4618): "go "
+! 17948 (0x461c): "kgj"
+! 17952 (0x4620): "tk iwp e   de  "
+! 17964 (0x462c): "ggn    kc  g    n    sc C    g  ygkl"
+! 17988 (0x4644): "yn   tk"
+! 17992 (0x4648): "gk "
+! 17996 (0x464c): "yc "
+! 18000 (0x4650): "lmz    q   "
+! 18008 (0x4658): "go "
+! 18012 (0x465c): "kgj"
+! 18016 (0x4660): "tk pP e   de  "
+! 18028 (0x466c): "mon    kc  g    n    sc G    g    gkm"
+! 18052 (0x4684): "   mIt says: `LEAVE *TREASURES* HERE!` "
+! 18100 (0x46b4): "ga"
+! 18104 (0x46b8): "ean    0"
+! 18112 (0x46c0): "          h"
+! 18120 (0x46c8): "      l  "
+! 18128 (0x46d0): "ju   de  "
+! 18136 (0x46d8): "hxmOK "
+! 18144 (0x46e0): "qc"
+! 18148 (0x46e4): "   o   ss md      n"
+! 18160 (0x46f0): "   seknd      k"
+! 18168 (0x46f8): "l   "
+! 18172 (0x46fc): "t   "
+! 18176 (0x4700): "kdc"
+! 18180 (0x4704): "   m"
+! 18184 (0x4708): "h o"
+! 18188 (0x470c): "   kkc       heG  Fdb"
+! 18204 (0x471c): " i   su"
+! 18208 (0x4720): "eO    0"
+! 18216 (0x4728): "      l  "
+! 18224 (0x4730): "exmCrash!!! "
+! 18236 (0x473c): "gkl"
+! 18240 (0x4740): "lmw         "
+! 18248 (0x4748): "Cvn   gk "
+! 18256 (0x4750): "go "
+! 18260 (0x4754): "'hp   qhkkgj"
+! 18268 (0x475c): "alc    agp gnyk kc  g    g  ggkl"
+! 18288 (0x4770): "k   "
+! 18292 (0x4774): "agqk8kgj"
+! 18300 (0x477c): "zs "
+! 18304 (0x4780): " e   eb  "
+! 18312 (0x4788): "dxm1000 years bad luck starts with a cave in! "
+! 18348 (0x47ac): "Pk0"
+! 18352 (0x47b0): "gkl"
+! 18356 (0x47b4): "osr"
+! 18360 (0x47b8): "k8kc       heG  Fdb"
+! 18376 (0x47c8): " i   su"
+! 18380 (0x47cc): "dh     0"
+! 18388 (0x47d4): "      l  "
+! 18396 (0x47dc): "bNlk kc  g    g  l      o    g  dycr"
+! 18420 (0x47f4): "peqga"
+! 18424 (0x47f8): "   u"
+! 18428 (0x47fc): "    0"
+! 18432 (0x4800): "Up"
+! 18436 (0x4804): "  l  "
+! 18440 (0x4808): "    "
+! 18444 (0x480c): "lk kc  c    g  ygkn"
+! 18456 (0x4818): "fdc~t   "
+! 18464 (0x4820): "k   "
+! 18468 (0x4824): "c   oeo   ulnsukr"
+! 18480 (0x4830): "   kkgj"
+! 18484 (0x4834): "al0  "
+! 18488 (0x4838): "igp gnpc sc G    g    Ua"
+! 18504 (0x4848): "          "
+! 18512 (0x4850): "cce ka"
+! 18516 (0x4854): "      "
+! 18520 (0x4858): "ahmLarge stone falls on me! "
+! 18540 (0x486c): "fclPkkgj"
+! 18548 (0x4874): "c  "
+! 18552 (0x4878): " e   ce  "
+! 18560 (0x4880): "jgnos kc  g    g    gkl"
+! 18576 (0x4890): "lmwa   tmh"
+! 18584 (0x4898): "x       h "
+! 18592 (0x48a0): "The sound of machinery. "
+! 18612 (0x48b4): "   t'hp      kkgj"
+! 18624 (0x48c0): "c  "
+! 18628 (0x48c4): " e   ce  "
+! 18636 (0x48cc): "egnos kc  c    g  ygkn"
+! 18652 (0x48dc): "~t   "
+! 18656 (0x48e0): "   k   "
+! 18660 (0x48e4): "am"
+! 18664 (0x48e8): "oeo   ulnsukr"
+! 18672 (0x48f0): "tic"
+! 18676 (0x48f4): "kgj"
+! 18680 (0x48f8): "bs !p gn    sc G    g  dycr"
+! 18700 (0x490c): "   sga"
+! 18704 (0x4910): "   u"
+! 18708 (0x4914): "  t0"
+! 18712 (0x4918): "Ul"
+! 18716 (0x491c): "      "
+! 18720 (0x4920): "    "
+! 18724 (0x4924): "'hp   oJ   hga"
+! 18736 (0x4930): "dws  t0"
+! 18744 (0x4938): "      l  "
+! 18752 (0x4940): "   ixklycr"
+! 18760 (0x4948): "hnpga"
+! 18764 (0x494c): "   u"
+! 18768 (0x4950): "    0"
+! 18772 (0x4954): "kcliw    g    Tw"
+! 18784 (0x4960): "     "
+! 18788 (0x4964): "    "
+! 18792 (0x4968): "zc kc      g    Vy"
+! 18804 (0x4974): "         "
+! 18812 (0x497c): "cNz  kc      g  pgkl"
+! 18828 (0x498c): "mk      qdpotk"
+! 18836 (0x4994): "go "
+! 18840 (0x4998): "z lga"
+! 18844 (0x499c): "   u"
+! 18848 (0x49a0): "    0"
+! 18852 (0x49a4): "kcliw    g  tgkl"
+! 18864 (0x49b0): "s nacvipc   mwon't let me "
+! 18884 (0x49c4): "   u"
+! 18888 (0x49c8): "  y0"
+! 18892 (0x49cc): "kclk    g  oT"
+! 18904 (0x49d8): "      "
+! 18908 (0x49dc): "    "
+! 18912 (0x49e0): "'hp   pkkgj"
+! 18920 (0x49e8): "al)  fP gnkc sc G    g  zUr"
+! 18940 (0x49fc): "          "
+! 18948 (0x4a04): "Nos kc  g    g  dycr"
+! 18964 (0x4a14): "t   ga"
+! 18968 (0x4a18): "   u"
+! 18972 (0x4a1c): "    0"
+! 18976 (0x4a20): "U"
+! 18980 (0x4a24): "  l  "
+! 18984 (0x4a28): "    "
+! 18988 (0x4a2c): "ps kc  c    g    Un"
+! 19000 (0x4a38): "          "
+! 19008 (0x4a40): "cxmARRGH! Poison needle in the lock. "
+! 19040 (0x4a60): "Pkkgj"
+! 19044 (0x4a64): "albls cgp gndk sc G    g  ogkm"
+! 19064 (0x4a78): "bn"
+! 19068 (0x4a7c): "b   tf      qc   o dhk"
+! 19080 (0x4a88): "kgj"
+! 19084 (0x4a8c): "z  dop gnkc sc G    g  tUn"
+! 19104 (0x4aa0): "          "
+! 19112 (0x4aa8): "Its locked. "
+! 19124 (0x4ab4): " c   b"
+! 19128 (0x4ab8): "fdc"
+! 19132 (0x4abc): "   hdxk gp gj   cg   "
+! 19144 (0x4ac8): " c   b"
+! 19148 (0x4acc): "fdc"
+! 19152 (0x4ad0): "   hdxk gp gj   sg   "
+! 19164 (0x4adc): " c   b"
+! 19168 (0x4ae0): "fdc"
+! 19172 (0x4ae4): "   hdxk e   c   b"
+! 19184 (0x4af0): "    "
+! 19188 (0x4af4): "        "
+! 19192 (0x4af8): " e   c   b"
+! 19200 (0x4b00): "    "
+! 19204 (0x4b04): "dxk    i   su"
+! 19212 (0x4b0c): "eO    0"
+! 19220 (0x4b14): "      l  "
+! 19228 (0x4b1c): "exmCrash!!! "
+! 19240 (0x4b28): "gkl"
+! 19244 (0x4b2c): "lmw         "
+! 19252 (0x4b34): "Cvn   gk "
+! 19260 (0x4b3c): "go "
+! 19264 (0x4b40): "'hp   qhk0"
+! 19272 (0x4b48): "Uv"
+! 19276 (0x4b4c): "  l  "
+! 19280 (0x4b50): "    "
+! 19284 (0x4b54): "Bare-handed? "
+! 19296 (0x4b60): "g   "
+! 19300 (0x4b64): "  b"
+! 19304 (0x4b68): "    "
+! 19308 (0x4b6c): "dxk    gp gn  kc  c    g  kgkk"
+! 19328 (0x4b80): "tmx"
+! 19332 (0x4b84): "dmh"
+! 19336 (0x4b88): "hg "
+! 19340 (0x4b8c): "0"
+! 19344 (0x4b90): "     g  igkm"
+! 19352 (0x4b98): "x  yma"
+! 19356 (0x4b9c): "enb   c   kkgj"
+! 19364 (0x4ba4): "albcs    p cf kf"
+! 19376 (0x4bb0): " hkkgj"
+! 19380 (0x4bb4): "alb    eop gn  sc G    g  xgkl"
+! 19400 (0x4bc8): "h   Srac x   "
+! 19408 (0x4bd0): "emw"
+! 19412 (0x4bd4): "lic   t'hp    f k"
+! 19424 (0x4be0): "ga"
+! 19428 (0x4be4): "dsc    0"
+! 19436 (0x4bec): "      l  "
+! 19444 (0x4bf4): ":mDoesn't bother him. "
+! 19464 (0x4c08): " hkkgj"
+! 19468 (0x4c0c): "alb    dP gnc  sc G    g  rgkl"
+! 19488 (0x4c20): "h   Srac x   "
+! 19496 (0x4c28): "emw"
+! 19500 (0x4c2c): "lic   f k"
+! 19508 (0x4c34): "   u"
+! 19512 (0x4c38): "    0"
+! 19516 (0x4c3c): "Vq"
+! 19520 (0x4c40): "  l  "
+! 19524 (0x4c44): "    "
+! 19528 (0x4c48): "Doesn't bother him. "
+! 19544 (0x4c58): "      hkkgj"
+! 19552 (0x4c60): "s  "
+! 19556 (0x4c64): " gngc sc G    g    kclg    g       le.Missed... "
+! 19592 (0x4c88): " hmNoise scares them off "
+! 19612 (0x4c9c): "   u"
+! 19616 (0x4ca0): "    0"
+! 19620 (0x4ca4): "Tl"
+! 19624 (0x4ca8): "  l  "
+! 19628 (0x4cac): "    "
+! 19632 (0x4cb0): "gc sc G    g       lg.Missed... "
+! 19656 (0x4cc8): "      hmNoise scares them off "
+! 19676 (0x4cdc): "gP"
+! 19680 (0x4ce0): "OK "
+! 19684 (0x4ce4): "      hmMissed... "
+! 19700 (0x4cf4): " c   b"
+! 19704 (0x4cf8): "fdc"
+! 19708 (0x4cfc): "   hdxk gp hmSorry, won't work. "
+! 19732 (0x4d14): "g   "
+! 19736 (0x4d18): "  b"
+! 19740 (0x4d1c): "    "
+! 19744 (0x4d20): "dxk    gp e   dv  "
+! 19756 (0x4d2c): "    "
+! 19760 (0x4d30): ". "
+! 19764 (0x4d34): "g   "
+! 19768 (0x4d38): "  b"
+! 19772 (0x4d3c): "    "
+! 19776 (0x4d40): "dxk    gp gnok kc  g    g    Un"
+! 19796 (0x4d54): "         "
+! 19804 (0x4d5c): "be   c    "
+! 19812 (0x4d64): "5mI see something. "
+! 19828 (0x4d74): "fmnHk0"
+! 19836 (0x4d7c): "              "
+! 19844 (0x4d84): ".Bare-handed? "
+! 19860 (0x4d94): " gnok kc  g    g    Un"
+! 19876 (0x4da4): "         "
+! 19884 (0x4dac): "C    "
+! 19888 (0x4db0): "    "
+! 19892 (0x4db4): "I see nothing special. "
+! 19912 (0x4dc8): " e   c    "
+! 19920 (0x4dd0): "?mI see nothing special. "
+! 19940 (0x4de4): "gP"
+! 19944 (0x4de8): "C    "
+! 19948 (0x4dec): "    "
+! 19952 (0x4df0): "p  kc       g  qgkl"
+! 19964 (0x4dfc): "k   "
+! 19968 (0x4e00): "x   fmh"
+! 19972 (0x4e04): "    "
+! 19976 (0x4e08): "lm"
+! 19980 (0x4e0c): "dhk"
+! 19984 (0x4e10): "Um"
+! 19988 (0x4e14): "      "
+! 19992 (0x4e18): "    "
+! 19996 (0x4e1c): "ns kc      g  ikcl       g  afmjHk0"
+! 20020 (0x4e34): "Um"
+! 20024 (0x4e38): "      "
+! 20028 (0x4e3c): "    "
+! 20032 (0x4e40): "ns sc G    g  qgkl"
+! 20044 (0x4e4c): "k   "
+! 20048 (0x4e50): "x   fmh"
+! 20052 (0x4e54): "    "
+! 20056 (0x4e58): "lm"
+! 20060 (0x4e5c): "dhk"
+! 20064 (0x4e60): "Um"
+! 20068 (0x4e64): "      "
+! 20072 (0x4e68): "    "
+! 20076 (0x4e6c): "I see nothing special. "
+! 20096 (0x4e80): " c   b"
+! 20100 (0x4e84): "fdc"
+! 20104 (0x4e88): "   hdxk i   su"
+! 20112 (0x4e90): "dkg    0"
+! 20120 (0x4e98): "          "
+! 20128 (0x4ea0): " e kk"
+! 20132 (0x4ea4): "      "
+! 20136 (0x4ea8): "   t'hp   oJ   hg   "
+! 20148 (0x4eb4): " c   b"
+! 20152 (0x4eb8): "fdc"
+! 20156 (0x4ebc): "   hdxk i   su"
+! 20164 (0x4ec4): "dna    0"
+! 20172 (0x4ecc): "eo    g  zgkm"
+! 20180 (0x4ed4): "    "
+! 20184 (0x4ed8): "Strange markings are present. "
+! 20208 (0x4ef0): "   u"
+! 20212 (0x4ef4): "    0"
+! 20216 (0x4ef8): "Sc"
+! 20220 (0x4efc): "      h"
+! 20224 (0x4f00): "Sc"
+! 20228 (0x4f04): "  l  "
+! 20232 (0x4f08): "    "
+! 20236 (0x4f0c): "OK "
+! 20240 (0x4f10): "gkn"
+! 20244 (0x4f14): "otl"
+! 20248 (0x4f18): "pu"
+! 20252 (0x4f1c): "  uuk"
+! 20256 (0x4f20): "htf"
+! 20260 (0x4f24): "dic   kkgj"
+! 20268 (0x4f2c): " s kP gnfs sc G    g    Uo"
+! 20288 (0x4f40): "     "
+! 20292 (0x4f44): "    "
+! 20296 (0x4f48): "yk kc      g  x      c    g  pgkl"
+! 20316 (0x4f5c): "k   "
+! 20320 (0x4f60): "   qdpotk"
+! 20328 (0x4f68): "ddi"
+! 20332 (0x4f6c): "ga"
+! 20336 (0x4f70): "djl    0"
+! 20344 (0x4f78): "      l  "
+! 20352 (0x4f80): "conxs kc      g  rgkn"
+! 20368 (0x4f90): "qdpotk"
+! 20372 (0x4f94): "   ugf    dic   ixslga"
+! 20388 (0x4fa4): "eX    0"
+! 20396 (0x4fac): "          h"
+! 20404 (0x4fb4): "      l  "
+! 20412 (0x4fbc): "contk kc      g  rfnaHmSomething falls out. "
+! 20444 (0x4fdc): "ga"
+! 20448 (0x4fe0): "dby    0"
+! 20456 (0x4fe8): "          h"
+! 20464 (0x4ff0): "      l  "
+! 20472 (0x4ff8): "lwnts kc      g    Ur"
+! 20488 (0x5008): "     "
+! 20492 (0x500c): "    "
+! 20496 (0x5010): "qc kc       g    gkl"
+! 20508 (0x501c): "k   "
+! 20512 (0x5020): "   qdpotk"
+! 20520 (0x5028): "dhm"
+! 20524 (0x502c): "mething falls out. "
+! 20540 (0x503c): "Hkkgj"
+! 20544 (0x5040): "alFc "
+! 20548 (0x5044): "eop e   dg  "
+! 20556 (0x504c): "    "
+! 20560 (0x5050): "ws kc      g  pgkl"
+! 20572 (0x505c): "k   "
+! 20576 (0x5060): "   qdpotk"
+! 20584 (0x5068): "ddi"
+! 20588 (0x506c): "ga"
+! 20592 (0x5070): "db      0"
+! 20600 (0x5078): "         "
+! 20608 (0x5080): "e   Dg  "
+! 20616 (0x5088): "cNss kc      g  pfnmHmI see something. "
+! 20648 (0x50a8): "   u"
+! 20652 (0x50ac): "    0"
+! 20656 (0x50b0): "Tp"
+! 20660 (0x50b4): "  l  "
+! 20664 (0x50b8): "    "
+! 20668 (0x50bc): "y  kc      g  pgkl"
+! 20680 (0x50c8): "k   "
+! 20684 (0x50cc): "   qdpotk"
+! 20692 (0x50d4): "ddi"
+! 20696 (0x50d8): "ga"
+! 20700 (0x50dc): "e     0"
+! 20708 (0x50e4): "      l  "
+! 20716 (0x50ec): "fony  kc       g    gkl"
+! 20732 (0x50fc): "q      vn   c   otnmk   nhpsqk numzk w"
+! 20756 (0x5114): "k   Cmga"
+! 20764 (0x511c): "dfw    0"
+! 20772 (0x5124): "      l  "
+! 20780 (0x512c): "cN   "
+! 20784 (0x5130): "kc      g  pfo HmI see something. "
+! 20812 (0x514c): "   u"
+! 20816 (0x5150): "    0"
+! 20820 (0x5154): "Sd"
+! 20824 (0x5158): "  l  "
+! 20828 (0x515c): "    "
+! 20832 (0x5160): "Sign: He who defiles the tombs of Egypt shall surely perish! "
+! 20876 (0x518c): "ga"
+! 20880 (0x5190): "dsl    0"
+! 20888 (0x5198): "iw    g    gkm"
+! 20896 (0x51a0): "qmwocr"
+! 20900 (0x51a4): "c n"
+! 20904 (0x51a8): "    k   oeAdpk ld   "
+! 20916 (0x51b4): "   m"
+! 20920 (0x51b8): "      ux   "
+! 20928 (0x51c0): "dhk"
+! 20932 (0x51c4): "alZk "
+! 20936 (0x51c8): "lop gnbc kc  g    nbc sc G    g    Ut"
+! 20960 (0x51e0): "         "
+! 20968 (0x51e8): "dpmI see something. "
+! 20984 (0x51f8): "gkn"
+! 20988 (0x51fc): "qdpotk"
+! 20992 (0x5200): "   ugf    dic   iqclga"
+! 21008 (0x5210): "dfe    0"
+! 21016 (0x5218): "          h"
+! 21024 (0x5220): "      l  "
+! 21032 (0x5228): "a.Its black, dirty & dusty "
+! 21056 (0x5240): " hmI see nothing special. "
+! 21076 (0x5254): "   g"
+! 21080 (0x5258): "kc       heG  Fdb"
+! 21092 (0x5264): "g  "
+! 21096 (0x5268): " i   su"
+! 21100 (0x526c): "dkp    0"
+! 21108 (0x5274): "f    g    V"
+! 21116 (0x527c): "         "
+! 21124 (0x5284): "pgnds kc  g    g    gkl"
+! 21140 (0x5294): "tk"
+! 21144 (0x5298): "F "
+! 21148 (0x529c): "deg2xq   q  k   "
+! 21160 (0x52a8): "k yvl"
+! 21164 (0x52ac): "  uuc   des   q u"
+! 21176 (0x52b8): "pv "
+! 21180 (0x52bc): "h s0va t   "
+! 21188 (0x52c4): "   t"
+! 21192 (0x52c8): "pep"
+! 21196 (0x52cc): "mgqk   sslafm"
+! 21204 (0x52d4): "   og8kgj"
+! 21212 (0x52dc): "0 dwp gnds kc  g    g  ugkk"
+! 21232 (0x52f0): "s radv    q           "
+! 21244 (0x52fc): "k   "
+! 21248 (0x5300): "go "
+! 21252 (0x5304): "kc       heG  Fdb"
+! 21264 (0x5310): "g  "
+! 21268 (0x5314): " e   c   b"
+! 21276 (0x531c): "    "
+! 21280 (0x5320): "dxk    gp hmYou be weird. Cut that out. "
+! 21312 (0x5340): " c   b"
+! 21316 (0x5344): "fdc"
+! 21320 (0x5348): "   hdxk i   su"
+! 21328 (0x5350): "dau  z0"
+! 21336 (0x5358): "      l  "
+! 21344 (0x5360): "PmI can't reach it. "
+! 21360 (0x5370): "ga"
+! 21364 (0x5374): "ddx    0"
+! 21372 (0x537c): "      l  "
+! 21380 (0x5384): "gxmI hear a hollow laugh. . . "
+! 21404 (0x539c): "ycr"
+! 21408 (0x53a0): "j   gkn"
+! 21412 (0x53a4): "fdca   ot   Kt   uumzlic"
+! 21428 (0x53b4): "   kkgj"
+! 21432 (0x53b8): "al7c kwp gnzc sc G    g    gkn"
+! 21452 (0x53cc): "fdca   ot   Kt   uumzlic"
+! 21468 (0x53dc): "   mI hear a hollow laugh. . . "
+! 21492 (0x53f4): "ycr"
+! 21496 (0x53f8): "znxfnvHkkgj"
+! 21504 (0x5400): "al7c kP e   dv  "
+! 21516 (0x540c): "    "
+! 21520 (0x5410): "j  kc      g    Vy"
+! 21532 (0x541c): "         "
+! 21540 (0x5424): "cNzc kc      g  pfnvHmI see something. "
+! 21572 (0x5444): "   u"
+! 21576 (0x5448): "    0"
+! 21580 (0x544c): "Vy"
+! 21584 (0x5450): "  l  "
+! 21588 (0x5454): "    "
+! 21592 (0x5458): "OK "
+! 21596 (0x545c): "gkl"
+! 21600 (0x5460): "lmw         "
+! 21608 (0x5468): "Cvn   gk "
+! 21616 (0x5470): "go "
+! 21620 (0x5474): "Nomad: `RUN YOU FOOL!` "
+! 21648 (0x5490): "g   "
+! 21652 (0x5494): "  b"
+! 21656 (0x5498): "    "
+! 21660 (0x549c): "dxk    i   su"
+! 21668 (0x54a4): "e z  v0"
+! 21676 (0x54ac): "      l  "
+! 21684 (0x54b4): "   t'hp hq.OK "
+! 21696 (0x54c0): "gP"
+! 21700 (0x54c4): "I can't. "
+! 21708 (0x54cc): "g   "
+! 21712 (0x54d0): "  b"
+! 21716 (0x54d4): "    "
+! 21720 (0x54d8): "dxk    i   su"
+! 21728 (0x54e0): "ean  s0"
+! 21736 (0x54e8): "          "
+! 21744 (0x54f0): "   i   lgkm"
+! 21752 (0x54f8): "   kkgj"
+! 21756 (0x54fc): "albys "
+! 21760 (0x5500): "bgp e   dr  "
+! 21768 (0x5508): "    "
+! 21772 (0x550c): "ac kc  g    g  cact"
+! 21784 (0x5518): "fntHkkgj"
+! 21792 (0x5520): "    lgp gnyk kc  g    g    kclhw    g    afu"
+! 21820 (0x553c): "afx"
+! 21824 (0x5540): "HmOK "
+! 21832 (0x5548): "ykz"
+! 21836 (0x554c): "oeb"
+! 21840 (0x5550): "yek2mC"
+! 21848 (0x5558): "m   "
+! 21852 (0x555c): "   ewv "
+! 21856 (0x5560): "amogo "
+! 21860 (0x5564): "dhk"
+! 21864 (0x5568): "alc    aP gnyk kc  g    g  fgkm"
+! 21884 (0x557c): "    "
+! 21888 (0x5580): "yklga"
+! 21892 (0x5584): "   u"
+! 21896 (0x5588): "  s0"
+! 21900 (0x558c): "St"
+! 21904 (0x5590): "      "
+! 21908 (0x5594): "    "
+! 21912 (0x5598): "aclgkm"
+! 21916 (0x559c): "    "
+! 21920 (0x55a0): "kgj"
+! 21924 (0x55a4): "os "
+! 21928 (0x55a8): " gn    kc  g    g    fkcHmStrange . . . Nothing happens. "
+! 21972 (0x55d4): " hmI don't see any reason to throw a  "
+! 22000 (0x55f0): "   h"
+! 22004 (0x55f4): " "
+! 22008 (0x55f8): " c   b"
+! 22012 (0x55fc): "fdc"
+! 22016 (0x5600): "   hdxk i   su"
+! 22024 (0x5608): "dau    0"
+! 22032 (0x5610): "bo    g  xT"
+! 22040 (0x5618): "          "
+! 22048 (0x5620): "PmI can't reach it. "
+! 22064 (0x5630): "ga"
+! 22068 (0x5634): "eb    0"
+! 22076 (0x563c): "          h"
+! 22084 (0x5644): "      l  "
+! 22092 (0x564c): "gwncs kc  g    ncs sc G    g    Vi"
+! 22116 (0x5664): "     "
+! 22120 (0x5668): "    "
+! 22124 (0x566c): "I see something. "
+! 22140 (0x567c): "Hkkgj"
+! 22144 (0x5680): "alQk "
+! 22148 (0x5684): "bop e   e   "
+! 22156 (0x568c): "    "
+! 22160 (0x5690): "cc kc  g    g  dycr"
+! 22172 (0x569c): "   o e"
+! 22176 (0x56a0): "ga"
+! 22180 (0x56a4): "ddx    0"
+! 22188 (0x56ac): "          "
+! 22196 (0x56b4): "bgnh  sc G    g  mgkl"
+! 22212 (0x56c4): "os"
+! 22216 (0x56c8): "aenn   go "
+! 22224 (0x56d0): "kgj"
+! 22228 (0x56d4): "jc eop gncc kc  g    g  xTw"
+! 22248 (0x56e8): "  l  "
+! 22252 (0x56ec): "    "
+! 22256 (0x56f0): "Chain too tough. "
+! 22272 (0x5700): " c   b"
+! 22276 (0x5704): "fdc"
+! 22280 (0x5708): "   hdxk i   su"
+! 22288 (0x5710): "dlk  q0"
+! 22296 (0x5718): "          "
+! 22304 (0x5720): "   t'hp   txkkc       heG  Fdb"
+! 22324 (0x5734): "g  "
+! 22328 (0x5738): " e   c   b"
+! 22336 (0x5740): "    "
+! 22340 (0x5744): "dxk    i   su"
+! 22348 (0x574c): "ef    z0"
+! 22356 (0x5754): "          "
+! 22364 (0x575c): "PmThanks. "
+! 22376 (0x5768): "   oneiga"
+! 22384 (0x5770): "ef    x0"
+! 22392 (0x5778): "hw    g  ngkm"
+! 22400 (0x5780): "fmvnl          gq"
+! 22412 (0x578c): "Cmga"
+! 22416 (0x5790): "   u"
+! 22420 (0x5794): "  v0"
+! 22424 (0x5798): "kcllg    g  lgkm"
+! 22436 (0x57a4): "   mThanks. "
+! 22448 (0x57b0): " c   b"
+! 22452 (0x57b4): "fdc"
+! 22456 (0x57b8): "   hdxk i   su"
+! 22464 (0x57c0): "dky  c0"
+! 22472 (0x57c8): "ixk"
+! 22476 (0x57cc): "     heG  Fdb"
+! 22488 (0x57d8): " gp gj      w   8kc       heG  Fdb"
+! 22512 (0x57f0): " e   c   b"
+! 22520 (0x57f8): "    "
+! 22524 (0x57fc): "dxk    i   su"
+! 22532 (0x5804): "dvo    0"
+! 22540 (0x580c): "          "
+! 22548 (0x5814): "cpmTRY: `TAKE INVENTORY` "
+! 22580 (0x5834): "g   "
+! 22584 (0x5838): "  b"
+! 22588 (0x583c): "    "
+! 22592 (0x5840): "dxk    i   su"
+! 22600 (0x5848): "dqd    0"
+! 22608 (0x5850): "      l  "
+! 22616 (0x5858): "?mWOW, man, crazy... "
+! 22636 (0x586c): "g   "
+! 22640 (0x5870): "  b"
+! 22644 (0x5874): "    "
+! 22648 (0x5878): "dxk    gp e   e  "
+! 22660 (0x5884): "    "
+! 22664 (0x5888): "OK "
+! 22668 (0x588c): "gkn"
+! 22672 (0x5890): "c   mmb       "
+! 22680 (0x5898): "go "
+! 22684 (0x589c): "0"
+! 22688 (0x58a0): "hw    g  sgkm"
+! 22696 (0x58a8): "    "
+! 22700 (0x58ac): "Liquid is acid. "
+! 22712 (0x58b8): "fclPkkc       heG  Fdb"
+! 22728 (0x58c8): "g  "
+! 22732 (0x58cc): " gp e   dr  "
+! 22740 (0x58d4): "    "
+! 22744 (0x58d8): "OK "
+! 22748 (0x58dc): "gkm"
+! 22752 (0x58e0): "nl          gq"
+! 22760 (0x58e8): "k   CmgP"
+! 22768 (0x58f0): "OK "
+! 22772 (0x58f4): "gkn"
+! 22776 (0x58f8): "otl"
+! 22780 (0x58fc): "k qk qk mx   fmh"
+! 22792 (0x5908): "pep"
+! 22796 (0x590c): "go "
+! 22800 (0x5910): "kc       heG  Fdb"
+! 22812 (0x591c): "g  "
+! 22816 (0x5920): " gp hmStrange . . . Nothing happens. "
+! 22848 (0x5940): " c   b"
+! 22852 (0x5944): "fdc"
+! 22856 (0x5948): "   hdxk i   su"
+! 22864 (0x5950): "dlk  q0"
+! 22872 (0x5958): "          "
+! 22880 (0x5960): "   t'hp   txkkc       heG  Fdb"
+! 22900 (0x5974): "g  "
+! 22904 (0x5978): " i   su"
+! 22908 (0x597c): "don    0"
+! 22916 (0x5984): "          "
+! 22924 (0x598c): "XmOK "
+! 22932 (0x5994): "fcuw   go "
+! 22940 (0x599c): "exkkc       heG  Fdb"
+! 22956 (0x59ac): " gp hmPour water? "
+! 22972 (0x59bc): " c   b"
+! 22976 (0x59c0): "fdc"
+! 22980 (0x59c4): "   hdxk i   su"
+! 22988 (0x59cc): "dt      0"
+! 22996 (0x59d4): "      l  "
+! 23004 (0x59dc): "c.The nomad stuck out his tongue at me. "
+! 23036 (0x59fc): " hmStrange . . . Nothing happens. "
+! 23064 (0x5a18): "g   "
+! 23068 (0x5a1c): "  b"
+! 23072 (0x5a20): "    "
+! 23076 (0x5a24): "dxk    e   c   b"
+! 23088 (0x5a30): "    "
+! 23092 (0x5a34): "dxk    i   su"
+! 23100 (0x5a3c): "djl  z0"
+! 23108 (0x5a44): "      l  "
+! 23116 (0x5a4c): "PmChain too tough. "
+! 23132 (0x5a5c): "g   "
+! 23136 (0x5a60): "  b"
+! 23140 (0x5a64): "    "
+! 23144 (0x5a68): "dxk    i   su"
+! 23152 (0x5a70): "dfe    0"
+! 23160 (0x5a78): "          h"
+! 23168 (0x5a80): "      l  "
+! 23176 (0x5a88): "cgnnk kc  g    nnk sc G    g  iycr"
+! 23200 (0x5aa0): "ymogkm"
+! 23204 (0x5aa4): "    "
+! 23208 (0x5aa8): "kgj"
+! 23212 (0x5aac): "uk ewp gnp  kc  g    np  sc G    g  qkcllg    g  iycr"
+! 23248 (0x5ad0): "ymogkm"
+! 23252 (0x5ad4): "    "
+! 23256 (0x5ad8): "kc       heG  Fdb"
+! 23268 (0x5ae4): "g  "
+! 23272 (0x5ae8): " gp gnsk kc      g    kcllw    g  vgkl"
+! 23296 (0x5b00): "k   "
+! 23300 (0x5b04): "         s   s   ek"
+! 23312 (0x5b10): "- "
+! 23316 (0x5b14): "sklga"
+! 23320 (0x5b18): "   u"
+! 23324 (0x5b1c): "    0"
+! 23328 (0x5b20): "Tl"
+! 23332 (0x5b24): "  l  "
+! 23336 (0x5b28): "    "
+! 23340 (0x5b2c): "es kc  g    nes sc G    g  kgkm"
+! 23360 (0x5b40): "    "
+! 23364 (0x5b44): "'hp   ggtexkkgj"
+! 23376 (0x5b50): "ls iop gndk sc G    g    Tf"
+! 23396 (0x5b64): "      "
+! 23400 (0x5b68): "    "
+! 23404 (0x5b6c): "esf ke"
+! 23408 (0x5b70): "fnhHmOyster makes a slobbering noise "
+! 23436 (0x5b8c): " hmYou be weird. Cut that out. "
+! 23460 (0x5ba4): "g   "
+! 23464 (0x5ba8): "  b"
+! 23468 (0x5bac): "    "
+! 23472 (0x5bb0): "dxk    i   su"
+! 23480 (0x5bb8): "dt      0"
+! 23488 (0x5bc0): "      l  "
+! 23496 (0x5bc8): "g.won't let me "
+! 23508 (0x5bd4): "gkm"
+! 23512 (0x5bd8): " .The nomad stuck out his tongue at me. "
+! 23544 (0x5bf8): "   u"
+! 23548 (0x5bfc): "    0"
+! 23552 (0x5c00): "Ss"
+! 23556 (0x5c04): "  l  "
+! 23560 (0x5c08): "    "
+! 23564 (0x5c0c): "ps kc  g    g  tycr"
+! 23576 (0x5c18): "   oscsgkm"
+! 23584 (0x5c20): "   mCrash!!! "
+! 23596 (0x5c2c): "gP"
+! 23600 (0x5c30): "ps kc  c    g  kgkk"
+! 23612 (0x5c3c): "tmx"
+! 23616 (0x5c40): "dmh"
+! 23620 (0x5c44): "hg "
+! 23624 (0x5c48): "kc       heG  Fdb"
+! 23636 (0x5c54): "g  "
+! 23640 (0x5c58): " bbzv            "
+! 23652 (0x5c64): " s    g          xmWelcome to Adventure: 8 `PYRAMID OF DOOM` "
+! 23708 (0x5c9c): "zk "
+! 23712 (0x5ca0): "vmg   hodf"
+! 23720 (0x5ca8): "kcs"
+! 23724 (0x5cac): "   c kmcu"
+! 23732 (0x5cb4): "   d"
+! 23736 (0x5cb8): "qdd"
+! 23740 (0x5cbc): "  m"
+! 23744 (0x5cc0): "   opv"
+! 23748 (0x5cc4): "dnk"
+! 23752 (0x5cc8): "djb"
+! 23756 (0x5ccc): "          y"
+! 23764 (0x5cd4): "          "
+! 23772 (0x5cdc): "XmRats "
+! 23780 (0x5ce4): "ict   h "
+! 23788 (0x5cec): "Cmtvz"
+! 23792 (0x5cf0): "t  ks t bke kk"
+! 23804 (0x5cfc): "    "
+! 23808 (0x5d00): "oc kc       g  fycr"
+! 23820 (0x5d0c): "   oo      g"
+! 23828 (0x5d14): "zv            "
+! 23836 (0x5d1c): "Uv"
+! 23840 (0x5d20): "     "
+! 23844 (0x5d24): "    "
+! 23848 (0x5d28): "qslgkk"
+! 23852 (0x5d2c): "k   "
+! 23856 (0x5d30): "c   q   yc"
+! 23864 (0x5d38): "mc "
+! 23868 (0x5d3c): "lmz   cgoq"
+! 23876 (0x5d44): "zv          k"
+! 23884 (0x5d4c): "      k    g  c      khbsTvz"
+! 23900 (0x5d5c): "t  ks t gse kg"
+! 23912 (0x5d68): "    "
+! 23916 (0x5d6c): "  kc  g    g    ksz g    g  sgkm"
+! 23936 (0x5d80): "fn"
+! 23940 (0x5d84): "   v bajsz"
+! 23948 (0x5d8c): "dhm"
+! 23952 (0x5d90): "lets "
+! 23956 (0x5d94): "tvz"
+! 23960 (0x5d98): "ks t    e kg"
+! 23968 (0x5da0): "  "
+! 23972 (0x5da4): "   g kg"
+! 23976 (0x5da8): "tvz"
+! 23980 (0x5dac): "ks lo ice kf"
+! 23988 (0x5db4): "  "
+! 23992 (0x5db8): "ghmGot him!! "
+! 24004 (0x5dc4): "gkm"
+! 24008 (0x5dc8): "mc"
+! 24012 (0x5dcc): "q   "
+! 24016 (0x5dd0): "os "
+! 24020 (0x5dd4): "mtg   blegen    "
+! 24032 (0x5de0): "lic   g kf"
+! 24040 (0x5de8): "tvz"
+! 24044 (0x5dec): "ks t a e kf"
+! 24052 (0x5df4): "  "
+! 24056 (0x5df8): " g kf"
+! 24060 (0x5dfc): "gkm"
+! 24064 (0x5e00): "   Gkq"
+! 24068 (0x5e04): "lic   bzv      e    "
+! 24080 (0x5e10): "So"
+! 24084 (0x5e14): "  l  "
+! 24088 (0x5e18): "    "
+! 24092 (0x5e1c): "'hp   .Mummy moves toward me. "
+! 24116 (0x5e34): "tvz"
+! 24120 (0x5e38): "ks  dgnr  sc G    g  ugkm"
+! 24140 (0x5e4c): "rk   n "
+! 24144 (0x5e50): "Lc   sadpk   huk"
+! 24156 (0x5e5c): "    "
+! 24160 (0x5e60): "tvz"
+! 24164 (0x5e64): "ks     egnps kc  g    g  yaer"
+! 24184 (0x5e78): "HmGlove falls off my sweaty hand "
+! 24208 (0x5e90): "tvz"
+! 24212 (0x5e94): "ks ag mNqs sc G    g    kclbo    g    Ve"
+! 24240 (0x5eb0): "     "
+! 24244 (0x5eb4): "    "
+! 24248 (0x5eb8): " ko"
+! 24252 (0x5ebc): "    "
+! 24256 (0x5ec0): "Nomad: `Look up decapitated!` "
+! 24284 (0x5edc): "      bbzv            "
+! 24296 (0x5ee8): "T "
+! 24300 (0x5eec): "  l  "
+! 24304 (0x5ef0): "    "
+! 24308 (0x5ef4): "b  sc G    g    gkn"
+! 24320 (0x5f00): "   enaS"
+! 24328 (0x5f08): "    a   oe      v    h   "
+! 24344 (0x5f18): "y q"
+! 24348 (0x5f1c): "tn"
+! 24352 (0x5f20): "dhm"
+! 24356 (0x5f24): "al bar, pulls down ladder "
+! 24376 (0x5f38): "Diucltvz"
+! 24384 (0x5f40): "ks t bonc  sc G    g  nSw"
+! 24404 (0x5f54): "  l  "
+! 24408 (0x5f58): "    "
+! 24412 (0x5f5c): "cTbTbzbzv          v"
+! 24428 (0x5f6c): "             "
+! 24436 (0x5f74): "Nqs sc C    g  3mvJbzv            "
+! 24460 (0x5f8c): "Ta"
+! 24464 (0x5f90): "  l  "
+! 24468 (0x5f94): "    "
+! 24472 (0x5f98): "es sc G    g    adf"
+! 24484 (0x5fa4): "gkm"
+! 24488 (0x5fa8): "emwKu          ektte"
+! 24500 (0x5fb4): "vmh"
+! 24504 (0x5fb8): "   "
+! 24508 (0x5fbc): " ke"
+! 24512 (0x5fc0): "Jbzv      o    "
+! 24524 (0x5fcc): "      l  "
+! 24532 (0x5fd4): "du   dn  "
+! 24540 (0x5fdc): "bxmNomad: `RUN YOU FOOL!` "
+! 24572 (0x5ffc): "t  ks ag lwnqs sc G    g    Ta"
+! 24592 (0x6010): "      l  "
+! 24600 (0x6018): "ggnvc kc      g              g  ygkm"
+! 24624 (0x6030): "mcr"
+! 24628 (0x6034): "ks "
+! 24632 (0x6038): "ades   "
+! 24636 (0x603c): "fmz"
+! 24640 (0x6040): "hco"
+! 24644 (0x6044): "   g ko"
+! 24648 (0x6048): "tvz"
+! 24652 (0x604c): "ks t ake kl"
+! 24660 (0x6054): "  "
+! 24664 (0x6058): "Onzs kc      g  b   ziwtjbbzv            "
+! 24692 (0x6074): "      l  "
+! 24700 (0x607c): "4ngc sc G    g  eadf"
+! 24716 (0x608c): "   ovtltvz"
+! 24724 (0x6094): "ks bo cNwk sc G    g  pgkl"
+! 24744 (0x60a8): "to "
+! 24748 (0x60ac): "attacks! "
+! 24756 (0x60b4): "fclRbzv      e  y"
+! 24768 (0x60c0): "Tl"
+! 24772 (0x60c4): "  l  "
+! 24776 (0x60c8): "    "
+! 24780 (0x60cc): "Rats "
+! 24784 (0x60d0): "gkv"
+! 24788 (0x60d4): "   h "
+! 24792 (0x60d8): "ddh"
+! 24796 (0x60dc): "tvz"
+! 24800 (0x60e0): "ks e cwnxk sc G    g  sgkm"
+! 24820 (0x60f4): "gdc"
+! 24824 (0x60f8): "wk"
+! 24828 (0x60fc): "amz"
+! 24832 (0x6100): "lic   hCmtvz"
+! 24840 (0x6108): "t  ks  dwnzk sc G    g  wgkl"
+! 24860 (0x611c): "pum"
+! 24864 (0x6120): "acvilcadcpv "
+! 24872 (0x6128): "Lc   opv"
+! 24880 (0x6130): "ddh"
+! 24884 (0x6134): "tvz"
+! 24888 (0x6138): "ks t a   E    "
+! 24900 (0x6144): " e kj"
+! 24904 (0x6148): "  "
+! 24908 (0x614c): "   g kj"
+! 24912 (0x6150): "   g"
+! 24916 (0x6154): "zv            "
+! 24924 (0x615c): "kcllw    g    Ul"
+! 24936 (0x6168): "      h"
+! 24940 (0x616c): "Ul"
+! 24944 (0x6170): "  l  "
+! 24948 (0x6174): "    "
+! 24952 (0x6178): "'hp   ohmMirrors EVERYWHERE! Light blinds me, so I shut it OFF! "
+! 25008 (0x61b0): "   g"
+! 25012 (0x61b4): "zv          k"
+! 25020 (0x61bc): "kclmo    g  c   h"
+! 25032 (0x61c8): "   stvz"
+! 25036 (0x61cc): "t  ks t Ce k"
+! 25048 (0x61d8): "    "
+! 25052 (0x61dc): " k"
+! 25056 (0x61e0): " cztvz"
+! 25060 (0x61e4): "t  ks  g konqs sc G    g    Sk"
+! 25080 (0x61f8): "              "
+! 25088 (0x6200): "f.What! The nomad jumped me while my back was turned! "
+! 25128 (0x6228): "fclPk dhzs"
+! 25136 (0x6230): "kgj"
+! 25140 (0x6234): "f     v q   zz"
+! 25148 (0x623c): "e'  As"
+! 25156 (0x6244): "zt"
+! 25160 (0x6248): "   v      zz"
+! 25168 (0x6250): "  As"
+! 25172 (0x6254): "kgj"
+! 25176 (0x6258): "m     v      zz"
+! 25184 (0x6260): "dhd  Asb"
+! 25192 (0x6268): "g  "
+! 25196 (0x626c): " .PYRAMID OF DOOM"
+! 25220 (0x6284): "TRS-80"
+! 25228 (0x628c): "1.00"
+! 25236 (0x6294): "NORTH"
+! 25244 (0x629c): "SOUTH"
+! 25252 (0x62a4): "EAST"
+! 25260 (0x62ac): "WEST"
+! 25268 (0x62b4): "UP"
+! 25272 (0x62b8): "DOWN"
+! 25280 (0x62c0): "I don't understand your command. "
+! 25304 (0x62d8): "I can't do that yet. "
+! 25320 (0x62e8): "S"
+! 25324 (0x62ec): "Start the game"
+! 25336 (0x62f8): "R"
+! 25340 (0x62fc): "Restore a saved game"
+! 25356 (0x630c): "C"
+! 25360 (0x6310): "Show credits"
+! 25372 (0x631c): "I"
+! 25376 (0x6320): "Info about playing"
+! 25392 (0x6330): "Q"
+! 25396 (0x6334): "Quit"
+! 25400 (0x6338): "I'm in a desert"
+! 25412 (0x6344): "I'm in a desert"
+! 25424 (0x6350): "I'm in a desert"
+! 25436 (0x635c): "I'm in a desert next to a pyramid"
+! 25460 (0x6374): "I'm in a hole"
+! 25472 (0x6380): "I'm in a "
+! 25480 (0x6388): "I'm in a sarcophagus"
+! 25496 (0x6398): "I'm in a burial room"
+! 25512 (0x63a8): "I'm in a long, narrow passageway"
+! 25536 (0x63c0): "I'm in a hidden alcove"
+! 25552 (0x63d0): "I'm in a tall room"
+! 25568 (0x63e0): "I'm in a dining hall"
+! 25584 (0x63f0): "I'm in a hallway"
+! 25596 (0x63fc): "I'm in a round altar room"
+! 25616 (0x6410): "I'm in a hieroglyphics room"
+! 25636 (0x6424): "I'm in a sitting room"
+! 25652 (0x6434): "I'm in a sloping crawlway"
+! 25672 (0x6448): "I'm in a Revolving cavern"
+! 25692 (0x645c): "I'm in a prison cell"
+! 25708 (0x646c): "I'm on a narrow ledge"
+! 25724 (0x647c): "I'm in a throne room"
+! 25740 (0x648c): "I'm in a treasure room"
+! 25756 (0x649c): "I'm on top of a pyramid"
+! 25776 (0x64b0): "I'm in a Pool of water"
+! 25796 (0x64c4): "I'm in a ."
+! 25808 (0x64d0): "I'm in a dressing room"
+! 25824 (0x64e0): "I'm in a lot of TROUBLE!"
+! 25848 (0x64f8): "                                                                                                                                                                                                                                                                                                                                                                                                            "
