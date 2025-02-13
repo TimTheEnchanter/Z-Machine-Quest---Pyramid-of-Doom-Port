@@ -1,0 +1,122 @@
+<!--Saved by Quest 5.9.9166.36226-->
+<asl version="580">
+  <include ref="English.aslx" />
+  <include ref="Core.aslx" />
+  <game name="Pyramid of Doom">
+    <gameid>971819d8-b8f0-4dea-8449-6c26b6ecb796</gameid>
+    <version>1.0</version>
+    <firstpublished>2025</firstpublished>
+  </game>
+  <object name="Room 1">
+    <inherit name="editor_room" />
+    <description>I'm in a desert.</description>
+    <object name="player">
+      <inherit name="editor_object" />
+      <inherit name="editor_player" />
+    </object>
+  </object>
+  <object name="Room 2">
+    <inherit name="editor_room" />
+    <description>I'm in a desert.</description>
+  </object>
+  <object name="Room 3">
+    <inherit name="editor_room" />
+    <description>I'm in a desert.</description>
+  </object>
+  <object name="Room 4">
+    <inherit name="editor_room" />
+    <description>I'm in a desert next to a pyramid.</description>
+  </object>
+  <object name="Room 5">
+    <inherit name="editor_room" />
+    <description>I'm in a hole.</description>
+  </object>
+  <object name="Room 6">
+    <inherit name="editor_room" />
+    <description>I'm in a ???</description>
+  </object>
+  <object name="Room 7">
+    <inherit name="editor_room" />
+    <description>I'm in a sarcophagus.</description>
+  </object>
+  <object name="Room 8">
+    <inherit name="editor_room" />
+    <description>I'm in a burial room.</description>
+  </object>
+  <object name="Room 9">
+    <inherit name="editor_room" />
+    <description>I'm in a long, narrow passageway.</description>
+  </object>
+  <object name="Room 10">
+    <inherit name="editor_room" />
+    <description>I'm in a hidden alcove.</description>
+  </object>
+  <object name="Room 11">
+    <inherit name="editor_room" />
+    <description>I'm in a tall room.</description>
+  </object>
+  <object name="Room 12">
+    <inherit name="editor_room" />
+    <description>I'm in a dining hall.</description>
+  </object>
+  <object name="Room 13">
+    <inherit name="editor_room" />
+    <description>I'm in a hallway.</description>
+  </object>
+  <object name="Room 14">
+    <inherit name="editor_room" />
+    <description>I'm in a round altar room.</description>
+  </object>
+  <object name="Room 15">
+    <inherit name="editor_room" />
+    <description>I'm in a hieroglyphics room.</description>
+  </object>
+  <object name="Room 16">
+    <inherit name="editor_room" />
+    <description>I'm in a sitting room.</description>
+  </object>
+  <object name="Room 17">
+    <inherit name="editor_room" />
+    <description>I'm in a sloping crawlway.</description>
+  </object>
+  <object name="Room 18">
+    <inherit name="editor_room" />
+    <description>I'm in a Revolving cavern.</description>
+  </object>
+  <object name="Room 19">
+    <inherit name="editor_room" />
+    <description>I'm in a prison cell.</description>
+  </object>
+  <object name="Room 20">
+    <inherit name="editor_room" />
+    <description>I'm on a narrow ledge.</description>
+  </object>
+  <object name="Room 21">
+    <inherit name="editor_room" />
+    <description>I'm in a throne room.</description>
+  </object>
+  <object name="Room 22">
+    <inherit name="editor_room" />
+    <description>I'm in a treasure room.</description>
+  </object>
+  <object name="Room 23">
+    <inherit name="editor_room" />
+    <description>I'm on top of a pyramid.</description>
+  </object>
+  <object name="Room 24">
+    <inherit name="editor_room" />
+    <description>I'm in a Pool of water.</description>
+  </object>
+  <object name="Room 25">
+    <inherit name="editor_room" />
+    <description>I'm in a ???</description>
+  </object>
+  <object name="Room 26">
+    <inherit name="editor_room" />
+    <description>I'm in a dressing room.</description>
+  </object>
+  <object name="Room 27">
+    <inherit name="editor_room" />
+    <description>I'm in a lot of TROUBLE!</description>
+  </object>
+</asl>
