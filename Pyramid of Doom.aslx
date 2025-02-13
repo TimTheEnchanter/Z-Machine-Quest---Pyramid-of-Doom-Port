@@ -25,18 +25,42 @@
       <inherit name="editor_object" />
       <look type="string"></look>
     </object>
+    <exit alias="north" to="Room 2">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="east" to="Room 4">
+      <inherit name="eastdirection" />
+    </exit>
   </object>
   <object name="Room 2">
     <inherit name="editor_room" />
     <description>I'm in a desert.</description>
+    <exit alias="south" to="Room 1">
+      <inherit name="southdirection" />
+    </exit>
+    <exit alias="east" to="Room 3">
+      <inherit name="eastdirection" />
+    </exit>
   </object>
   <object name="Room 3">
     <inherit name="editor_room" />
     <description>I'm in a desert.</description>
+    <exit alias="west" to="Room 2">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="south" to="Room 4">
+      <inherit name="southdirection" />
+    </exit>
   </object>
   <object name="Room 4">
     <inherit name="editor_room" />
     <description>I'm in a desert next to a pyramid.</description>
+    <exit alias="west" to="Room 1">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="north" to="Room 3">
+      <inherit name="northdirection" />
+    </exit>
   </object>
   <object name="Room 5">
     <inherit name="editor_room" />
