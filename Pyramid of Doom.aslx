@@ -14,6 +14,17 @@
       <inherit name="editor_object" />
       <inherit name="editor_player" />
     </object>
+    <object name="Room 24">
+      <inherit name="editor_room" />
+      <description>I'm in a Pool of water.</description>
+      <object name="Large Key">
+        <inherit name="editor_object" />
+      </object>
+    </object>
+    <object name="Shovel">
+      <inherit name="editor_object" />
+      <look type="string"></look>
+    </object>
   </object>
   <object name="Room 2">
     <inherit name="editor_room" />
@@ -102,10 +113,6 @@
   <object name="Room 23">
     <inherit name="editor_room" />
     <description>I'm on top of a pyramid.</description>
-  </object>
-  <object name="Room 24">
-    <inherit name="editor_room" />
-    <description>I'm in a Pool of water.</description>
   </object>
   <object name="Room 25">
     <inherit name="editor_room" />
