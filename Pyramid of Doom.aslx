@@ -88,6 +88,9 @@
     <exit name="Small Locked Door">
       <locked />
     </exit>
+    <exit alias="northeast" to="Desert 4">
+      <inherit name="northeastdirection" />
+    </exit>
   </object>
   <object name="Rocky Entranceway">
     <inherit name="editor_room" />
