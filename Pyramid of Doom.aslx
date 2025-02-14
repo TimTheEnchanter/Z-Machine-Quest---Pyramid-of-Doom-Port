@@ -74,6 +74,13 @@
     <exit alias="southwest" to="Hole">
       <inherit name="southwestdirection" />
     </exit>
+    <exit name="Large Locked Door" alias="east" to="Rocky Entranceway">
+      <inherit name="eastdirection" />
+      <locked />
+    </exit>
+    <object name="Sign">
+      <inherit name="editor_object" />
+    </object>
   </object>
   <object name="Hole">
     <inherit name="editor_room" />
@@ -82,9 +89,12 @@
       <locked />
     </exit>
   </object>
-  <object name="Room 6">
+  <object name="Rocky Entranceway">
     <inherit name="editor_room" />
-    <description>I'm in a ???</description>
+    <description>I'm in a rocky entranceway.</description>
+    <exit alias="west" to="Desert 4">
+      <inherit name="westdirection" />
+    </exit>
   </object>
   <object name="Room 7">
     <inherit name="editor_room" />
