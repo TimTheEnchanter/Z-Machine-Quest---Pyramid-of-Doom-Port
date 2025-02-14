@@ -7,64 +7,80 @@
     <version>1.0</version>
     <firstpublished>2025</firstpublished>
   </game>
-  <object name="Room 1">
+  <object name="Desert 1">
     <inherit name="editor_room" />
     <description>I'm in a desert.</description>
     <object name="player">
       <inherit name="editor_object" />
       <inherit name="editor_player" />
     </object>
-    <object name="Room 24">
+    <object name="Pool">
       <inherit name="editor_room" />
-      <description>I'm in a Pool of water.</description>
+      <description>I'm in a pool of water.</description>
+      <dropdestination type="object">Pool</dropdestination>
       <object name="Large Key">
         <inherit name="editor_object" />
       </object>
+      <exit alias="out" to="Desert 1">
+        <inherit name="outdirection" />
+      </exit>
     </object>
     <object name="Shovel">
       <inherit name="editor_object" />
       <look type="string"></look>
     </object>
-    <exit alias="north" to="Room 2">
+    <exit alias="north" to="Desert 2">
       <inherit name="northdirection" />
     </exit>
-    <exit alias="east" to="Room 4">
+    <exit alias="east" to="Desert 4">
       <inherit name="eastdirection" />
     </exit>
+    <exit alias="in" to="Pool">
+      <inherit name="indirection" />
+    </exit>
   </object>
-  <object name="Room 2">
+  <object name="Desert 2">
     <inherit name="editor_room" />
     <description>I'm in a desert.</description>
-    <exit alias="south" to="Room 1">
+    <exit alias="south" to="Desert 1">
       <inherit name="southdirection" />
     </exit>
-    <exit alias="east" to="Room 3">
+    <exit alias="east" to="Desert 3">
       <inherit name="eastdirection" />
     </exit>
   </object>
-  <object name="Room 3">
+  <object name="Desert 3">
     <inherit name="editor_room" />
     <description>I'm in a desert.</description>
-    <exit alias="west" to="Room 2">
+    <exit alias="west" to="Desert 2">
       <inherit name="westdirection" />
     </exit>
-    <exit alias="south" to="Room 4">
+    <exit alias="south" to="Desert 4">
       <inherit name="southdirection" />
     </exit>
+    <object name="Small Key">
+      <inherit name="editor_object" />
+    </object>
   </object>
-  <object name="Room 4">
+  <object name="Desert 4">
     <inherit name="editor_room" />
     <description>I'm in a desert next to a pyramid.</description>
-    <exit alias="west" to="Room 1">
+    <exit alias="west" to="Desert 1">
       <inherit name="westdirection" />
     </exit>
-    <exit alias="north" to="Room 3">
+    <exit alias="north" to="Desert 3">
       <inherit name="northdirection" />
     </exit>
+    <exit alias="southwest" to="Hole">
+      <inherit name="southwestdirection" />
+    </exit>
   </object>
-  <object name="Room 5">
+  <object name="Hole">
     <inherit name="editor_room" />
     <description>I'm in a hole.</description>
+    <exit name="Small Locked Door">
+      <locked />
+    </exit>
   </object>
   <object name="Room 6">
     <inherit name="editor_room" />
