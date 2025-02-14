@@ -95,6 +95,12 @@
     <exit alias="west" to="Desert 4">
       <inherit name="westdirection" />
     </exit>
+    <exit alias="north" to="Dining Hall">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="south" to="Sitting Room">
+      <inherit name="southdirection" />
+    </exit>
   </object>
   <object name="Room 7">
     <inherit name="editor_room" />
@@ -116,13 +122,22 @@
     <inherit name="editor_room" />
     <description>I'm in a tall room.</description>
   </object>
-  <object name="Room 12">
+  <object name="Dining Hall">
     <inherit name="editor_room" />
     <description>I'm in a dining hall.</description>
+    <exit alias="south" to="Rocky Entranceway">
+      <inherit name="southdirection" />
+    </exit>
+    <exit alias="east" to="Hallway">
+      <inherit name="eastdirection" />
+    </exit>
   </object>
-  <object name="Room 13">
+  <object name="Hallway">
     <inherit name="editor_room" />
     <description>I'm in a hallway.</description>
+    <exit alias="west" to="Dining Hall">
+      <inherit name="westdirection" />
+    </exit>
   </object>
   <object name="Room 14">
     <inherit name="editor_room" />
@@ -132,13 +147,22 @@
     <inherit name="editor_room" />
     <description>I'm in a hieroglyphics room.</description>
   </object>
-  <object name="Room 16">
+  <object name="Sitting Room">
     <inherit name="editor_room" />
     <description>I'm in a sitting room.</description>
+    <exit alias="north" to="Rocky Entranceway">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="southeast" to="Sloping Crawlway">
+      <inherit name="southeastdirection" />
+    </exit>
   </object>
-  <object name="Room 17">
+  <object name="Sloping Crawlway">
     <inherit name="editor_room" />
     <description>I'm in a sloping crawlway.</description>
+    <exit alias="northwest" to="Sitting Room">
+      <inherit name="northwestdirection" />
+    </exit>
   </object>
   <object name="Room 18">
     <inherit name="editor_room" />
