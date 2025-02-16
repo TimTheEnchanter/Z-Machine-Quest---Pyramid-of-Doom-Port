@@ -203,4 +203,17 @@
     <inherit name="editor_room" />
     <description>I'm in a lot of TROUBLE!</description>
   </object>
+  <object name="nomad">
+    <inherit name="editor_object" />
+    <inherit name="male" />
+    <feature_usegive />
+  </object>
+  <timer name="nomad timer">
+    <interval>30</interval>
+    <enabled />
+    <script>
+      MoveObjectHere (nomad)
+      msg ("A strange looking nomad mysteriously appears behind you.")
+    </script>
+  </timer>
 </asl>
