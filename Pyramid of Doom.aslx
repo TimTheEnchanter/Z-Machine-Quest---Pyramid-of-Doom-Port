@@ -104,26 +104,60 @@
     <exit alias="south" to="Sitting Room">
       <inherit name="southdirection" />
     </exit>
+    <object name="Sarcophagus">
+      <inherit name="editor_room" />
+      <description>I'm in a sarcophagus.</description>
+      <exit alias="out" to="Rocky Entranceway">
+        <inherit name="outdirection" />
+      </exit>
+      <exit alias="east" to="Burial Room">
+        <inherit name="eastdirection" />
+      </exit>
+      <object name="Stairs">
+        <inherit name="editor_object" />
+        <look>A set of stairs extending downward.</look>
+      </object>
+    </object>
+    <exit alias="in" to="Sarcophagus">
+      <inherit name="indirection" />
+    </exit>
   </object>
-  <object name="Room 7">
-    <inherit name="editor_room" />
-    <description>I'm in a sarcophagus.</description>
-  </object>
-  <object name="Room 8">
+  <object name="Burial Room">
     <inherit name="editor_room" />
     <description>I'm in a burial room.</description>
+    <exit alias="west" to="Sarcophagus">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="north" to="Long Narrow Passageway">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="east" to="Hidden Alcove">
+      <inherit name="eastdirection" />
+    </exit>
+    <exit alias="south" to="Tall Room">
+      <inherit name="southdirection" />
+    </exit>
   </object>
-  <object name="Room 9">
+  <object name="Long Narrow Passageway">
     <inherit name="editor_room" />
     <description>I'm in a long, narrow passageway.</description>
+    <exit alias="south" to="Burial Room">
+      <inherit name="southdirection" />
+    </exit>
   </object>
-  <object name="Room 10">
+  <object name="Hidden Alcove">
     <inherit name="editor_room" />
     <description>I'm in a hidden alcove.</description>
+    <exit alias="west" to="Burial Room">
+      <inherit name="westdirection" />
+    </exit>
   </object>
-  <object name="Room 11">
+  <object name="Tall Room">
     <inherit name="editor_room" />
     <description>I'm in a tall room.</description>
+    <exit alias="north" to="Burial Room">
+      <inherit name="northdirection" />
+    </exit>
   </object>
   <object name="Dining Hall">
     <inherit name="editor_room" />
@@ -203,10 +237,13 @@
     <inherit name="editor_room" />
     <description>I'm in a lot of TROUBLE!</description>
   </object>
-  <object name="nomad">
-    <inherit name="editor_object" />
-    <inherit name="male" />
-    <feature_usegive />
+  <object name="hidden">
+    <inherit name="editor_room" />
+    <object name="nomad">
+      <inherit name="editor_object" />
+      <inherit name="male" />
+      <feature_usegive />
+    </object>
   </object>
   <timer name="nomad timer">
     <interval>30</interval>
