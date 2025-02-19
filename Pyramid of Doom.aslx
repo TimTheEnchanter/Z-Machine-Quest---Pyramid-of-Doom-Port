@@ -17,6 +17,12 @@
     <object name="player">
       <inherit name="editor_object" />
       <inherit name="editor_player" />
+      <object name="Empty Canteen">
+        <inherit name="editor_object" />
+      </object>
+      <object name="Unlit Flashlight">
+        <inherit name="editor_object" />
+      </object>
     </object>
     <object name="Pool">
       <inherit name="editor_room" />
@@ -32,6 +38,16 @@
     <object name="Shovel">
       <inherit name="editor_object" />
       <look type="string"></look>
+      <dig type="script">
+        if (game.pov.parent = Desert Southeast) {
+          msg ("You dig a hole into the sand revealing a locked entranceway.")
+          MakeExitVisible (hole)
+          UnlockExit (hole)
+        }
+        else {
+          msg ("You dig a hole into the sand.")
+        }
+      </dig>
     </object>
     <exit alias="north" to="Desert Northwest">
       <inherit name="northdirection" />
@@ -78,15 +94,29 @@
     <exit alias="north" to="Desert Northeast">
       <inherit name="northdirection" />
     </exit>
-    <exit alias="southwest" to="Hole">
+    <exit name="hole" alias="southwest" to="Hole">
       <inherit name="southwestdirection" />
+      <visible type="boolean">false</visible>
+      <locked />
+      <lockmessage>All you see is sand.</lockmessage>
     </exit>
     <exit name="Large Locked Door" alias="east" to="Rocky Entranceway">
       <inherit name="eastdirection" />
       <locked />
+      <visible type="boolean">false</visible>
     </exit>
     <object name="Sign">
       <inherit name="editor_object" />
+    </object>
+    <object name="Stone">
+      <inherit name="editor_object" />
+      <read>Confusing. Part appears missing.</read>
+      <take />
+      <ontake type="script">
+        msg ("You can hear the faint sound of machinery.")
+        MakeExitVisible (Large Locked Door)
+      </ontake>
+      <not_all />
     </object>
   </object>
   <object name="Hole">
@@ -261,6 +291,11 @@
       <feature_usegive />
     </object>
   </object>
+  <verb>
+    <property>dig</property>
+    <pattern>dig</pattern>
+    <defaultexpression>WriteVerb(game.pov, "can't") + " dig " + object.article + "."</defaultexpression>
+  </verb>
   <timer name="nomad timer">
     <interval>75</interval>
     <enabled />
