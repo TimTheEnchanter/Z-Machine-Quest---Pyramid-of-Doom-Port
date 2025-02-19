@@ -6,10 +6,14 @@
     <gameid>971819d8-b8f0-4dea-8449-6c26b6ecb796</gameid>
     <version>1.0</version>
     <firstpublished>2025</firstpublished>
+    <author>Original: Scott Adams Port: James Parrott</author>
+    <category>Fantasy</category>
   </game>
-  <object name="Desert 1">
+  <object name="Desert Southwest">
     <inherit name="editor_room" />
     <description>I'm in a desert.</description>
+    <usedefaultprefix type="boolean">false</usedefaultprefix>
+    <dropdestination type="object">Desert Southwest</dropdestination>
     <object name="player">
       <inherit name="editor_object" />
       <inherit name="editor_player" />
@@ -21,7 +25,7 @@
       <object name="Large Key">
         <inherit name="editor_object" />
       </object>
-      <exit alias="out" to="Desert 1">
+      <exit alias="out" to="Desert Southwest">
         <inherit name="outdirection" />
       </exit>
     </object>
@@ -29,46 +33,49 @@
       <inherit name="editor_object" />
       <look type="string"></look>
     </object>
-    <exit alias="north" to="Desert 2">
+    <exit alias="north" to="Desert Northwest">
       <inherit name="northdirection" />
     </exit>
-    <exit alias="east" to="Desert 4">
+    <exit alias="east" to="Desert Southeast">
       <inherit name="eastdirection" />
     </exit>
     <exit alias="in" to="Pool">
       <inherit name="indirection" />
     </exit>
   </object>
-  <object name="Desert 2">
+  <object name="Desert Northwest">
     <inherit name="editor_room" />
     <description>I'm in a desert.</description>
-    <exit alias="south" to="Desert 1">
+    <usedefaultprefix type="boolean">false</usedefaultprefix>
+    <exit alias="south" to="Desert Southwest">
       <inherit name="southdirection" />
     </exit>
-    <exit alias="east" to="Desert 3">
+    <exit alias="east" to="Desert Northeast">
       <inherit name="eastdirection" />
     </exit>
   </object>
-  <object name="Desert 3">
+  <object name="Desert Northeast">
     <inherit name="editor_room" />
     <description>I'm in a desert.</description>
-    <exit alias="west" to="Desert 2">
+    <usedefaultprefix type="boolean">false</usedefaultprefix>
+    <exit alias="west" to="Desert Northwest">
       <inherit name="westdirection" />
     </exit>
-    <exit alias="south" to="Desert 4">
+    <exit alias="south" to="Desert Southeast">
       <inherit name="southdirection" />
     </exit>
     <object name="Small Key">
       <inherit name="editor_object" />
     </object>
   </object>
-  <object name="Desert 4">
+  <object name="Desert Southeast">
     <inherit name="editor_room" />
     <description>I'm in a desert next to a pyramid.</description>
-    <exit alias="west" to="Desert 1">
+    <usedefaultprefix type="boolean">false</usedefaultprefix>
+    <exit alias="west" to="Desert Southwest">
       <inherit name="westdirection" />
     </exit>
-    <exit alias="north" to="Desert 3">
+    <exit alias="north" to="Desert Northeast">
       <inherit name="northdirection" />
     </exit>
     <exit alias="southwest" to="Hole">
@@ -88,14 +95,14 @@
     <exit name="Small Locked Door">
       <locked />
     </exit>
-    <exit alias="northeast" to="Desert 4">
+    <exit alias="northeast" to="Desert Southeast">
       <inherit name="northeastdirection" />
     </exit>
   </object>
   <object name="Rocky Entranceway">
     <inherit name="editor_room" />
     <description>I'm in a rocky entranceway.</description>
-    <exit alias="west" to="Desert 4">
+    <exit alias="west" to="Desert Southeast">
       <inherit name="westdirection" />
     </exit>
     <exit alias="north" to="Dining Hall">
@@ -168,6 +175,15 @@
     <exit alias="east" to="Hallway">
       <inherit name="eastdirection" />
     </exit>
+    <object name="Table">
+      <inherit name="editor_object" />
+      <inherit name="surface" />
+      <feature_container />
+      <look type="string"></look>
+      <object name="Diamond Necklace">
+        <inherit name="editor_object" />
+      </object>
+    </object>
   </object>
   <object name="Hallway">
     <inherit name="editor_room" />
@@ -246,7 +262,7 @@
     </object>
   </object>
   <timer name="nomad timer">
-    <interval>30</interval>
+    <interval>75</interval>
     <enabled />
     <script>
       MoveObjectHere (nomad)
