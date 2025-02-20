@@ -222,13 +222,22 @@
       <inherit name="westdirection" />
     </exit>
   </object>
-  <object name="Room 14">
+  <object name="Round Altar Room">
     <inherit name="editor_room" />
     <description>I'm in a round altar room.</description>
+    <exit alias="south" to="Sloping Crawlway">
+      <inherit name="southdirection" />
+    </exit>
+    <exit alias="east" to="Hieroglyphics Room">
+      <inherit name="eastdirection" />
+    </exit>
   </object>
-  <object name="Room 15">
+  <object name="Hieroglyphics Room">
     <inherit name="editor_room" />
     <description>I'm in a hieroglyphics room.</description>
+    <exit alias="west" to="Round Altar Room">
+      <inherit name="westdirection" />
+    </exit>
   </object>
   <object name="Sitting Room">
     <inherit name="editor_room" />
@@ -245,6 +254,9 @@
     <description>I'm in a sloping crawlway.</description>
     <exit alias="northwest" to="Sitting Room">
       <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="north" to="Round Altar Room">
+      <inherit name="northdirection" />
     </exit>
   </object>
   <object name="Room 18">
