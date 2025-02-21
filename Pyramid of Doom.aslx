@@ -158,6 +158,12 @@
     <exit alias="in" to="Sarcophagus">
       <inherit name="indirection" />
     </exit>
+    <object name="Bandages">
+      <inherit name="editor_object" />
+    </object>
+    <object name="Pistol">
+      <inherit name="editor_object" />
+    </object>
   </object>
   <object name="Burial Room">
     <inherit name="editor_room" />
