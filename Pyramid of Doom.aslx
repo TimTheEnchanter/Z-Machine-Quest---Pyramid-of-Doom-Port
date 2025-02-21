@@ -303,16 +303,32 @@
   </object>
   <object name="hidden">
     <inherit name="editor_room" />
-    <object name="nomad">
+    <object name="Nomad">
       <inherit name="editor_object" />
       <inherit name="male" />
       <feature_usegive />
+      <shoot type="scriptdictionary">
+        <item key="Pistol">
+          msg ("Got him!! Nomad vanishes in a puff of yellow smoke.")
+          MoveObject (nomad, hidden)
+        </item>
+      </shoot>
+      <speak>The nomad stuck out his tongue at me.</speak>
+      <hit>The nomad stuck out his tongue at me.</hit>
+      <push>The nomad stuck out his tongue at me.</push>
+      <touch>The nomad stuck out his tongue at me.</touch>
+      <kill>The nomad stuck out his tongue at me.</kill>
     </object>
   </object>
   <verb>
     <property>dig</property>
     <pattern>dig</pattern>
     <defaultexpression>WriteVerb(game.pov, "can't") + " dig " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>shoot</property>
+    <pattern>shoot</pattern>
+    <defaultexpression>WriteVerb(game.pov, "can't") + " shoot " + object.article + "."</defaultexpression>
   </verb>
   <timer name="nomad timer">
     <interval>75</interval>
