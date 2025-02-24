@@ -254,6 +254,18 @@
     <exit alias="southeast" to="Sloping Crawlway">
       <inherit name="southeastdirection" />
     </exit>
+    <object name="Fireplace">
+      <inherit name="editor_object" />
+      <object name="Ashes">
+        <inherit name="editor_object" />
+      </object>
+    </object>
+    <object name="Basket">
+      <inherit name="editor_object" />
+      <inherit name="container_closed" />
+      <feature_container />
+      <listchildren />
+    </object>
   </object>
   <object name="Sloping Crawlway">
     <inherit name="editor_room" />
