@@ -30,6 +30,7 @@
       <dropdestination type="object">Pool</dropdestination>
       <object name="Large Key">
         <inherit name="editor_object" />
+        <take />
       </object>
       <exit alias="out" to="Desert Southwest">
         <inherit name="outdirection" />
@@ -48,6 +49,7 @@
           msg ("You dig a hole into the sand.")
         }
       </dig>
+      <take />
     </object>
     <exit alias="north" to="Desert Northwest">
       <inherit name="northdirection" />
@@ -82,6 +84,7 @@
     </exit>
     <object name="Small Key">
       <inherit name="editor_object" />
+      <take />
     </object>
   </object>
   <object name="Desert Southeast">
@@ -160,9 +163,11 @@
     </exit>
     <object name="Bandages">
       <inherit name="editor_object" />
+      <take />
     </object>
     <object name="Pistol">
       <inherit name="editor_object" />
+      <take />
     </object>
   </object>
   <object name="Burial Room">
@@ -218,6 +223,7 @@
       <look type="string"></look>
       <object name="Diamond Necklace">
         <inherit name="editor_object" />
+        <take />
       </object>
     </object>
   </object>
@@ -247,6 +253,10 @@
     <exit alias="west" to="Round Altar Room">
       <inherit name="westdirection" />
     </exit>
+    <object name="Dried Camel Jerky">
+      <inherit name="editor_object" />
+      <take />
+    </object>
   </object>
   <object name="Sitting Room">
     <inherit name="editor_room" />
@@ -273,9 +283,11 @@
       </object>
       <object name="Lump of Coal">
         <inherit name="editor_object" />
+        <take />
       </object>
       <object name="Gold Necklace">
         <inherit name="editor_object" />
+        <take />
       </object>
     </object>
   </object>
