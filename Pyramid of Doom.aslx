@@ -156,6 +156,7 @@
       <object name="Stairs">
         <inherit name="editor_object" />
         <look>A set of stairs extending downward.</look>
+        <scenery />
       </object>
     </object>
     <exit alias="in" to="Sarcophagus">
@@ -233,6 +234,17 @@
     <exit alias="west" to="Dining Hall">
       <inherit name="westdirection" />
     </exit>
+    <object name="Archway">
+      <inherit name="editor_object" />
+      <scenery />
+    </object>
+    <object name="Giant Oyster">
+      <inherit name="editor_object" />
+    </object>
+    <object name="Flute">
+      <inherit name="editor_object" />
+      <take />
+    </object>
   </object>
   <object name="Round Altar Room">
     <inherit name="editor_room" />
@@ -303,6 +315,10 @@
     <object name="Starving Rats">
       <inherit name="editor_object" />
       <inherit name="plural" />
+    </object>
+    <object name="Passageway">
+      <inherit name="editor_object" />
+      <scenery />
     </object>
   </object>
   <object name="Room 18">
