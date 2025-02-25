@@ -19,6 +19,16 @@
       <inherit name="editor_player" />
       <object name="Empty Canteen">
         <inherit name="editor_object" />
+        <fill type="script">
+          if (game.pov.parent = Pool) {
+            AddToInventory (Filled Canteen)
+            RemoveObject (Empty Canteen)
+            msg ("Canteen is full.")
+          }
+          else {
+            msg ("No container.")
+          }
+        </fill>
       </object>
       <object name="Unlit Flashlight">
         <inherit name="editor_object" />
@@ -162,7 +172,7 @@
     <exit alias="in" to="Sarcophagus">
       <inherit name="indirection" />
     </exit>
-    <object name="Bandages">
+    <object name="Mouldy Bandages">
       <inherit name="editor_object" />
       <take />
     </object>
@@ -359,7 +369,7 @@
   </object>
   <object name="hidden">
     <inherit name="editor_room" />
-    <object name="Nomad">
+    <object name="Small Nomad">
       <inherit name="editor_object" />
       <inherit name="male" />
       <feature_usegive />
@@ -375,6 +385,9 @@
       <touch>The nomad stuck out his tongue at me.</touch>
       <kill>The nomad stuck out his tongue at me.</kill>
     </object>
+    <object name="Filled Canteen">
+      <inherit name="editor_object" />
+    </object>
   </object>
   <verb>
     <property>dig</property>
@@ -385,6 +398,11 @@
     <property>shoot</property>
     <pattern>shoot</pattern>
     <defaultexpression>WriteVerb(game.pov, "can't") + " shoot " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <pattern>fill</pattern>
+    <property>fill</property>
+    <defaultexpression>WriteVerb(game.pov, "can't") + " fill" + object.article + "."</defaultexpression>
   </verb>
   <timer name="nomad timer">
     <interval>75</interval>
