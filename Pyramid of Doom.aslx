@@ -237,6 +237,9 @@
     <exit alias="east" to="Hieroglyphics Room">
       <inherit name="eastdirection" />
     </exit>
+    <object name="Blood Stained Altar">
+      <inherit name="editor_object" />
+    </object>
   </object>
   <object name="Hieroglyphics Room">
     <inherit name="editor_room" />
@@ -265,6 +268,15 @@
       <inherit name="container_closed" />
       <feature_container />
       <listchildren />
+      <object name="Hissing Cobra">
+        <inherit name="editor_object" />
+      </object>
+      <object name="Lump of Coal">
+        <inherit name="editor_object" />
+      </object>
+      <object name="Gold Necklace">
+        <inherit name="editor_object" />
+      </object>
     </object>
   </object>
   <object name="Sloping Crawlway">
@@ -276,6 +288,10 @@
     <exit alias="north" to="Round Altar Room">
       <inherit name="northdirection" />
     </exit>
+    <object name="Starving Rats">
+      <inherit name="editor_object" />
+      <inherit name="plural" />
+    </object>
   </object>
   <object name="Room 18">
     <inherit name="editor_room" />
