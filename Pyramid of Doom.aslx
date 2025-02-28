@@ -119,9 +119,12 @@
       <inherit name="eastdirection" />
       <locked />
       <visible type="boolean">false</visible>
-      <runscript type="boolean">false</runscript>
+      <runscript />
       <script type="script">
-        if (Got()) {
+        if (LargeDoorDeathTrapOff = True) {
+        }
+        else {
+          finish
         }
       </script>
     </exit>
