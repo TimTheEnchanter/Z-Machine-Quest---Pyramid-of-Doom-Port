@@ -95,6 +95,8 @@
     <object name="Small Key">
       <inherit name="editor_object" />
       <take />
+      <attr name="feature_usegive" type="boolean">false</attr>
+      <selfuseon type="scriptdictionary" />
     </object>
   </object>
   <object name="Desert Southeast">
@@ -117,9 +119,15 @@
       <inherit name="eastdirection" />
       <locked />
       <visible type="boolean">false</visible>
+      <runscript type="boolean">false</runscript>
+      <script type="script">
+        if (Got()) {
+        }
+      </script>
     </exit>
     <object name="Sign">
       <inherit name="editor_object" />
+      <read>The sign states "He who defiles to tombs of Egypt shall surely perish!"</read>
     </object>
     <object name="Stone">
       <inherit name="editor_object" />
@@ -135,12 +143,19 @@
   <object name="Hole">
     <inherit name="editor_room" />
     <description>I'm in a hole.</description>
-    <exit name="Small Locked Door">
-      <locked />
-    </exit>
     <exit alias="northeast" to="Desert Southeast">
       <inherit name="northeastdirection" />
     </exit>
+    <object name="Small Locked Door">
+      <inherit name="editor_object" />
+      <alias>Small Locked Door</alias>
+      <unlock type="script">
+        if (Got(Small Key)) {
+          UnlockExit (Large Locked Door)
+          LargeDoorDeathTrapOff = true
+        }
+      </unlock>
+    </object>
   </object>
   <object name="Rocky Entranceway">
     <inherit name="editor_room" />
