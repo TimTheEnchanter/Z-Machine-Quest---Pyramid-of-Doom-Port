@@ -214,6 +214,15 @@
     <exit alias="south" to="Tall Room">
       <inherit name="southdirection" />
     </exit>
+    <object name="Fearsome Mummy">
+      <inherit name="editor_object" />
+    </object>
+    <object name="Antique Tapestry">
+      <inherit name="editor_object" />
+    </object>
+    <object name="Burning Tanna Leaves">
+      <inherit name="editor_object" />
+    </object>
   </object>
   <object name="Long Narrow Passageway">
     <inherit name="editor_room" />
@@ -221,6 +230,12 @@
     <exit alias="south" to="Burial Room">
       <inherit name="southdirection" />
     </exit>
+    <object name="Bricked up doorway">
+      <inherit name="editor_object" />
+    </object>
+    <object name="Rope">
+      <inherit name="editor_object" />
+    </object>
   </object>
   <object name="Hidden Alcove">
     <inherit name="editor_room" />
@@ -235,6 +250,15 @@
     <exit alias="north" to="Burial Room">
       <inherit name="northdirection" />
     </exit>
+    <object name="Metal Bar">
+      <inherit name="editor_object" />
+    </object>
+    <object name="Decapitated Skeleton">
+      <inherit name="editor_object" />
+    </object>
+    <object name="Saw">
+      <inherit name="editor_object" />
+    </object>
   </object>
   <object name="Dining Hall">
     <inherit name="editor_room" />
