@@ -243,6 +243,26 @@
     <exit alias="west" to="Burial Room">
       <inherit name="westdirection" />
     </exit>
+    <object name="Chopping Block">
+      <inherit name="editor_object" />
+    </object>
+    <object name="Skull">
+      <inherit name="editor_object" />
+    </object>
+    <object name="Box">
+      <inherit name="editor_object" />
+      <inherit name="openable" />
+      <feature_container />
+      <object name="Gold Teeth">
+        <inherit name="editor_object" />
+      </object>
+      <object name="Bones">
+        <inherit name="editor_object" />
+      </object>
+      <object name="Iron Glove">
+        <inherit name="editor_object" />
+      </object>
+    </object>
   </object>
   <object name="Tall Room">
     <inherit name="editor_room" />
